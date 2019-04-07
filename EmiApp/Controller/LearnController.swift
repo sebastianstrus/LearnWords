@@ -272,11 +272,10 @@ class LearnController: UIViewController, UITextFieldDelegate {
     func checkAnswer() {
         if (currentQuestion.english.uppercased() == answerTF.text?.uppercased()) {
             answerTF.layer.borderColor = AppColors.BORDER_GREEN.cgColor
-            nextButton.isEnabled = true
+            answered = true
             nextButton.alpha = 1
         } else {
             answerTF.layer.borderColor = AppColors.BORDER_RED.cgColor
-            nextButton.isEnabled = false
         }
     }
     
@@ -291,6 +290,7 @@ class LearnController: UIViewController, UITextFieldDelegate {
             questionLabel.textColor = AppColors.ACCENT_PURPLE
             answerTF.text = ""
             answerTF.layer.borderColor = AppColors.ACCENT_PURPLE.cgColor
+            answered = false
         } else {
             showMessage("You are very smart!", withTitle: "Congratulations!")
         }
