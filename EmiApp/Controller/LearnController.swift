@@ -13,7 +13,7 @@ import AVFoundation
 
 import UIKit
 
-class LearnController: UIViewController {
+class LearnController: UIViewController, UITextFieldDelegate {
     
     
     var questions: [Question]!
@@ -161,7 +161,6 @@ class LearnController: UIViewController {
         super.viewDidLoad()
         
         shuffledQuestions = questions.shuffled()
-        
         hideKeyboardWhenTappedAround()
         setupView()
         
@@ -174,11 +173,20 @@ class LearnController: UIViewController {
         responseUtterance.pitchMultiplier = 0.75
         responseUtterance.rate = 0.45
         mySynthesizer.speak(responseUtterance)*/
+        answerTF.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+    }
+    
+    // MARK: - UITextFieldDelegate functions
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("test")
+        textField.resignFirstResponder()
+        checkAnswer()
+        return true
     }
 
     
