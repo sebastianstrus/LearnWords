@@ -52,8 +52,7 @@ class MainMenuController: UIViewController {
     fileprivate func handleVerbs() {
         let learnController = LearnController()
         learnController.title = "Verbs"
-        learnController.questions = Data.getWeatherWords()
-        learnController.questions = [Question(swedish: "szwedzki", english: "angol")]
+        learnController.questions = Data.getVerbs()
         navigationController?.pushViewController(learnController, animated: true)
     }
     
@@ -77,6 +76,7 @@ class MainMenuController: UIViewController {
         learnController.questions = Data.getWeatherWords()
         navigationController?.pushViewController(learnController, animated: true)
     }
+    
     
 
 }

@@ -30,6 +30,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.rootViewController = navigationController
         
+        let all: String = "cut,skära#deal,handla#dig,gräva#do,göra#draw,dra#dream,drömma#drink,dricka#drive,öra#eat,äta#fall,falla#feed,mata#feel,känna#fight,slåss#find,hitta#flee,fly#fling,slänga#fly,flyga#forbid,förbjuda#forget,glömma#forgive,förlåten#freeze,frysa#get,få#give,ge#go,gå#grow,växa#hang,hänga#have,ha#hear,höra#hide,gömma#hit,träffa#hold,hålla#hurt,skada#keep,behålla#know,veta#lay,lägga#lead,leda#lean,luta#learn,lära#leave,lämna#lend,låna#let,låta#lie,ligga#light,tända#lose,förlora#make,göra#mean,betyda#meet,möta#pay,betala#put,ställa#quit,sluta#read,läsa#ride,rida#ring,ringa#rise,stiga#run,springa#say,säga#see,se#seek,söka#sell,sälja#send,skicka#set,sätta#shake,skaka#shine,skina#shoot,skjuta#show,visa#shrink,krympa#shut,stänga#sink,sjunka#sit,sitta#sleep,sova#slide,glida#smell,lukta#speak,tala#spell,stava#spend,tillbringa#spit,spotta#spread,sprida#stand,stå#steal,stjäla#stick,sticka#sting,stinga#stink,stinka#strike,slå#swear,svära#sweep,svepa#swim,simma#swing,svänga#take,ta#teach,lära#tear,riva#tell,berätta#think,tänka#throw,kasta#tread,trampa#understand,förstå#wake,väcka#wear,bära#weave,väva#weep,gråta#win,vinna#wring,vrida#write,skriva"
+        
+        let splitted: [String] = all.components(separatedBy: "#")
+        // Question(swedish: "föra", english: "bring"),
+        for pair in splitted {
+            let splittedPair = pair.components(separatedBy: ",")
+            
+            //print("Question(swedish: \"\(splittedPair[1])\", english: \"\(splittedPair[0])\"),")
+        }
         return true
     }
 

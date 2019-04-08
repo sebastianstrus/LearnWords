@@ -106,6 +106,7 @@ class LearnController: UIViewController, UITextFieldDelegate {
     fileprivate let answerTF: UITextField = {
         let tf = UITextField()
         tf.textAlignment = .center
+        tf.autocapitalizationType = UITextAutocapitalizationType.none
         tf.font = UIFont.systemFont(ofSize: 18)
         //tf.backgroundColor = UIColor.lightGray
         tf.placeholder = "Your answer"
@@ -194,7 +195,7 @@ class LearnController: UIViewController, UITextFieldDelegate {
         view.backgroundColor = UIColor.white
         
         view.addSubview(numberLabel)
-        numberLabel.setAnchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 60, height: 30)
+        numberLabel.setAnchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 100, height: 30)
         
         view.addSubview(soundButtonUK)
         soundButtonUK.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: view.trailingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 50, height: 50)
