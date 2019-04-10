@@ -26,9 +26,118 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationController.navigationBar.tintColor = UIColor.white
         
         
+        
+        /*let times: [Question] = Data.getWeatherWords()
+        print("TIME (\(times.count))")
+        for question in times {
+            print("\(question.swedish)  -  \(question.english)")
+        }
+        print(" ")
+        let verbs: [Question] = Data.getVerbs()
+        print("VERBS (\(verbs.count))")
+        for question in verbs {
+            print("\(question.swedish)  -  \(question.english)")
+        }
+        
+        
+        print(" ")
+        let adjectives: [Question] = Data.getAdjectives()
+        print("ADJECTIVES (\(adjectives.count))")
+        for question in adjectives {
+            print("\(question.swedish)  -  \(question.english)")
+        }*/
+        
 
         
+        
         window?.rootViewController = navigationController
+        
+        
+        let filePath = Bundle.main.path(forResource: "test2", ofType: "txt");
+        let URL = NSURL.fileURL(withPath: filePath!)
+        
+        do {
+            let string = try String.init(contentsOf: URL)
+            
+            // use string here
+            
+            let myStrings: [String] = string.components(separatedBy: .newlines)
+            
+            //var newStrings:[String] = myStrings.reversed()
+            //newStrings.remove(at: 0)
+            
+            //for i in 0...(myStrings.count) {
+                //if (i % 2 == 0) {
+                    //print("Question(swedish: \"\(newStrings[i])\", english: \"\(newStrings[i+1])\"),")
+                //}
+            //}
+
+            for row in myStrings {
+                let verbs:[String?] = row.components(separatedBy: " ")
+                
+                if (verbs.count == 5) {
+                    print("5")
+                }
+                if (verbs.count == 6) {
+                    print("6")
+                }
+                if (verbs.count == 7) {
+                    print("7")
+                }
+                if (verbs.count == 8) {
+                    print("8")
+                }
+                if (verbs.count == 9) {
+                    print("9")
+                }
+                if (verbs.count == 10) {
+                    print("10")
+                }
+                if (verbs.count == 11) {
+                    print("11")
+                }
+                if (verbs.count == 12) {
+                    print("12")
+                }
+                if (verbs.count == 13) {
+                    print("12")
+                }
+                if (verbs.count == 14) {
+                    print("13")
+                }
+                
+                
+                
+                /*if (verbs.count == 4) {
+                    print("One: \(verbs[0]!) two: \(verbs[1]!) three: \(verbs[2]!) four: \(verbs[3] ?? "")\(verbs[4] ?? "") \(verbs[5] ?? "") \(verbs[6] ?? "") \(verbs[7] ?? "") \(verbs[8] ?? "") \(verbs[9] ?? "")")
+                } else if (verbs.count == 5) {
+                    print("One: \(verbs[0]!) two: \(verbs[1]!) three: \(verbs[2]!) four: \(verbs[3] ?? "")\(verbs[4] ?? "") \(verbs[5] ?? "") \(verbs[6] ?? "") \(verbs[7] ?? "") \(verbs[8] ?? "") \(verbs[9] ?? "")")
+                } else if (verbs.count == 6) {
+                    print("One: \(verbs[0]!) two: \(verbs[1]!) three: \(verbs[2]!) four: \(verbs[3] ?? "")\(verbs[4] ?? "") \(verbs[5] ?? "") \(verbs[6] ?? "") \(verbs[7] ?? "") \(verbs[8] ?? "") \(verbs[9] ?? "")")
+                } else if (verbs.count == 7) {
+                    print("One: \(verbs[0]!) two: \(verbs[1]!) three: \(verbs[2]!) four: \(verbs[3] ?? "")\(verbs[4] ?? "") \(verbs[5] ?? "") \(verbs[6] ?? "") \(verbs[7] ?? "") \(verbs[8] ?? "") \(verbs[9] ?? "")")
+                } else if (verbs.count == 8) {
+                    print("One: \(verbs[0]!) two: \(verbs[1]!) three: \(verbs[2]!) four: \(verbs[3] ?? "")\(verbs[4] ?? "") \(verbs[5] ?? "") \(verbs[6] ?? "") \(verbs[7] ?? "") \(verbs[8] ?? "") \(verbs[9] ?? "")")
+                } else if (verbs.count == 9) {
+                    print("One: \(verbs[0]!) two: \(verbs[1]!) three: \(verbs[2]!) four: \(verbs[3] ?? "")\(verbs[4] ?? "") \(verbs[5] ?? "") \(verbs[6] ?? "") \(verbs[7] ?? "") \(verbs[8] ?? "") \(verbs[9] ?? "")")
+                } else if (verbs.count == 10) {
+                    print("One: \(verbs[0]!) two: \(verbs[1]!) three: \(verbs[2]!) four: \(verbs[3] ?? "")\(verbs[4] ?? "") \(verbs[5] ?? "") \(verbs[6] ?? "") \(verbs[7] ?? "") \(verbs[8] ?? "") \(verbs[9] ?? "")")
+                }*/
+                
+                //print("One: \(verbs[0]!) two: \(verbs[1]!) three: \(verbs[2]!) four: \(verbs[3] ?? "") \(verbs[4] ?? "") \(verbs[5] ?? "") \(verbs[6] ?? "") \(verbs[7] ?? "") \(verbs[8] ?? "") \(verbs[9] ?? "")")
+                
+                /*let splittedPair = pair.components(separatedBy: " - ")
+                
+                print("Question(swedish: \"\(splittedPair[0])\", english: \"\(splittedPair[1])\"),")*/
+            }
+            
+            
+            print(myStrings)
+        } catch  {
+            print(error);
+        }
+        
+        
         
         let all: String = "cut,skära#deal,handla#dig,gräva#do,göra#draw,dra#dream,drömma#drink,dricka#drive,öra#eat,äta#fall,falla#feed,mata#feel,känna#fight,slåss#find,hitta#flee,fly#fling,slänga#fly,flyga#forbid,förbjuda#forget,glömma#forgive,förlåten#freeze,frysa#get,få#give,ge#go,gå#grow,växa#hang,hänga#have,ha#hear,höra#hide,gömma#hit,träffa#hold,hålla#hurt,skada#keep,behålla#know,veta#lay,lägga#lead,leda#lean,luta#learn,lära#leave,lämna#lend,låna#let,låta#lie,ligga#light,tända#lose,förlora#make,göra#mean,betyda#meet,möta#pay,betala#put,ställa#quit,sluta#read,läsa#ride,rida#ring,ringa#rise,stiga#run,springa#say,säga#see,se#seek,söka#sell,sälja#send,skicka#set,sätta#shake,skaka#shine,skina#shoot,skjuta#show,visa#shrink,krympa#shut,stänga#sink,sjunka#sit,sitta#sleep,sova#slide,glida#smell,lukta#speak,tala#spell,stava#spend,tillbringa#spit,spotta#spread,sprida#stand,stå#steal,stjäla#stick,sticka#sting,stinga#stink,stinka#strike,slå#swear,svära#sweep,svepa#swim,simma#swing,svänga#take,ta#teach,lära#tear,riva#tell,berätta#think,tänka#throw,kasta#tread,trampa#understand,förstå#wake,väcka#wear,bära#weave,väva#weep,gråta#win,vinna#wring,vrida#write,skriva"
         
@@ -39,6 +148,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             //print("Question(swedish: \"\(splittedPair[1])\", english: \"\(splittedPair[0])\"),")
         }
+        
+        
+        
+        
+        
         return true
     }
 
@@ -67,3 +181,135 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+/*
+big
+stor
+bold
+djärv
+brave
+modig
+bright
+ljus
+busy
+upptagen
+clean
+ren
+clear
+klar
+clever
+smart
+close
+nära
+cold
+kall
+cool
+häftig
+cruel
+rå
+cute
+söt
+dark
+mörk
+deep
+djup
+faint
+svag
+fair
+rättvis
+fast
+snabb
+few
+få
+fierce
+våldsam
+fine
+fin
+fit
+lämplig
+fresh
+fräsh
+great
+stor
+hard
+svår
+high
+hög
+hot
+varm
+kind
+snäll
+large
+stor
+late
+sen
+lonely
+ensam
+long
+lång
+loud
+hög
+mean
+elak
+mild
+mild
+near
+nära
+new
+ny
+near
+nära
+nice
+snäll
+odd
+märklig
+poor
+fattig
+pure
+ren
+quick
+kvick
+quiet
+tyst
+rich
+rik
+rough
+grov
+sad
+ledsen
+safe
+säker
+shallow
+grunt
+sharp
+skarp
+shy
+blyg
+simple
+enkel
+slow
+långsam
+small
+liten
+smart
+smart
+soft
+mjuk
+strange
+konstig
+strong
+stark
+tall
+lång
+thick
+tjock
+thin
+smal
+tough
+tuff
+warm
+warm
+wise
+vis
+young
+ung
+*/

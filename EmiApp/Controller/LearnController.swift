@@ -55,6 +55,8 @@ class LearnController: UIViewController, UITextFieldDelegate {
         return label
     }()
     
+    
+    
     let soundButtonUK: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "sound_icon"), for: .normal)
@@ -69,7 +71,6 @@ class LearnController: UIViewController, UITextFieldDelegate {
         label.textAlignment = NSTextAlignment.center
         return label
     }()
-    
     
     
     let soundButtonUS: UIButton = {
@@ -275,8 +276,10 @@ class LearnController: UIViewController, UITextFieldDelegate {
             answerTF.layer.borderColor = AppColors.BORDER_GREEN.cgColor
             answered = true
             nextButton.alpha = 1
+            handleSoundUK()
         } else {
             answerTF.layer.borderColor = AppColors.BORDER_RED.cgColor
+            answerTF.becomeFirstResponder()
         }
     }
     
@@ -292,6 +295,7 @@ class LearnController: UIViewController, UITextFieldDelegate {
             answerTF.text = ""
             answerTF.layer.borderColor = AppColors.ACCENT_PURPLE.cgColor
             answered = false
+            answerTF.becomeFirstResponder()
         } else {
             showMessage("You are very smart!", withTitle: "Congratulations!")
         }

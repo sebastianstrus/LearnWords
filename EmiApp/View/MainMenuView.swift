@@ -25,7 +25,7 @@ class MainMenuView: UIView {
     var timeAction: (() -> Void)?
     var verbsAction: (() -> Void)?
     var adjectivesAction: (() -> Void)?
-    var weatherAction: (() -> Void)?
+    var plEnAction: (() -> Void)?
     var usefulAction: (() -> Void)?
     
     // MARK: - All subviews
@@ -88,8 +88,8 @@ class MainMenuView: UIView {
     }()
     
     fileprivate let weatherButton: BounceButton = {
-        let button = BounceButton(title: "Weather")
-        button.addTarget(self, action: #selector(handleWeather), for: .touchUpInside)
+        let button = BounceButton(title: "PL - EN")
+        button.addTarget(self, action: #selector(handlePlEn), for: .touchUpInside)
         return button
     }()
     
@@ -189,8 +189,8 @@ class MainMenuView: UIView {
         adjectivesAction?()
     }
     
-    @objc fileprivate func handleWeather() {
-        weatherAction?()
+    @objc fileprivate func handlePlEn() {
+        plEnAction?()
     }
     
     @objc fileprivate func handleUseful() {

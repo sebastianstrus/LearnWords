@@ -35,7 +35,7 @@ class MainMenuController: UIViewController {
         mainMenuView.timeAction = handleTime
         mainMenuView.verbsAction = handleVerbs
         mainMenuView.adjectivesAction = handleAdjectives
-        mainMenuView.weatherAction = handleWeather
+        mainMenuView.plEnAction = handlePlEn
         mainMenuView.usefulAction = handleUseful
         
         self.view.addSubview(mainMenuView)
@@ -59,22 +59,22 @@ class MainMenuController: UIViewController {
     fileprivate func handleAdjectives() {
         let learnController = LearnController()
         learnController.title = "Adjectives"
-        learnController.questions = Data.getWeatherWords()
+        learnController.questions = Data.getAdjectives()
         navigationController?.pushViewController(learnController, animated: true)
     }
     
-    fileprivate func handleWeather() {
+    fileprivate func handlePlEn() {
         let learnController = LearnController()
-        learnController.title = "Weather"
-        learnController.questions = Data.getWeatherWords()
+        learnController.title = "PL - EN"
+        learnController.questions = Data.getPlEn()
         navigationController?.pushViewController(learnController, animated: true)
     }
     
     fileprivate func handleUseful() {
-        let learnController = LearnController()
-        learnController.title = "Useful words"
-        learnController.questions = Data.getWeatherWords()
-        navigationController?.pushViewController(learnController, animated: true)
+//        let learnController = LearnController()
+//        learnController.title = "Useful words"
+//        learnController.questions = Data.getWeatherWords()
+//        navigationController?.pushViewController(learnController, animated: true)
     }
     
     
