@@ -73,57 +73,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //}
 
             for row in myStrings {
-                let verbs:[String?] = row.components(separatedBy: " ")
+                let verbs:[String] = row.components(separatedBy: " ")
                 
-                if (verbs.count == 5) {
-                    print("5")
+                if (verbs.count == 4) {
+                    print("LongQuestion(polish: \"\(verbs[3])\", english1: \"\(verbs[0])\", english2: \"\(verbs[1])\", english3: \"\(verbs[2])\"),")
                 }
-                if (verbs.count == 6) {
-                    print("6")
+                else if (verbs.count == 5) {
+                    print("LongQuestion(polish: \"\(verbs[3]) \(verbs[4])\", english1: \"\(verbs[0])\", english2: \"\(verbs[1])\", english3: \"\(verbs[2])\"),")
                 }
-                if (verbs.count == 7) {
-                    print("7")
+                else if (verbs.count == 6) {
+                    print("LongQuestion(polish: \"\(verbs[3]) \(verbs[4]) \(verbs[5])\", english1: \"\(verbs[0])\", english2: \"\(verbs[1])\", english3: \"\(verbs[2])\"),")
                 }
-                if (verbs.count == 8) {
-                    print("8")
+                else if (verbs.count == 7) {
+                    print("LongQuestion(polish: \"\(verbs[3]) \(verbs[4]) \(verbs[5]) \(verbs[6])\", english1: \"\(verbs[0])\", english2: \"\(verbs[1])\", english3: \"\(verbs[2])\"),")
                 }
-                if (verbs.count == 9) {
-                    print("9")
+                else if (verbs.count == 8) {
+                    print("LongQuestion(polish: \"\(verbs[3]) \(verbs[4]) \(verbs[5]) \(verbs[6]) \(verbs[7])\", english1: \"\(verbs[0])\", english2: \"\(verbs[1])\", english3: \"\(verbs[2])\"),")
                 }
-                if (verbs.count == 10) {
-                    print("10")
-                }
-                if (verbs.count == 11) {
-                    print("11")
-                }
-                if (verbs.count == 12) {
-                    print("12")
-                }
-                if (verbs.count == 13) {
-                    print("12")
-                }
-                if (verbs.count == 14) {
-                    print("13")
+                else if (verbs.count == 9) {
+                    print("LongQuestion(polish: \"\(verbs[3]) \(verbs[4]) \(verbs[5]) \(verbs[6]) \(verbs[7]) \(verbs[8])\", english1: \"\(verbs[0])\", english2: \"\(verbs[1])\", english3: \"\(verbs[2])\"),")
                 }
                 
                 
-                
-                /*if (verbs.count == 4) {
-                    print("One: \(verbs[0]!) two: \(verbs[1]!) three: \(verbs[2]!) four: \(verbs[3] ?? "")\(verbs[4] ?? "") \(verbs[5] ?? "") \(verbs[6] ?? "") \(verbs[7] ?? "") \(verbs[8] ?? "") \(verbs[9] ?? "")")
-                } else if (verbs.count == 5) {
-                    print("One: \(verbs[0]!) two: \(verbs[1]!) three: \(verbs[2]!) four: \(verbs[3] ?? "")\(verbs[4] ?? "") \(verbs[5] ?? "") \(verbs[6] ?? "") \(verbs[7] ?? "") \(verbs[8] ?? "") \(verbs[9] ?? "")")
-                } else if (verbs.count == 6) {
-                    print("One: \(verbs[0]!) two: \(verbs[1]!) three: \(verbs[2]!) four: \(verbs[3] ?? "")\(verbs[4] ?? "") \(verbs[5] ?? "") \(verbs[6] ?? "") \(verbs[7] ?? "") \(verbs[8] ?? "") \(verbs[9] ?? "")")
-                } else if (verbs.count == 7) {
-                    print("One: \(verbs[0]!) two: \(verbs[1]!) three: \(verbs[2]!) four: \(verbs[3] ?? "")\(verbs[4] ?? "") \(verbs[5] ?? "") \(verbs[6] ?? "") \(verbs[7] ?? "") \(verbs[8] ?? "") \(verbs[9] ?? "")")
-                } else if (verbs.count == 8) {
-                    print("One: \(verbs[0]!) two: \(verbs[1]!) three: \(verbs[2]!) four: \(verbs[3] ?? "")\(verbs[4] ?? "") \(verbs[5] ?? "") \(verbs[6] ?? "") \(verbs[7] ?? "") \(verbs[8] ?? "") \(verbs[9] ?? "")")
-                } else if (verbs.count == 9) {
-                    print("One: \(verbs[0]!) two: \(verbs[1]!) three: \(verbs[2]!) four: \(verbs[3] ?? "")\(verbs[4] ?? "") \(verbs[5] ?? "") \(verbs[6] ?? "") \(verbs[7] ?? "") \(verbs[8] ?? "") \(verbs[9] ?? "")")
-                } else if (verbs.count == 10) {
-                    print("One: \(verbs[0]!) two: \(verbs[1]!) three: \(verbs[2]!) four: \(verbs[3] ?? "")\(verbs[4] ?? "") \(verbs[5] ?? "") \(verbs[6] ?? "") \(verbs[7] ?? "") \(verbs[8] ?? "") \(verbs[9] ?? "")")
-                }*/
-                
+              
                 //print("One: \(verbs[0]!) two: \(verbs[1]!) three: \(verbs[2]!) four: \(verbs[3] ?? "") \(verbs[4] ?? "") \(verbs[5] ?? "") \(verbs[6] ?? "") \(verbs[7] ?? "") \(verbs[8] ?? "") \(verbs[9] ?? "")")
                 
                 /*let splittedPair = pair.components(separatedBy: " - ")
@@ -132,7 +104,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             
             
-            print(myStrings)
+            //print(myStrings)
         } catch  {
             print(error);
         }

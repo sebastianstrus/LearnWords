@@ -36,6 +36,7 @@
 		7DD60A89225BE5F9009AA0A2 /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7DD60A88225BE5F9009AA0A2 /* words.txt */; };
 		7DD60A8B225D43CA009AA0A2 /* main.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7DD60A8A225D43C9009AA0A2 /* main.txt */; };
 		7DD60A8E225E7F7B009AA0A2 /* test2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7DD60A8D225E7F7B009AA0A2 /* test2.txt */; };
+		7DD60A90225E9591009AA0A2 /* LongQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD60A8F225E9591009AA0A2 /* LongQuestion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		7DD60A8A225D43C9009AA0A2 /* main.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.txt; sourceTree = "<group>"; };
 		7DD60A8C225E7EF5009AA0A2 /* test1.pages */ = {isa = PBXFileReference; lastKnownFileType = file; path = test1.pages; sourceTree = "<group>"; };
 		7DD60A8D225E7F7B009AA0A2 /* test2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test2.txt; sourceTree = "<group>"; };
+		7DD60A8F225E9591009AA0A2 /* LongQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongQuestion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				7DD6083E225A2320009AA0A2 /* Question.swift */,
+				7DD60A8F225E9591009AA0A2 /* LongQuestion.swift */,
 				7DD60864225A46AF009AA0A2 /* Data.swift */,
 				7DD60A88225BE5F9009AA0A2 /* words.txt */,
 				7DD60A8C225E7EF5009AA0A2 /* test1.pages */,
@@ -312,6 +315,7 @@
 				7DD60841225A23D8009AA0A2 /* MainMenuView.swift in Sources */,
 				7DD60831225A1602009AA0A2 /* UIViewController+Extension.swift in Sources */,
 				7DD60814225A155B009AA0A2 /* AppDelegate.swift in Sources */,
+				7DD60A90225E9591009AA0A2 /* LongQuestion.swift in Sources */,
 				7DD60843225A2AF6009AA0A2 /* LearnController.swift in Sources */,
 				7DD6083A225A1623009AA0A2 /* Constants.swift in Sources */,
 				7DD60856225A2CCB009AA0A2 /* BounceButton.swift in Sources */,

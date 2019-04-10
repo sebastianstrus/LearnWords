@@ -97,13 +97,13 @@ bear bore borne znosić, udźwignąć coś, żywić (urazę)
 bend bent bent zginać, nachylać
 breed bred bred hodować, wychować, rozmnażać się
 cast cast cast rzucić, zrzucić
-deal dealt dealt rozdawać, postępować, mieć do czynienia, radzić sobie
+deal dealt dealt postępować, mieć do czynienia, radzić sobie
 forbid forbade forbidden zabraniać
 kneel knelt/kneeled knelt/kneeled klękać, klęczeć
 knit knit/knitted knit/knitted robić na drutach
 lead led led prowadzić
 seek sought sought szukać, poszukiwać
-set set set umieszczać, ustawiać, zachodzić (o słońcu), osadzić, nastawić, wyznaczyć
+set set set ustawiać, zachodzić (o słońcu), nastawić, wyznaczyć
 shrink shrank shrunk kurczyć się, zbiegać
 slide slid slid ślizgać się, zjeżdżać
 split split split dzielić, rodzielać
@@ -131,7 +131,7 @@ slay slew slain zabijać
 sling slung slung cisnąć, miotać
 spring sprang sprung przeskakiwać, wyskakiwać
 sting stung stung żądlić
-strive strove striven zmagać się z czymś, dążyć, starać się
+strive strove striven zmagać się, dążyć, starać się
 tread trod trodden kroczyć, stąpać, deptać
 weep wept wept płakać, szlochać
 wind wound wound nawijać, nakręcać, wić się
