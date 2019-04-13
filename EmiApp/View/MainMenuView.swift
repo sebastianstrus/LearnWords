@@ -72,17 +72,19 @@ class MainMenuView: UIView {
     fileprivate let timeButton: BounceButton = {
         let button = BounceButton(title: "Time")
         button.addTarget(self, action: #selector(handleTime), for: .touchUpInside)
+        button.alpha = 0
         return button
     }()
     
     fileprivate let verbsButton: BounceButton = {
         let button = BounceButton(title: "Verbs")
         button.addTarget(self, action: #selector(handleVerbs), for: .touchUpInside)
+        button.alpha = 0
         return button
     }()
     
     fileprivate let adjectivesButton: BounceButton = {
-        let button = BounceButton(title: "Adjectives")
+        let button = BounceButton(title: "Czasowniki")
         button.addTarget(self, action: #selector(handleAdjectives), for: .touchUpInside)
         return button
     }()
@@ -90,59 +92,34 @@ class MainMenuView: UIView {
     fileprivate let weatherButton: BounceButton = {
         let button = BounceButton(title: "PL - EN")
         button.addTarget(self, action: #selector(handlePlEn), for: .touchUpInside)
+        button.alpha = 0
         return button
     }()
     
     fileprivate let usefulButton: BounceButton = {
         let button = BounceButton(title: "Useful words")
         button.addTarget(self, action: #selector(handleUseful), for: .touchUpInside)
+        button.alpha = 0
         return button
     }()
     
     // MARK: - private functions
     fileprivate func setup() {
-        addSubview(backgroundImageView)
-        backgroundImageView.pinToEdges(view: self, safe: false)
-        
-        addSubview(topContainer)
-        topContainer.setAnchor(top: topAnchor,
-                               leading: leadingAnchor,
-                               bottom: nil,
-                               trailing: trailingAnchor,
-                               paddingTop: 0,
-                               paddingLeft: 0,
-                               paddingBottom: 0,
-                               paddingRight: 0,
-                               width: CGFloat(Device.SCREEN_WIDTH),
-                               height: CGFloat(Device.SCREEN_HEIGHT/3))
-        
-        let titlesStackView = createVerticalStackView(views: [titleLabel, subtitleLabel],
-                                                      spacing: Device.IS_IPHONE ? 0 : 20)
-        topContainer.addSubview(titlesStackView)
-        titlesStackView.setAnchor(width: CGFloat(Device.SCREEN_WIDTH),
-                                  height: 160)
-        titlesStackView.centerXAnchor.constraint(equalTo: topContainer.centerXAnchor).isActive = true
-        titlesStackView.centerYAnchor.constraint(equalTo: topContainer.centerYAnchor, constant: 14).isActive = true
-        
+        //addSubview(backgroundImageView)
+        //backgroundImageView.pinToEdges(view: self, safe: false)
+        backgroundColor = UIColor.darkGray
+
         addSubview(bottomContainer)
-        bottomContainer.setAnchor(top: topContainer.bottomAnchor,
-                                  leading: leadingAnchor,
-                                  bottom: bottomAnchor,
-                                  trailing: trailingAnchor,
-                                  paddingTop: 0,
-                                  paddingLeft: 0,
-                                  paddingBottom: 0,
-                                  paddingRight: 0,
-                                  width: CGFloat(Device.SCREEN_WIDTH),
-                                  height: 0)
+        bottomContainer.pinToEdges(view: self, safe: false)
         
         
         
         buttonsStackView = createVerticalStackView(views: [timeButton, verbsButton, adjectivesButton, weatherButton, usefulButton],
-                                                   spacing: 10)
+                                                   spacing: 20)
         bottomContainer.addSubview(buttonsStackView)
+        
         buttonsStackView.setAnchor(width: Device.IS_IPHONE ? 160 : 320,//Device.IS_IPHONE ? 200 : 400,
-                                   height: 240)//Device.IS_IPHONE ? 115 : 230)
+                                   height: 480)//Device.IS_IPHONE ? 115 : 230)
         buttonsStackView.centerXAnchor.constraint(equalTo: bottomContainer.centerXAnchor).isActive = true
         buttonsStackView.centerYAnchor.constraint(equalTo: bottomContainer.centerYAnchor).isActive = true
         
@@ -151,32 +128,8 @@ class MainMenuView: UIView {
         titleLabel.alpha = 1//0
         subtitleLabel.alpha = 1//0
         buttonsStackView.alpha = 1//0
-        showTitle()
     }
-    
-    fileprivate func showTitle(){
-        UIView.animate(withDuration: 1, animations: {
-            self.titleLabel.alpha = 1
-        }, completion: { (true) in
-            self.showSubtitle()
-        })
-        
-    }
-    
-    fileprivate func showSubtitle() {
-        UIView.animate(withDuration: 1, animations: {
-            self.subtitleLabel.alpha = 1
-        }) { (true) in
-            self.showButtons()
-        }
-    }
-    
-    fileprivate func showButtons() {
-        UIView.animate(withDuration: 1) {
-            self.buttonsStackView.alpha = 1
-        }
-    }
-    
+
     @objc fileprivate func handleTime() {
         timeAction?()
     }

@@ -43,31 +43,22 @@ class MainMenuController: UIViewController {
     }
 
     fileprivate func handleTime() {
-        let learnController = LearnController()
-        learnController.title = "Time"
-        learnController.questions = Data.getWeatherWords()
-        navigationController?.pushViewController(learnController, animated: true)
+
     }
     
     fileprivate func handleVerbs() {
-        let learnController = LearnController()
-        learnController.title = "Verbs"
-        learnController.questions = Data.getVerbs()
-        navigationController?.pushViewController(learnController, animated: true)
+
     }
     
     fileprivate func handleAdjectives() {
         let learnController = LearnController()
-        learnController.title = "Adjectives"
-        learnController.questions = Data.getAdjectives()
+        learnController.title = "Czasowniki"
+        learnController.questions = Data.getHardVerbs()
         navigationController?.pushViewController(learnController, animated: true)
     }
     
     fileprivate func handlePlEn() {
-        let learnController = LearnController()
-        learnController.title = "PL - EN"
-        learnController.questions = Data.getPlEn()
-        navigationController?.pushViewController(learnController, animated: true)
+
     }
     
     fileprivate func handleUseful() {

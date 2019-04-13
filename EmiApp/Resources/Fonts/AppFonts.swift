@@ -10,9 +10,9 @@ import UIKit
 
 struct AppFonts {
     static let TITLE_FONT = UIFont(name: "Yellowtail-Regular", size: 80)//Device.IS_IPHONE ? 45 : 90)
-    static let SUBTITLE_FONT = UIFont(name: "Lato-Regular", size: Device.IS_IPHONE ? 26 : 54)
-    static let BUTTONS_FONT = UIFont(name: "Oswald-Medium", size: Device.IS_IPHONE ? 18 : 36)
-    static let NUMBER_FONT = UIFont(name: "Lato-Regular", size: Device.IS_IPHONE ? 22 : 44)
+    static let SUBTITLE_FONT = UIFont(name: "Lato-Regular", size: 54)
+    static let BUTTONS_FONT = UIFont(name: "Oswald-Medium", size: 36)
+    static let NUMBER_FONT = UIFont(name: "Lato-Regular", size:44)
     /*
     static let INFO_FONT = UIFont(name: "Oswald-Medium", size: Device.IS_IPHONE ? 18 : 36)
     static let BTN_COLOR_FONT = UIFont(name: "LondrinaOutline-Regular", size: Device.IS_IPHONE ? 50 : 100)

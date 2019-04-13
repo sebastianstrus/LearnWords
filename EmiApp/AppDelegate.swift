@@ -75,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             for row in myStrings {
                 let verbs:[String] = row.components(separatedBy: " ")
                 
-                if (verbs.count == 4) {
+                /*if (verbs.count == 4) {
                     print("LongQuestion(polish: \"\(verbs[3])\", english1: \"\(verbs[0])\", english2: \"\(verbs[1])\", english3: \"\(verbs[2])\"),")
                 }
                 else if (verbs.count == 5) {
@@ -92,7 +92,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
                 else if (verbs.count == 9) {
                     print("LongQuestion(polish: \"\(verbs[3]) \(verbs[4]) \(verbs[5]) \(verbs[6]) \(verbs[7]) \(verbs[8])\", english1: \"\(verbs[0])\", english2: \"\(verbs[1])\", english3: \"\(verbs[2])\"),")
-                }
+                }*/
                 
                 
               

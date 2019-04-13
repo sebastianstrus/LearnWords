@@ -16,20 +16,41 @@ import UIKit
 class LearnController: UIViewController, UITextFieldDelegate {
     
     
-    var questions: [Question]!
-    
-    var shuffledQuestions: [Question]!
+    var questions: [LongQuestion]!
     
     
     
+    var shuffledQuestions: [LongQuestion]!
+    
+    var setUK: Bool = true
     
     
     
-    
-    var answered: Bool = false {
+    var answeredFirst: Bool = false {
         didSet {
-            nextButton.isEnabled = answered ? true : false
-            nextButton.alpha = answered ? 1 : 0.5
+            if (answeredSecond && answeredThird) {
+                nextButton.isEnabled = answeredFirst ? true : false
+                nextButton.alpha = answeredFirst ? 1 : 0.5
+            }
+        }
+    }
+    
+    var answeredSecond: Bool = false {
+        didSet {
+            if (answeredFirst && answeredThird) {
+                nextButton.isEnabled = answeredFirst ? true : false
+                nextButton.alpha = answeredFirst ? 1 : 0.5
+            }
+        }
+    }
+    
+    var answeredThird: Bool = false {
+        didSet {
+            if (answeredFirst && answeredSecond) {
+                nextButton.isEnabled = answeredFirst ? true : false
+                nextButton.alpha = answeredFirst ? 1 : 0.5
+            }
+
         }
     }
     
@@ -39,7 +60,7 @@ class LearnController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    var currentQuestion: Question!
+    var currentQuestion: LongQuestion!
     
     
     
@@ -72,6 +93,24 @@ class LearnController: UIViewController, UITextFieldDelegate {
         return label
     }()
     
+    let switchButton: UISwitch = {
+        let sw = UISwitch()
+        sw.transform = CGAffineTransform(scaleX: 2, y: 2)
+        sw.onTintColor = AppColors.ACCENT_PURPLE
+        sw.tintColor = AppColors.ACCENT_PURPLE
+        sw.thumbTintColor = AppColors.WHITE_GRAY
+        sw.backgroundColor = AppColors.ACCENT_PURPLE
+        sw.layer.cornerRadius = 16
+        sw.clipsToBounds = true
+        sw.isOn = true
+        sw.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
+        return sw
+    }()
+    
+    @objc func switchChanged(mySwitch: UISwitch) {
+        setUK = mySwitch.isOn
+        // Do something
+    }
     
     let soundButtonUS: UIButton = {
         let button = UIButton()
@@ -93,7 +132,7 @@ class LearnController: UIViewController, UITextFieldDelegate {
     fileprivate let questionLabel: UILabel = {
         let label = UILabel()
         label.text = "test"
-        label.font = UIFont.systemFont(ofSize: 24)
+        label.font = UIFont.systemFont(ofSize: 48)
         label.textColor = AppColors.ACCENT_PURPLE
 
         label.numberOfLines = 2
@@ -106,11 +145,39 @@ class LearnController: UIViewController, UITextFieldDelegate {
     
     fileprivate let answerTF: UITextField = {
         let tf = UITextField()
+        tf.tag = 1
         tf.textAlignment = .center
         tf.autocapitalizationType = UITextAutocapitalizationType.none
-        tf.font = UIFont.systemFont(ofSize: 18)
-        //tf.backgroundColor = UIColor.lightGray
-        tf.placeholder = "Your answer"
+        tf.font = UIFont.systemFont(ofSize: 36)
+        tf.placeholder = "infinitive"
+        tf.layer.borderWidth = 3
+        tf.layer.cornerRadius = 10
+        tf.layer.borderColor = AppColors.ACCENT_PURPLE.cgColor
+        tf.autocorrectionType = UITextAutocorrectionType.no
+        return tf
+    }()
+    
+    fileprivate let answerTF2: UITextField = {
+        let tf = UITextField()
+        tf.tag = 2
+        tf.textAlignment = .center
+        tf.autocapitalizationType = UITextAutocapitalizationType.none
+        tf.font = UIFont.systemFont(ofSize: 36)
+        tf.placeholder = "simple past"
+        tf.layer.borderWidth = 3
+        tf.layer.cornerRadius = 10
+        tf.layer.borderColor = AppColors.ACCENT_PURPLE.cgColor
+        tf.autocorrectionType = UITextAutocorrectionType.no
+        return tf
+    }()
+    
+    fileprivate let answerTF3: UITextField = {
+        let tf = UITextField()
+        tf.tag = 3
+        tf.textAlignment = .center
+        tf.autocapitalizationType = UITextAutocapitalizationType.none
+        tf.font = UIFont.systemFont(ofSize: 36)
+        tf.placeholder = "past participle"
         tf.layer.borderWidth = 3
         tf.layer.cornerRadius = 10
         tf.layer.borderColor = AppColors.ACCENT_PURPLE.cgColor
@@ -122,9 +189,9 @@ class LearnController: UIViewController, UITextFieldDelegate {
         let button = BounceButton()
         button.setTitle("Ok", for: .normal)
         button.setTitleColor(UIColor.white, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 60)
         button.backgroundColor = AppColors.ACCENT_PURPLE
-        button.layer.cornerRadius = 10
+        button.layer.cornerRadius = 100
         button.addTarget(self, action: #selector(handleOk), for: .touchUpInside)
         return button
     }()
@@ -132,10 +199,10 @@ class LearnController: UIViewController, UITextFieldDelegate {
     fileprivate let nextButton: UIButton = {
         let button = BounceButton()
         button.setTitle("Next", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 60)
         button.setTitleColor(UIColor.white, for: .normal)
         button.backgroundColor = AppColors.ACCENT_PURPLE
-        button.layer.cornerRadius = 10
+        button.layer.cornerRadius = 100
         button.addTarget(self, action: #selector(handleNext), for: .touchUpInside)
         return button
     }()
@@ -143,7 +210,7 @@ class LearnController: UIViewController, UITextFieldDelegate {
     fileprivate let hintButton: UIButton = {
         let button = UIButton()
         button.setTitle("Hint", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 10)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.setTitleColor(AppColors.ACCENT_PURPLE, for: .normal)
         button.layer.cornerRadius = 5
         button.addTarget(self, action: #selector(handleHint), for: .touchUpInside)
@@ -162,6 +229,8 @@ class LearnController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = UIColor.gray
+        
         shuffledQuestions = questions.shuffled()
         hideKeyboardWhenTappedAround()
         setupView()
@@ -176,6 +245,8 @@ class LearnController: UIViewController, UITextFieldDelegate {
         responseUtterance.rate = 0.45
         mySynthesizer.speak(responseUtterance)*/
         answerTF.delegate = self
+        answerTF2.delegate = self
+        answerTF3.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -185,10 +256,72 @@ class LearnController: UIViewController, UITextFieldDelegate {
     
     // MARK: - UITextFieldDelegate functions
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print("test")
-        textField.resignFirstResponder()
-        checkAnswer()
+        
+        switch textField.tag {
+        case 1:
+            print("case1")
+            if answerTF.text?.uppercased() == currentQuestion.english1.uppercased() {
+                print("case11")
+                answerTF.layer.borderColor = AppColors.BORDER_GREEN.cgColor
+                answeredFirst = true
+                handleSound(text: answerTF.text!)
+                //answerTF.resignFirstResponder()
+                answerTF2.becomeFirstResponder()
+            }
+            else {
+                answerTF.layer.borderColor = AppColors.BORDER_RED.cgColor
+                answerTF.becomeFirstResponder()
+            }
+        case 2:
+            print("case2")
+            if answerTF2.text?.uppercased() == currentQuestion.english2.uppercased() {
+                print("case22")
+                answerTF2.layer.borderColor = AppColors.BORDER_GREEN.cgColor
+                answeredSecond = true
+                handleSound(text: answerTF2.text!)
+                //answerTF2.resignFirstResponder()
+                answerTF3.becomeFirstResponder()
+            }
+            else {
+                answerTF2.layer.borderColor = AppColors.BORDER_RED.cgColor
+                answerTF2.becomeFirstResponder()
+            }
+        case 3:
+            print("case3")
+            if answerTF3.text?.uppercased() == currentQuestion.english3.uppercased() {
+                print("case33")
+                answerTF3.layer.borderColor = AppColors.BORDER_GREEN.cgColor
+                answeredThird = true
+                handleSound(text: answerTF3.text!)
+                answerTF3.resignFirstResponder()
+                
+            }
+            else {
+                answerTF3.layer.borderColor = AppColors.BORDER_RED.cgColor
+                answerTF3.becomeFirstResponder()
+            }
+        default:
+            print("defult")
+        }
+        
+        //print("test textField.tag: \(textField.tag)")
+        //textField.resignFirstResponder()
+        //checkAnswer()
         return true
+    }
+    
+    func checkAnswer() {
+        
+        
+        if (currentQuestion.english1.uppercased() == answerTF.text?.uppercased()) {
+            answerTF.layer.borderColor = AppColors.BORDER_GREEN.cgColor
+            answeredFirst = true
+            nextButton.alpha = 1
+            //handleSoundUK()
+        } else {
+            answerTF.layer.borderColor = AppColors.BORDER_RED.cgColor
+            answerTF.becomeFirstResponder()
+        }
     }
 
     
@@ -196,20 +329,23 @@ class LearnController: UIViewController, UITextFieldDelegate {
         view.backgroundColor = UIColor.white
         
         view.addSubview(numberLabel)
-        numberLabel.setAnchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 100, height: 30)
+        numberLabel.setAnchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 0, width: 200, height: 60)
         
         view.addSubview(soundButtonUK)
-        soundButtonUK.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: view.trailingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 50, height: 50)
+        soundButtonUK.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: view.trailingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 100, height: 100)
         
         view.addSubview(ukLabel)
-        ukLabel.setAnchor(top: nil, leading: nil, bottom: nil, trailing: soundButtonUK.leadingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: -4, width: 40, height: 30)
+        ukLabel.setAnchor(top: nil, leading: nil, bottom: nil, trailing: soundButtonUK.leadingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: -4, width: 80, height: 60)
         ukLabel.centerYAnchor.constraint(equalTo: soundButtonUK.centerYAnchor).isActive = true
         
+        view.addSubview(switchButton)
+        switchButton.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: ukLabel.leadingAnchor, paddingTop: 38, paddingLeft: 0, paddingBottom: 0, paddingRight: 46)
+        
         view.addSubview(soundButtonUS)
-        soundButtonUS.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: ukLabel.leadingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 10, width: 50, height: 50)
+        soundButtonUS.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: switchButton.leadingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 40, width: 100, height: 100)
         
         view.addSubview(usLabel)
-        usLabel.setAnchor(top: nil, leading: nil, bottom: nil, trailing: soundButtonUS.leadingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: -4, width: 40, height: 30)
+        usLabel.setAnchor(top: nil, leading: nil, bottom: nil, trailing: soundButtonUS.leadingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: -4, width: 80, height: 60)
         usLabel.centerYAnchor.constraint(equalTo: soundButtonUS.centerYAnchor).isActive = true
         
         
@@ -217,48 +353,67 @@ class LearnController: UIViewController, UITextFieldDelegate {
         
         
         view.addSubview(questionLabel)
-        questionLabel.setAnchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, paddingTop: 60, paddingLeft: 20, paddingBottom: 20, paddingRight: 20, width: 0, height: 70)
+        questionLabel.setAnchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, paddingTop: 100, paddingLeft: 20, paddingBottom: 20, paddingRight: 20, width: 0, height: 140)
         
         view.addSubview(answerTF)
-        answerTF.setAnchor(top: questionLabel.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 70)
+        //answerTF.setAnchor(top: questionLabel.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 70)
+        
+        let stackView = UIStackView(arrangedSubviews: [answerTF, answerTF2, answerTF3])
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+        stackView.spacing = 30
+        view.addSubview(stackView)
+        stackView.setAnchor(top: questionLabel.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 70)
+        
         
         numberLabel.text = "1/\(questions.count)"
         
         let buttonsStackView = UIStackView(arrangedSubviews: [okButton, nextButton])
         buttonsStackView.axis = .horizontal
         buttonsStackView.distribution = .fillEqually
-        buttonsStackView.spacing = 10
+        buttonsStackView.spacing = 140
         view.addSubview(buttonsStackView)
-        buttonsStackView.setAnchor(top: answerTF.bottomAnchor, leading: answerTF.leadingAnchor, bottom: nil, trailing: answerTF.trailingAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
+        buttonsStackView.setAnchor(width: 540, height: 200)
+        buttonsStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        buttonsStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         
         // set first
-        questionLabel.text = shuffledQuestions[0].swedish
+        questionLabel.text = shuffledQuestions[0].polish
         currentQuestion = shuffledQuestions[0]
         nextButton.isEnabled = false
         nextButton.alpha = 0.5
         
         view.addSubview(hintButton)
-        hintButton.setAnchor(top: nil, leading: nil, bottom: view.bottomAnchor, trailing: view.trailingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 10, paddingRight: 10, width: 50, height: 30)
+        hintButton.setAnchor(top: nil, leading: nil, bottom: view.bottomAnchor, trailing: view.trailingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 80, paddingRight: 20, width: 100, height: 60)
         
 
         
     }
     
-    @objc fileprivate func handleSoundUK() {
+    func handleSound(text: String) {
         let mySynthesizer = AVSpeechSynthesizer()
-        let helloUtterance = AVSpeechUtterance(string: answerTF.text!)
-        helloUtterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
+        let helloUtterance = AVSpeechUtterance(string: text)
+        helloUtterance.voice = AVSpeechSynthesisVoice(language: setUK ? "en-GB" : "en-US")
         helloUtterance.pitchMultiplier = 1.25
-        helloUtterance.rate = 0.5
+        helloUtterance.rate = 0.4
         mySynthesizer.speak(helloUtterance)
     }
     
-    @objc fileprivate func handleSoundUS() {
+    @objc fileprivate func handleSoundUK(text: String) {
         let mySynthesizer = AVSpeechSynthesizer()
-        let helloUtterance = AVSpeechUtterance(string: answerTF.text!)
+        let helloUtterance = AVSpeechUtterance(string: text)
+        helloUtterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
+        helloUtterance.pitchMultiplier = 1.25
+        helloUtterance.rate = 0.4
+        mySynthesizer.speak(helloUtterance)
+    }
+    
+    @objc fileprivate func handleSoundUS(text: String) {
+        let mySynthesizer = AVSpeechSynthesizer()
+        let helloUtterance = AVSpeechUtterance(string: text)
         helloUtterance.voice = AVSpeechSynthesisVoice(language: "en-US")
         helloUtterance.pitchMultiplier = 1.25
-        helloUtterance.rate = 0.5
+        helloUtterance.rate = 0.4
         mySynthesizer.speak(helloUtterance)
     }
     
@@ -271,31 +426,31 @@ class LearnController: UIViewController, UITextFieldDelegate {
         
     }
     
-    func checkAnswer() {
-        if (currentQuestion.english.uppercased() == answerTF.text?.uppercased()) {
-            answerTF.layer.borderColor = AppColors.BORDER_GREEN.cgColor
-            answered = true
-            nextButton.alpha = 1
-            handleSoundUK()
-        } else {
-            answerTF.layer.borderColor = AppColors.BORDER_RED.cgColor
-            answerTF.becomeFirstResponder()
-        }
-    }
+    
     
     func setNextQuestion() {
         if (currentNumber < questions.count - 1) {
             print("currentNumber: \(currentNumber)")
             print("questions.count: \(questions.count)")
             currentNumber += 1
-            questionLabel.text = shuffledQuestions[currentNumber].swedish
+            questionLabel.text = shuffledQuestions[currentNumber].polish
             currentQuestion = shuffledQuestions[currentNumber]
             
             questionLabel.textColor = AppColors.ACCENT_PURPLE
-            answerTF.text = ""
             answerTF.layer.borderColor = AppColors.ACCENT_PURPLE.cgColor
-            answered = false
+            answerTF2.layer.borderColor = AppColors.ACCENT_PURPLE.cgColor
+            answerTF3.layer.borderColor = AppColors.ACCENT_PURPLE.cgColor
+            
+            answeredFirst = false
+            answeredSecond = false
+            answeredThird = false
+            
             answerTF.becomeFirstResponder()
+            
+            answerTF.text = ""
+            answerTF2.text = ""
+            answerTF3.text = ""
+            
         } else {
             showMessage("You are very smart!", withTitle: "Congratulations!")
         }
@@ -303,7 +458,11 @@ class LearnController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func handleHint() {
-        showMessage(currentQuestion.english, withTitle: "Hint :(")
+        showMessage(nil, withTitle: "\(currentQuestion.english1) \(currentQuestion.english2) \(currentQuestion.english3)")
+    }
+    
+    override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
+        print("didUpdateFocus")
     }
 }
 
