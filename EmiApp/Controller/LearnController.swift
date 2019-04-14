@@ -75,19 +75,11 @@ class LearnController: UIViewController, UITextFieldDelegate {
         label.textAlignment = NSTextAlignment.center
         return label
     }()
-    
-    
-    
-    let soundButtonUK: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(named: "sound_icon"), for: .normal)
-        button.addTarget(self, action: #selector(handleSoundUK), for: .touchUpInside)
-        return button
-    }()
+
     
     let ukLabel: UILabel = {
         let label = UILabel()
-        let attributedString = NSMutableAttributedString(attributedString: NSAttributedString(string: "UK:", attributes: [NSAttributedString.Key.font: AppFonts.NUMBER_FONT!, .foregroundColor: AppColors.ACCENT_PURPLE]))
+        let attributedString = NSMutableAttributedString(attributedString: NSAttributedString(string: "UK", attributes: [NSAttributedString.Key.font: AppFonts.NUMBER_FONT!, .foregroundColor: AppColors.ACCENT_PURPLE]))
         label.attributedText = attributedString
         label.textAlignment = NSTextAlignment.center
         return label
@@ -112,16 +104,30 @@ class LearnController: UIViewController, UITextFieldDelegate {
         // Do something
     }
     
-    let soundButtonUS: UIButton = {
+    let soundButton1: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "sound_icon"), for: .normal)
-        button.addTarget(self, action: #selector(handleSoundUS), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleSound1), for: .touchUpInside)
+        return button
+    }()
+    
+    let soundButton2: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "sound_icon"), for: .normal)
+        button.addTarget(self, action: #selector(handleSound2), for: .touchUpInside)
+        return button
+    }()
+    
+    let soundButton3: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "sound_icon"), for: .normal)
+        button.addTarget(self, action: #selector(handleSound3), for: .touchUpInside)
         return button
     }()
     
     let usLabel: UILabel = {
         let label = UILabel()
-        let attributedString = NSMutableAttributedString(attributedString: NSAttributedString(string: "US:", attributes: [NSAttributedString.Key.font: AppFonts.NUMBER_FONT!, .foregroundColor: AppColors.ACCENT_PURPLE]))
+        let attributedString = NSMutableAttributedString(attributedString: NSAttributedString(string: "US", attributes: [NSAttributedString.Key.font: AppFonts.NUMBER_FONT!, .foregroundColor: AppColors.ACCENT_PURPLE]))
         label.attributedText = attributedString
         label.textAlignment = NSTextAlignment.center
         //label.backgroundColor = UIColor.lightGray
@@ -331,22 +337,23 @@ class LearnController: UIViewController, UITextFieldDelegate {
         view.addSubview(numberLabel)
         numberLabel.setAnchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 0, width: 200, height: 60)
         
-        view.addSubview(soundButtonUK)
-        soundButtonUK.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: view.trailingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 100, height: 100)
+        
+//        view.addSubview(soundButtonUK)
+//        soundButtonUK.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: view.trailingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 100, height: 100)
         
         view.addSubview(ukLabel)
-        ukLabel.setAnchor(top: nil, leading: nil, bottom: nil, trailing: soundButtonUK.leadingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: -4, width: 80, height: 60)
-        ukLabel.centerYAnchor.constraint(equalTo: soundButtonUK.centerYAnchor).isActive = true
+        ukLabel.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: view.trailingAnchor, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 20, width: 80, height: 60)
+        //ukLabel.centerYAnchor.constraint(equalTo: soundButtonUK.centerYAnchor).isActive = true
         
         view.addSubview(switchButton)
-        switchButton.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: ukLabel.leadingAnchor, paddingTop: 38, paddingLeft: 0, paddingBottom: 0, paddingRight: 46)
+        switchButton.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: ukLabel.leadingAnchor, paddingTop: 38, paddingLeft: 0, paddingBottom: 0, paddingRight: 30)
         
-        view.addSubview(soundButtonUS)
-        soundButtonUS.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: switchButton.leadingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 40, width: 100, height: 100)
+//        view.addSubview(soundButtonUS)
+//        soundButtonUS.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: switchButton.leadingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 40, width: 100, height: 100)
         
         view.addSubview(usLabel)
-        usLabel.setAnchor(top: nil, leading: nil, bottom: nil, trailing: soundButtonUS.leadingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: -4, width: 80, height: 60)
-        usLabel.centerYAnchor.constraint(equalTo: soundButtonUS.centerYAnchor).isActive = true
+        usLabel.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: switchButton.leadingAnchor, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 26, width: 80, height: 60)
+        //usLabel.centerYAnchor.constraint(equalTo: soundButtonUS.centerYAnchor).isActive = true
         
         
         
@@ -366,6 +373,20 @@ class LearnController: UIViewController, UITextFieldDelegate {
         stackView.setAnchor(top: questionLabel.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 70)
         
         
+
+        
+        let soundStackView = UIStackView(arrangedSubviews: [soundButton1, soundButton2, soundButton3])
+        soundStackView.axis = .horizontal
+        soundStackView.alignment = .fill
+        soundStackView.distribution = .equalSpacing
+        view.addSubview(soundStackView)
+        soundStackView.setAnchor(top: stackView.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, paddingTop: 0, paddingLeft: 200, paddingBottom: 0, paddingRight: 200, width: 0, height: 100)
+        
+        soundButton1.setAnchor(width: 70, height: 70)
+        soundButton2.setAnchor(width: 70, height: 70)
+        soundButton3.setAnchor(width: 70, height: 70)
+
+        
         numberLabel.text = "1/\(questions.count)"
         
         let buttonsStackView = UIStackView(arrangedSubviews: [okButton, nextButton])
@@ -375,7 +396,7 @@ class LearnController: UIViewController, UITextFieldDelegate {
         view.addSubview(buttonsStackView)
         buttonsStackView.setAnchor(width: 540, height: 200)
         buttonsStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        buttonsStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        buttonsStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 100).isActive = true
         
         // set first
         questionLabel.text = shuffledQuestions[0].polish
@@ -397,6 +418,18 @@ class LearnController: UIViewController, UITextFieldDelegate {
         helloUtterance.pitchMultiplier = 1.25
         helloUtterance.rate = 0.4
         mySynthesizer.speak(helloUtterance)
+    }
+    
+    @objc func handleSound1() {
+        handleSound(text: answerTF.text ?? "")
+    }
+    @objc func handleSound2() {
+        handleSound(text: answerTF2.text ?? "")
+
+    }
+    @objc func handleSound3() {
+        handleSound(text: answerTF3.text ?? "")
+
     }
     
     @objc fileprivate func handleSoundUK(text: String) {
