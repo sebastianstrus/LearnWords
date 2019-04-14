@@ -14,16 +14,28 @@ import AVFoundation
 import UIKit
 
 class LearnController: UIViewController, UITextFieldDelegate {
-    
+
     
     var questions: [LongQuestion]!
     
+    var timer = Timer()
     
+    var seconds: Int = 0 {
+        didSet {
+            //secondsLabel.text = "\(seconds)"
+            secondsLabel.text = "\(Int(seconds/60)):\(seconds - Int(seconds/60)*60)"
+        }
+    }
     
     var shuffledQuestions: [LongQuestion]!
     
     var setUK: Bool = true
     
+    var usedHints: Int = 0 {
+        didSet {
+            missedLabel.text = "Hints: \(usedHints)"
+        }
+    }
     
     
     var answeredFirst: Bool = false {
@@ -75,6 +87,25 @@ class LearnController: UIViewController, UITextFieldDelegate {
         label.textAlignment = NSTextAlignment.center
         return label
     }()
+    
+    let secondsLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = AppColors.ACCENT_PURPLE
+        label.font = AppFonts.NUMBER_FONT
+        label.text = "0:0"
+        label.textAlignment = NSTextAlignment.center
+        return label
+    }()
+    
+    let missedLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor(r: 180, g: 0, b: 0)
+        label.font = AppFonts.NUMBER_FONT
+        label.text = "Hints: \(0)"
+        label.textAlignment = NSTextAlignment.center
+        return label
+    }()
+    
 
     
     let ukLabel: UILabel = {
@@ -235,6 +266,8 @@ class LearnController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
+        
         view.backgroundColor = UIColor.gray
         
         shuffledQuestions = questions.shuffled()
@@ -255,6 +288,10 @@ class LearnController: UIViewController, UITextFieldDelegate {
         answerTF3.delegate = self
     }
     
+    @objc func updateTimer() {
+        seconds += 1
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
@@ -273,6 +310,10 @@ class LearnController: UIViewController, UITextFieldDelegate {
                 handleSound(text: answerTF.text!)
                 //answerTF.resignFirstResponder()
                 answerTF2.becomeFirstResponder()
+                
+                if (currentNumber + 1 >= questions.count) && answeredSecond && answeredSecond {
+                    self.timer.invalidate()
+                }
             }
             else {
                 answerTF.layer.borderColor = AppColors.BORDER_RED.cgColor
@@ -287,6 +328,10 @@ class LearnController: UIViewController, UITextFieldDelegate {
                 handleSound(text: answerTF2.text!)
                 //answerTF2.resignFirstResponder()
                 answerTF3.becomeFirstResponder()
+                
+                if (currentNumber + 1 >= questions.count) && answeredFirst && answeredThird {
+                    self.timer.invalidate()
+                }
             }
             else {
                 answerTF2.layer.borderColor = AppColors.BORDER_RED.cgColor
@@ -300,6 +345,12 @@ class LearnController: UIViewController, UITextFieldDelegate {
                 answeredThird = true
                 handleSound(text: answerTF3.text!)
                 answerTF3.resignFirstResponder()
+                nextButton.isSelected = true
+                //nextButton.stat = UIControl.State.focused
+                
+                if (currentNumber + 1 >= questions.count) && answeredFirst && answeredSecond {
+                    self.timer.invalidate()
+                }
                 
             }
             else {
@@ -315,6 +366,8 @@ class LearnController: UIViewController, UITextFieldDelegate {
         //checkAnswer()
         return true
     }
+    
+    
     
     func checkAnswer() {
         
@@ -335,7 +388,7 @@ class LearnController: UIViewController, UITextFieldDelegate {
         view.backgroundColor = UIColor.white
         
         view.addSubview(numberLabel)
-        numberLabel.setAnchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 0, width: 200, height: 60)
+        numberLabel.setAnchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, paddingTop: 20, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 200, height: 60)
         
         
 //        view.addSubview(soundButtonUK)
@@ -386,7 +439,6 @@ class LearnController: UIViewController, UITextFieldDelegate {
         soundButton2.setAnchor(width: 70, height: 70)
         soundButton3.setAnchor(width: 70, height: 70)
 
-        
         numberLabel.text = "1/\(questions.count)"
         
         let buttonsStackView = UIStackView(arrangedSubviews: [okButton, nextButton])
@@ -407,7 +459,14 @@ class LearnController: UIViewController, UITextFieldDelegate {
         view.addSubview(hintButton)
         hintButton.setAnchor(top: nil, leading: nil, bottom: view.bottomAnchor, trailing: view.trailingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 80, paddingRight: 20, width: 100, height: 60)
         
-
+        
+        view.addSubview(missedLabel)
+        missedLabel.setAnchor(top: nil, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: nil, paddingTop: 0, paddingLeft: 10, paddingBottom: 80, paddingRight: 0, width: 250, height: 60)
+        
+        view.addSubview(secondsLabel)
+        secondsLabel.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: nil, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 150, height: 60)
+        secondsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
         
     }
     
@@ -451,7 +510,7 @@ class LearnController: UIViewController, UITextFieldDelegate {
     }
     
     @objc fileprivate func handleOk() {
-        checkAnswer()
+        //checkAnswer()
     }
     
     @objc fileprivate func handleNext() {
@@ -491,6 +550,7 @@ class LearnController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func handleHint() {
+        usedHints += 1
         showMessage(nil, withTitle: "\(currentQuestion.english1) \(currentQuestion.english2) \(currentQuestion.english3)")
     }
     

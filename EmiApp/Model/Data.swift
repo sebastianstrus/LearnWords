@@ -297,7 +297,7 @@ class Data {
             LongQuestion(polish: "słyszeć", english1: "hear", english2: "heard", english3: "heard"),
             LongQuestion(polish: "uderzać", english1: "hit", english2: "hit", english3: "hit"),
             LongQuestion(polish: "trzymać, utrzymywać, posiadać", english1: "hold", english2: "held", english3: "held"),
-            LongQuestion(polish: "ranić, boleć", english1: "hurt", english2: "hurt", english3: "hurt"),
+            LongQuestion(polish: "ranić, boleć", english1: "hurt", english2: "hurt", english3: "hurt")/*,
             LongQuestion(polish: "trzymać", english1: "keep", english2: "kept", english3: "kept"),
             LongQuestion(polish: "znać, wiedzieć", english1: "know", english2: "knew", english3: "known"),
             LongQuestion(polish: "uczyć się", english1: "learn", english2: "learnt/learned", english3: "learnt/learned"),
@@ -405,7 +405,7 @@ class Data {
             LongQuestion(polish: "kroczyć, stąpać, deptać", english1: "tread", english2: "trod", english3: "trodden"),
             LongQuestion(polish: "płakać, szlochać", english1: "weep", english2: "wept", english3: "wept"),
             LongQuestion(polish: "nawijać, nakręcać, wić się", english1: "wind", english2: "wound", english3: "wound"),
-            LongQuestion(polish: "wykręcić, wyżąć coś, wycisnąć", english1: "wring", english2: "wrung", english3: "wrung")
+            LongQuestion(polish: "wykręcić, wyżąć coś, wycisnąć", english1: "wring", english2: "wrung", english3: "wrung")*/
         ]
     }
 }
