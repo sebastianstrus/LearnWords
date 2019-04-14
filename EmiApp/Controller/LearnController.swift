@@ -313,6 +313,7 @@ class LearnController: UIViewController, UITextFieldDelegate {
                 
                 if (currentNumber + 1 >= questions.count) && answeredSecond && answeredSecond {
                     self.timer.invalidate()
+                    showMessage("You are very smart!", withTitle: "Congratulations!")
                 }
             }
             else {
@@ -331,6 +332,7 @@ class LearnController: UIViewController, UITextFieldDelegate {
                 
                 if (currentNumber + 1 >= questions.count) && answeredFirst && answeredThird {
                     self.timer.invalidate()
+                    showMessage("You are very smart!", withTitle: "Congratulations!")
                 }
             }
             else {
@@ -350,6 +352,7 @@ class LearnController: UIViewController, UITextFieldDelegate {
                 
                 if (currentNumber + 1 >= questions.count) && answeredFirst && answeredSecond {
                     self.timer.invalidate()
+                    showMessage("\nYour time: \(Int(seconds/60)):\(seconds - Int(seconds/60)*60),\nYou used \(usedHints) \( usedHints == 1 ? "hint" : "hints").\(usedHints == 0 ? "\nYou are very smart!" : "")", withTitle: "Congratulations!")
                 }
                 
             }
@@ -514,6 +517,7 @@ class LearnController: UIViewController, UITextFieldDelegate {
     }
     
     @objc fileprivate func handleNext() {
+        
         setNextQuestion()
         
     }
@@ -544,7 +548,7 @@ class LearnController: UIViewController, UITextFieldDelegate {
             answerTF3.text = ""
             
         } else {
-            showMessage("You are very smart!", withTitle: "Congratulations!")
+            showMessage("There is no more questions!", withTitle: "Try again!")
         }
         
     }
