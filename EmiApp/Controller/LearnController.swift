@@ -20,10 +20,13 @@ class LearnController: UIViewController, UITextFieldDelegate {
     
     var timer = Timer()
     
-    var seconds: Int = 0 {
+    var time: Int = 0 {
         didSet {
             //secondsLabel.text = "\(seconds)"
-            secondsLabel.text = "\(Int(seconds/60)):\(seconds - Int(seconds/60)*60)"
+            let minutes = Int(time) / 60 % 60
+            let seconds = Int(time) % 60
+            secondsLabel.text = String(format:"%02i:%02i", minutes, seconds)
+            
         }
     }
     
@@ -50,7 +53,7 @@ class LearnController: UIViewController, UITextFieldDelegate {
     var answeredSecond: Bool = false {
         didSet {
             if (answeredFirst && answeredThird) {
-                nextButton.isEnabled = answeredFirst ? true : false
+                nextButton.isEnabled = answeredSecond ? true : false
                 nextButton.alpha = answeredFirst ? 1 : 0.5
             }
         }
@@ -59,8 +62,16 @@ class LearnController: UIViewController, UITextFieldDelegate {
     var answeredThird: Bool = false {
         didSet {
             if (answeredFirst && answeredSecond) {
-                nextButton.isEnabled = answeredFirst ? true : false
-                nextButton.alpha = answeredFirst ? 1 : 0.5
+                if answeredThird {
+                    nextButton.isEnabled = true
+                    nextButton.alpha = 1
+                    print("becomeFirstResponder")
+                    tempTF.becomeFirstResponder()
+                }
+                else {
+                    nextButton.isEnabled = false
+                    nextButton.alpha = 0.5
+                }
             }
 
         }
@@ -222,6 +233,13 @@ class LearnController: UIViewController, UITextFieldDelegate {
         return tf
     }()
     
+    fileprivate let tempTF: UITextField = {
+        let tf = UITextField()
+        tf.tag = 4
+        tf.placeholder = ""
+        return tf
+    }()
+    
     fileprivate let okButton: UIButton = {
         let button = BounceButton()
         button.setTitle("Ok", for: .normal)
@@ -286,10 +304,11 @@ class LearnController: UIViewController, UITextFieldDelegate {
         answerTF.delegate = self
         answerTF2.delegate = self
         answerTF3.delegate = self
+        tempTF.delegate = self
     }
     
     @objc func updateTimer() {
-        seconds += 1
+        time += 1
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -352,7 +371,7 @@ class LearnController: UIViewController, UITextFieldDelegate {
                 
                 if (currentNumber + 1 >= questions.count) && answeredFirst && answeredSecond {
                     self.timer.invalidate()
-                    showMessage("\nYour time: \(Int(seconds/60)):\(seconds - Int(seconds/60)*60),\nYou used \(usedHints) \( usedHints == 1 ? "hint" : "hints").\(usedHints == 0 ? "\nYou are very smart!" : "")", withTitle: "Congratulations!")
+                    showMessage("\nYour time: \(Int(time/60)):\(time - Int(time/60)*60),\nYou used \(usedHints) \( usedHints == 1 ? "hint" : "hints").\(usedHints == 0 ? "\nYou are very smart!" : "")", withTitle: "Congratulations!")
                 }
                 
             }
@@ -360,6 +379,9 @@ class LearnController: UIViewController, UITextFieldDelegate {
                 answerTF3.layer.borderColor = AppColors.BORDER_RED.cgColor
                 answerTF3.becomeFirstResponder()
             }
+        case 4:
+            print("case 4")
+            setNextQuestion()
         default:
             print("defult")
         }
@@ -470,6 +492,8 @@ class LearnController: UIViewController, UITextFieldDelegate {
         secondsLabel.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: nil, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 150, height: 60)
         secondsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
+        view.addSubview(tempTF)
+        tempTF.setAnchor(top: nil, leading: nil, bottom: view.bottomAnchor, trailing: view.trailingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 1, height: 1)
         
     }
     
