@@ -397,7 +397,7 @@ class Data {
             LongQuestion(polish: "porzucać, zaniechać, opuścić", english1: "forsake", english2: "forsook", english3: "forsaken"),
             LongQuestion(polish: "przepowiadać, przewidywać", english1: "foretell", english2: "foretold", english3: "foretold"),
             LongQuestion(polish: "zemleć, rozkruszyć, zgrzytać, ostrzyć, trzeć", english1: "grind", english2: "ground", english3: "ground"),
-            LongQuestion(polish: "skakać", english1: "leap", english2: "leaped/leapt", english3: "leaped/leapt"),
+            LongQuestion(polish: "skakać, przeskoczyć", english1: "leap", english2: "leaped/leapt", english3: "leaped/leapt"),
             LongQuestion(polish: "piłować", english1: "saw", english2: "sawed", english3: "sawn"),
             LongQuestion(polish: "zrzucać, pozbywać się", english1: "shed", english2: "shed", english3: "shed"),
             LongQuestion(polish: "zgładzać, zabijać", english1: "slay", english2: "slew", english3: "slain"),
