@@ -400,7 +400,7 @@ class Data {
             LongQuestion(polish: "skakać", english1: "leap", english2: "leaped/leapt", english3: "leaped/leapt"),
             LongQuestion(polish: "piłować", english1: "saw", english2: "sawed", english3: "sawn"),
             LongQuestion(polish: "zrzucać, pozbywać się", english1: "shed", english2: "shed", english3: "shed"),
-            LongQuestion(polish: "zabijać", english1: "slay", english2: "slew", english3: "slain"),
+            LongQuestion(polish: "zgładzać, zabijać", english1: "slay", english2: "slew", english3: "slain"),
             LongQuestion(polish: "cisnąć, miotać", english1: "sling", english2: "slung", english3: "slung"),
             LongQuestion(polish: "przeskakiwać, wyskakiwać", english1: "spring", english2: "sprang", english3: "sprung"),
             LongQuestion(polish: "żądlić", english1: "sting", english2: "stung", english3: "stung"),
