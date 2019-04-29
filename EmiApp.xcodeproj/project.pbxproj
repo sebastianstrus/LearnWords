@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64FDD9EFFF6639D7393B9C1A /* Pods_EmiApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A4B72E2E7888EDAE1802439 /* Pods_EmiApp.framework */; };
+		7D1B4EE62277B08900BA5064 /* bravo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7D1B4EE52277B08800BA5064 /* bravo.mp3 */; };
 		7DD60814225A155B009AA0A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD60813225A155B009AA0A2 /* AppDelegate.swift */; };
 		7DD60816225A155B009AA0A2 /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD60815225A155B009AA0A2 /* MainMenuController.swift */; };
 		7DD60819225A155B009AA0A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DD60817225A155B009AA0A2 /* Main.storyboard */; };
@@ -40,6 +42,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A4B72E2E7888EDAE1802439 /* Pods_EmiApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmiApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		23EA5240958E881C90E0734D /* Pods-EmiApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmiApp.debug.xcconfig"; path = "Target Support Files/Pods-EmiApp/Pods-EmiApp.debug.xcconfig"; sourceTree = "<group>"; };
+		7D1B4EE52277B08800BA5064 /* bravo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bravo.mp3; sourceTree = "<group>"; };
 		7DD60810225A155B009AA0A2 /* EmiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD60813225A155B009AA0A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DD60815225A155B009AA0A2 /* MainMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
@@ -73,6 +78,7 @@
 		7DD60A8C225E7EF5009AA0A2 /* test1.pages */ = {isa = PBXFileReference; lastKnownFileType = file; path = test1.pages; sourceTree = "<group>"; };
 		7DD60A8D225E7F7B009AA0A2 /* test2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test2.txt; sourceTree = "<group>"; };
 		7DD60A8F225E9591009AA0A2 /* LongQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongQuestion.swift; sourceTree = "<group>"; };
+		C6C84F0CC7EE2798DF8D0D35 /* Pods-EmiApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmiApp.release.xcconfig"; path = "Target Support Files/Pods-EmiApp/Pods-EmiApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,17 +86,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64FDD9EFFF6639D7393B9C1A /* Pods_EmiApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22E067C26C92A8139289E6CD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				23EA5240958E881C90E0734D /* Pods-EmiApp.debug.xcconfig */,
+				C6C84F0CC7EE2798DF8D0D35 /* Pods-EmiApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6BE13C56B86C63351169A76D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A4B72E2E7888EDAE1802439 /* Pods_EmiApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7DD60807225A155B009AA0A2 = {
 			isa = PBXGroup;
 			children = (
 				7DD60812225A155B009AA0A2 /* EmiApp */,
 				7DD60811225A155B009AA0A2 /* Products */,
+				22E067C26C92A8139289E6CD /* Pods */,
+				6BE13C56B86C63351169A76D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +167,7 @@
 		7DD60838225A1614009AA0A2 /* Suporting files */ = {
 			isa = PBXGroup;
 			children = (
+				7D1B4EE52277B08800BA5064 /* bravo.mp3 */,
 				7DD60839225A1623009AA0A2 /* Constants.swift */,
 			);
 			path = "Suporting files";
@@ -228,9 +256,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7DD60822225A155B009AA0A2 /* Build configuration list for PBXNativeTarget "EmiApp" */;
 			buildPhases = (
+				1D2F77B680484A27FD308D58 /* [CP] Check Pods Manifest.lock */,
 				7DD6080C225A155B009AA0A2 /* Sources */,
 				7DD6080D225A155B009AA0A2 /* Frameworks */,
 				7DD6080E225A155B009AA0A2 /* Resources */,
+				39A31E10B0FCADA8BCF8D188 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -280,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DD6081E225A155B009AA0A2 /* LaunchScreen.storyboard in Resources */,
+				7D1B4EE62277B08900BA5064 /* bravo.mp3 in Resources */,
 				7DD60A89225BE5F9009AA0A2 /* words.txt in Resources */,
 				7DD60850225A2BEA009AA0A2 /* Oswald-Medium.ttf in Resources */,
 				7DD60A8B225D43CA009AA0A2 /* main.txt in Resources */,
@@ -292,6 +323,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D2F77B680484A27FD308D58 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EmiApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		39A31E10B0FCADA8BCF8D188 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EmiApp/Pods-EmiApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftySound/SwiftySound.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftySound.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EmiApp/Pods-EmiApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7DD6080C225A155B009AA0A2 /* Sources */ = {
@@ -462,6 +540,7 @@
 		};
 		7DD60823225A155B009AA0A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23EA5240958E881C90E0734D /* Pods-EmiApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -480,6 +559,7 @@
 		};
 		7DD60824225A155B009AA0A2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6C84F0CC7EE2798DF8D0D35 /* Pods-EmiApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

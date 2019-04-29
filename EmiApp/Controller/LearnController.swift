@@ -10,6 +10,7 @@
 
 import UIKit
 import AVFoundation
+import SwiftySound
 
 import UIKit
 
@@ -17,7 +18,7 @@ class LearnController: UIViewController, UITextFieldDelegate {
 
     
     var questions: [LongQuestion]!
-    
+    var gotPrize = false
     var timer = Timer()
     
     var time: Int = 0 {
@@ -372,6 +373,11 @@ class LearnController: UIViewController, UITextFieldDelegate {
                 if (currentNumber + 1 >= questions.count) && answeredFirst && answeredSecond {
                     self.timer.invalidate()
                     showMessage("\nYour time: \(Int(time/60)):\(time - Int(time/60)*60),\nYou used \(usedHints) \( usedHints == 1 ? "hint" : "hints").\(usedHints == 0 ? "\nYou are very smart!" : "")", withTitle: "Congratulations!")
+                    if (usedHints == 0) && (!gotPrize) {
+                        gotPrize = !gotPrize
+                        createParticles()
+                        Sound.play(file: "bravo.mp3")
+                    }
                 }
                 
             }
@@ -584,6 +590,35 @@ class LearnController: UIViewController, UITextFieldDelegate {
     
     override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
         print("didUpdateFocus")
+    }
+    
+    public func createParticles() {
+        let view = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: self.view.frame.size.height))
+        view.contentMode = UIView.ContentMode.scaleAspectFill
+        //view.image = UIImage(named: "landscape")
+        self.view.addSubview(view)
+        let cloud = CAEmitterLayer()
+        cloud.emitterPosition = CGPoint(x: view.center.x, y: -50)
+        cloud.emitterShape = CAEmitterLayerEmitterShape.line
+        cloud.emitterSize = CGSize(width: view.frame.size.width, height: 1)
+        let flake = makeEmitterCell()
+        cloud.emitterCells = [flake]
+        view.layer.addSublayer(cloud)
+    }
+    
+    func makeEmitterCell() -> CAEmitterCell {
+        let cell = CAEmitterCell()
+        cell.contentsScale = 1.5
+        cell.birthRate = 4
+        cell.lifetime = 50.0
+        cell.velocity = 50
+        cell.emissionLongitude = CGFloat.pi
+        cell.emissionRange = CGFloat.pi / 4
+        cell.spin = 0.5
+        cell.spinRange = 1.2
+        cell.scaleRange = -0.05
+        cell.contents = UIImage(named: "prize")?.cgImage
+        return cell
     }
 }
 
