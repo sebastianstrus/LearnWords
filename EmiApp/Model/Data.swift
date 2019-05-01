@@ -268,7 +268,7 @@ class Data {
     
     class func getHardVerbs() -> [LongQuestion] {
         return [
-            /*LongQuestion(polish: "stawać się, zostawać kimś/czymś", english1: "become", english2: "became", english3: "become"),
+            LongQuestion(polish: "stawać się, zostawać kimś/czymś", english1: "become", english2: "became", english3: "become"),
             LongQuestion(polish: "zaczynać", english1: "begin", english2: "began", english3: "begun"),
             LongQuestion(polish: "łamać, pękać, rozbić, tłuc", english1: "break", english2: "broke", english3: "broken"),
             LongQuestion(polish: "przynosić, przyprowadzić", english1: "bring", english2: "brought", english3: "brought"),
@@ -283,7 +283,7 @@ class Data {
             LongQuestion(polish: "rysować, pociągnąć, remisować", english1: "draw", english2: "drew", english3: "drawn"),
             LongQuestion(polish: "śnić, marzyć", english1: "dream", english2: "dreamed/dreamt", english3: "dreamed/dreamt"),
             LongQuestion(polish: "pić", english1: "drink", english2: "drank", english3: "drunk"),
-            LongQuestion(polish: "prowadzić, kierować się czymś", english1: "drive", english2: "drove", english3: "driven"),
+            LongQuestion(polish: "prowadzić, kierować (auto)", english1: "drive", english2: "drove", english3: "driven"),
             LongQuestion(polish: "jeść", english1: "eat", english2: "ate", english3: "eaten"),
             LongQuestion(polish: "padać, upadać, spadać", english1: "fall", english2: "fell", english3: "fallen"),
             LongQuestion(polish: "czuć", english1: "feel", english2: "felt", english3: "felt"),
@@ -297,9 +297,9 @@ class Data {
             LongQuestion(polish: "słyszeć", english1: "hear", english2: "heard", english3: "heard"),
             LongQuestion(polish: "uderzać", english1: "hit", english2: "hit", english3: "hit"),
             LongQuestion(polish: "trzymać, utrzymywać, posiadać", english1: "hold", english2: "held", english3: "held"),
-            LongQuestion(polish: "ranić, boleć", english1: "hurt", english2: "hurt", english3: "hurt"),*/
+            LongQuestion(polish: "ranić, boleć", english1: "hurt", english2: "hurt", english3: "hurt"),
             
-            /*LongQuestion(polish: "trzymać", english1: "keep", english2: "kept", english3: "kept"),
+            LongQuestion(polish: "trzymać", english1: "keep", english2: "kept", english3: "kept"),
             LongQuestion(polish: "znać, wiedzieć", english1: "know", english2: "knew", english3: "known"),
             LongQuestion(polish: "uczyć się", english1: "learn", english2: "learned/learnt", english3: "learned/learnt"),
             LongQuestion(polish: "opuszczać, wyjeżdżać, zostawiać", english1: "leave", english2: "left", english3: "left"),
@@ -328,9 +328,9 @@ class Data {
             LongQuestion(polish: "stać", english1: "stand", english2: "stood", english3: "stood"),
             LongQuestion(polish: "kraść", english1: "steal", english2: "stole", english3: "stolen"),
             LongQuestion(polish: "pływać", english1: "swim", english2: "swam", english3: "swum"),
-            LongQuestion(polish: "brać", english1: "take", english2: "took", english3: "taken"),*/
+            LongQuestion(polish: "brać", english1: "take", english2: "took", english3: "taken"),
             
-            /*LongQuestion(polish: "uczyć", english1: "teach", english2: "taught", english3: "taught"),
+            LongQuestion(polish: "uczyć", english1: "teach", english2: "taught", english3: "taught"),
             LongQuestion(polish: "powiedzieć", english1: "tell", english2: "told", english3: "told"),
             LongQuestion(polish: "myśleć, sądzić, uważać", english1: "think", english2: "thought", english3: "thought"),
             LongQuestion(polish: "rzucać", english1: "throw", english2: "threw", english3: "thrown"),
@@ -359,7 +359,7 @@ class Data {
             LongQuestion(polish: "rzucać, opuszczać", english1: "quit", english2: "quit", english3: "quit"),
             LongQuestion(polish: "podnosić się, wzrastać, wschodzić (o słońcu)", english1: "rise", english2: "rose", english3: "risen"),
             LongQuestion(polish: "trząść, potrząsać", english1: "shake", english2: "shook", english3: "shaken"),
-            LongQuestion(polish: "świecić, błyszczeć", english1: "shine", english2: "shone", english3: "shone"),*/
+            LongQuestion(polish: "świecić, błyszczeć", english1: "shine", english2: "shone", english3: "shone"),
             
             LongQuestion(polish: "strzelać", english1: "shoot", english2: "shot", english3: "shot"),
             LongQuestion(polish: "tonąć (o statku), zapadać się", english1: "sink", english2: "sank", english3: "sunk"),
@@ -374,7 +374,7 @@ class Data {
             LongQuestion(polish: "zabraniać", english1: "forbid", english2: "forbade", english3: "forbidden"),
             LongQuestion(polish: "klękać, klęczeć", english1: "kneel", english2: "kneeled/knelt", english3: "kneeled/knelt"),
             LongQuestion(polish: "robić na drutach", english1: "knit", english2: "knitted/knit", english3: "knitted/knit"),
-            LongQuestion(polish: "prowadzić", english1: "lead", english2: "led", english3: "led"),
+            LongQuestion(polish: "prowadzić (zespół)", english1: "lead", english2: "led", english3: "led"),
             LongQuestion(polish: "szukać, poszukiwać", english1: "seek", english2: "sought", english3: "sought"),
             LongQuestion(polish: "ustawiać, zachodzić (o słońcu), nastawić, wyznaczyć", english1: "set", english2: "set", english3: "set"),
             LongQuestion(polish: "kurczyć się, zbiegać", english1: "shrink", english2: "shrank", english3: "shrunk"),
