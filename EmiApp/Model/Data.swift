@@ -266,6 +266,7 @@ class Data {
                 Question(swedish: "rzucać", english: "fling")]
     }
     
+    // https://www.ang.pl/slownictwo/zawody-po-angielsku
     class func getProfessions() -> [Question] {
         return [Question(swedish: "kucharka/kucharz", english: "cook"),
                 Question(swedish: "lekarka/lekarz", english: "doctor"),
