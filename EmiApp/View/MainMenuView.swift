@@ -94,7 +94,7 @@ class MainMenuView: UIView {
     }()
     
     fileprivate let usefulButton: BounceButton = {
-        let button = BounceButton(title: "Useful words")
+        let button = BounceButton(title: "Professions")
         button.addTarget(self, action: #selector(handleUseful), for: .touchUpInside)
         return button
     }()

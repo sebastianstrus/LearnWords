@@ -71,10 +71,10 @@ class MainMenuController: UIViewController {
     }
     
     fileprivate func handleUseful() {
-//        let learnController = LearnController()
-//        learnController.title = "Useful words"
-//        learnController.questions = Data.getWeatherWords()
-//        navigationController?.pushViewController(learnController, animated: true)
+        let learnController = LearnController()
+        learnController.title = "Professions"
+        learnController.questions = Data.getProfessions()
+        navigationController?.pushViewController(learnController, animated: true)
     }
     
     
