@@ -233,7 +233,7 @@ class Data {
                 Question(swedish: "stor", english: "big")]
     }
     
-
+    
     // ąćęłńóśźż.
     class func getPlEn() -> [Question] {
         return [Question(swedish: "strajkować", english: "strike"),
@@ -315,6 +315,9 @@ class Data {
             LongQuestion(polish: "dzwonić", english1: "ring", english2: "rang", english3: "rung"),
             LongQuestion(polish: "biec", english1: "run", english2: "ran", english3: "run"),
             LongQuestion(polish: "mówić", english1: "say", english2: "said", english3: "said"),
+            
+            
+            
             LongQuestion(polish: "widzieć", english1: "see", english2: "saw", english3: "seen"),
             LongQuestion(polish: "sprzedawać", english1: "sell", english2: "sold", english3: "sold"),
             LongQuestion(polish: "wysyłać, słać", english1: "send", english2: "sent", english3: "sent"),
@@ -334,7 +337,7 @@ class Data {
             LongQuestion(polish: "powiedzieć", english1: "tell", english2: "told", english3: "told"),
             LongQuestion(polish: "myśleć, sądzić, uważać", english1: "think", english2: "thought", english3: "thought"),
             LongQuestion(polish: "rzucać", english1: "throw", english2: "threw", english3: "thrown"),
-            LongQuestion(polish: "budzić", english1: "wake", english2: "woke", english3: "woken"),
+            LongQuestion(polish: "budzić", english1: "wake", english2: "woke", english3: "waked/woken"),
             LongQuestion(polish: "nosić, zakładać", english1: "wear", english2: "wore", english3: "worn"),
             LongQuestion(polish: "rozumieć", english1: "understand", english2: "understood", english3: "understood"),
             LongQuestion(polish: "wygrywać", english1: "win", english2: "won", english3: "won"),
@@ -363,6 +366,9 @@ class Data {
             
             LongQuestion(polish: "strzelać", english1: "shoot", english2: "shot", english3: "shot"),
             LongQuestion(polish: "tonąć (o statku), zapadać się", english1: "sink", english2: "sank", english3: "sunk"),
+            
+            
+            
             LongQuestion(polish: "wbijać, wtykać, przyklejać, wystawić", english1: "stick", english2: "stuck", english3: "stuck"),
             LongQuestion(polish: "uderzyć, wybijać", english1: "strike", english2: "struck", english3: "struck"),
             LongQuestion(polish: "drzeć, rozdzierać", english1: "tear", english2: "tore", english3: "torn"),
@@ -409,6 +415,83 @@ class Data {
             LongQuestion(polish: "płakać, szlochać", english1: "weep", english2: "wept", english3: "wept"),
             LongQuestion(polish: "nawijać, nakręcać, wić się", english1: "wind", english2: "wound", english3: "wound"),
             LongQuestion(polish: "wykręcić, wyżąć coś, wycisnąć", english1: "wring", english2: "wrung", english3: "wrung")
+        ]
+    }
+    
+    class func getB1B2() -> [Question] {
+        return [Question(swedish: "tam i z powrotem", english: "back and forth"),
+                Question(swedish: "tył na przód (założyć np. ubranie)", english: "back to front"),
+                Question(swedish: "krok po kroku, po trochu", english: "bit by bit"),
+                Question(swedish: "drobiazgi", english: "bits and pieces"),
+                Question(swedish: "urodzony i wychowany", english: "born and bred"),
+                Question(swedish: "ogólnie rzecz biorąc", english: "by and large"),
+                Question(swedish: "dzień w dzień", english: "day in day out"),
+                Question(swedish: "smażona ryba z frytkami (popularne danie w UK)", english: "fish and chips"),
+                Question(swedish: "plus minus", english: "give or take"),
+                Question(swedish: "tu i tam (miejscami)", english: "here and there"),
+                Question(swedish: "zgiełk (np. w mieście)", english: "hustle and bustle"),
+                Question(swedish: "teraz albo nigdy", english: "it’s now or never"),
+                Question(swedish: "ład i porządek publiczny", english: "law and order"),
+                Question(swedish: "kwestia życia lub śmierci", english: "life or death"),
+                Question(swedish: "żyj i pozwól żyć innym", english: "live and let live"),
+                Question(swedish: "głośno i wyraźnie", english: "loud and clear"),
+                Question(swedish: "mniej więcej", english: "more or less"),
+                Question(swedish: "uporządkowany", english: "neat and tidy"),
+                Question(swedish: "nigdy przenigdy", english: "never ever"),
+                Question(swedish: "od czasu do czasu", english: "now and then"),
+                Question(swedish: "od czasu do czasu", english: "on and off"),
+                Question(swedish: "wiele razy", english: "over and over again"),
+                Question(swedish: "nieodłączna część czegoś", english: "part and parcel"),
+                Question(swedish: "święty spokój", english: "peace and quiet"),
+                Question(swedish: "koszt przesyłki i opakowania (P&P)", english: "postage and packing"),
+                Question(swedish: "czyjaś duma i pociecha", english: "pride and joy"),
+                Question(swedish: "za i przeciw/ zalety i wady", english: "pros and cons"),
+                Question(swedish: "jasne jak słońce, oczywiste", english: "pure and simple"),
+                Question(swedish: "bez względu na pogodę", english: "rain or shine"),
+                Question(swedish: "dział badań i rozwoju (R&D)", english: "research and development"),
+                Question(swedish: "wypoczynek (R&R)", english: "rest and relaxation"),
+                Question(swedish: "wstawać, pobudka", english: "rise and shine"),
+                Question(swedish: "cały i zdrowy", english: "safe and sound"),
+                Question(swedish: "krótki i zwięzły", english: "short and sweet"),
+                Question(swedish: "zmęczony czymś", english: "sick and tired"),
+                Question(swedish: "prędzej czy później", english: "sooner or later"),
+                Question(swedish: "krok po kroku", english: "step by step"),
+                Question(swedish: "decydujesz się czy nie?", english: "take it or leave it"),
+                Question(swedish: "raz za razem", english: "time after time"),
+                Question(swedish: "wzloty i upadki", english: "ups and downs"),
+                Question(swedish: "poczekaj a coś zobaczysz", english: "wait and see"),
+                Question(swedish: "wóz albo przewóz", english: "win or lose"),
+        ]
+    }
+    
+    
+    class func getC1() -> [Question] {
+        return [Question(swedish: "szybko, dynamicznie (np. rozwijać się)", english: "by leaps and bounds"),
+                Question(swedish: "zaprzestanie stosowania pewnych praktyk", english: "cease and desist"),
+                Question(swedish: "bezdomny, przegrany (o osobie)", english: "down and out"),
+                Question(swedish: "przede wszystkim", english: "first and foremost"),
+                Question(swedish: "kompromis", english: "give and take"),
+                Question(swedish: "samotny jak palec", english: "high and dry"),
+                Question(swedish: "wszędzie", english: "high and low"),
+                Question(swedish: "szczegóły czegoś", english: "ins and outs (of)"),
+                Question(swedish: "rodzinny (interes)", english: "mom-and-pop"),
+                Question(swedish: "żadnego ale", english: "no ifs and buts"),
+                Question(swedish: "nieważny, bez mocy prawnej", english: "null and void"),
+                Question(swedish: "drobiazgi", english: "odds and ends"),
+                Question(swedish: "poza domem (np. w podróży)", english: "out and about"),
+                Question(swedish: "grymasić, przebierać", english: "pick and choose"),
+                Question(swedish: "sztywny (o osobie)", english: "prim and proper"),
+                Question(swedish: "szeregowi członkowie (np. organizacji)", english: "rank and file"),
+                Question(swedish: "ciskać gromy (o osobie)", english: "rant and rave"),
+                Question(swedish: "przerwa na odpoczynek pomiędzy bitwami (R&R)", english: "rest and recuperation"),
+                Question(swedish: "przybliżony (np.  tłumaczenie), prymitywny (człowiek)", english: "rough-and-ready"),
+                Question(swedish: "wóz albo przewóz", english: "sink or swim"),
+                Question(swedish: "wet za wet", english: "tit for tat"),
+                Question(swedish: "niezawodny,", english: "tried and true/tested"),
+                Question(swedish: "dobrze zapowiadający się (np.", english: "up-and-coming"),
+                Question(swedish: "zużycie (np. produktu)", english: "wear and tear"),
+                Question(swedish: "chcąc nie chcąc", english: "willy-nilly"),
+                Question(swedish: "gościć kogoś", english: "wine and dine")
         ]
     }
 }

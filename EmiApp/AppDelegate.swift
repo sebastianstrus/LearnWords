@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navigationController
         
         
-        let filePath = Bundle.main.path(forResource: "test2", ofType: "txt");
+        let filePath = Bundle.main.path(forResource: "words", ofType: "txt");
         let URL = NSURL.fileURL(withPath: filePath!)
         
         do {
@@ -72,8 +72,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 //}
             //}
 
+            var i = 0
+            print("b1b2 count:")
+            print(myStrings.count)
             for row in myStrings {
-                let verbs:[String] = row.components(separatedBy: " ")
+                if row.contains("–") {
+                    //print(row.slice(from: ">", to: "<")!)
+                    
+                    let fullNameArr = row.split{$0 == "–"}.map(String.init)
+                    // or simply:
+                    // let fullNameArr = fullName.characters.split{" "}.map(String.init)
+
+                    var first = fullNameArr[1]
+                    let firstEdited = first.dropFirst()
+                    print("Question(swedish: \"\(firstEdited)\", english: \"\(fullNameArr[0].dropLast())\"),")
+
+                }
+                
+                
+                
+
+                
+                //let verbs:[String] = row.components(separatedBy: " ")
+                
+                
+                
                 
                 /*if (verbs.count == 4) {
                     print("LongQuestion(polish: \"\(verbs[3])\", english1: \"\(verbs[0])\", english2: \"\(verbs[1])\", english3: \"\(verbs[2])\"),")
@@ -102,6 +125,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 print("Question(swedish: \"\(splittedPair[0])\", english: \"\(splittedPair[1])\"),")*/
             }
+            print(i)
             
             
             //print(myStrings)
@@ -110,7 +134,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         
-        
+        /*
         let all: String = "cut,skära#deal,handla#dig,gräva#do,göra#draw,dra#dream,drömma#drink,dricka#drive,öra#eat,äta#fall,falla#feed,mata#feel,känna#fight,slåss#find,hitta#flee,fly#fling,slänga#fly,flyga#forbid,förbjuda#forget,glömma#forgive,förlåten#freeze,frysa#get,få#give,ge#go,gå#grow,växa#hang,hänga#have,ha#hear,höra#hide,gömma#hit,träffa#hold,hålla#hurt,skada#keep,behålla#know,veta#lay,lägga#lead,leda#lean,luta#learn,lära#leave,lämna#lend,låna#let,låta#lie,ligga#light,tända#lose,förlora#make,göra#mean,betyda#meet,möta#pay,betala#put,ställa#quit,sluta#read,läsa#ride,rida#ring,ringa#rise,stiga#run,springa#say,säga#see,se#seek,söka#sell,sälja#send,skicka#set,sätta#shake,skaka#shine,skina#shoot,skjuta#show,visa#shrink,krympa#shut,stänga#sink,sjunka#sit,sitta#sleep,sova#slide,glida#smell,lukta#speak,tala#spell,stava#spend,tillbringa#spit,spotta#spread,sprida#stand,stå#steal,stjäla#stick,sticka#sting,stinga#stink,stinka#strike,slå#swear,svära#sweep,svepa#swim,simma#swing,svänga#take,ta#teach,lära#tear,riva#tell,berätta#think,tänka#throw,kasta#tread,trampa#understand,förstå#wake,väcka#wear,bära#weave,väva#weep,gråta#win,vinna#wring,vrida#write,skriva"
         
         let splitted: [String] = all.components(separatedBy: "#")
@@ -119,7 +143,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let splittedPair = pair.components(separatedBy: ",")
             
             //print("Question(swedish: \"\(splittedPair[1])\", english: \"\(splittedPair[0])\"),")
-        }
+        }*/
         
         
         
@@ -153,135 +177,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
-/*
-big
-stor
-bold
-djärv
-brave
-modig
-bright
-ljus
-busy
-upptagen
-clean
-ren
-clear
-klar
-clever
-smart
-close
-nära
-cold
-kall
-cool
-häftig
-cruel
-rå
-cute
-söt
-dark
-mörk
-deep
-djup
-faint
-svag
-fair
-rättvis
-fast
-snabb
-few
-få
-fierce
-våldsam
-fine
-fin
-fit
-lämplig
-fresh
-fräsh
-great
-stor
-hard
-svår
-high
-hög
-hot
-varm
-kind
-snäll
-large
-stor
-late
-sen
-lonely
-ensam
-long
-lång
-loud
-hög
-mean
-elak
-mild
-mild
-near
-nära
-new
-ny
-near
-nära
-nice
-snäll
-odd
-märklig
-poor
-fattig
-pure
-ren
-quick
-kvick
-quiet
-tyst
-rich
-rik
-rough
-grov
-sad
-ledsen
-safe
-säker
-shallow
-grunt
-sharp
-skarp
-shy
-blyg
-simple
-enkel
-slow
-långsam
-small
-liten
-smart
-smart
-soft
-mjuk
-strange
-konstig
-strong
-stark
-tall
-lång
-thick
-tjock
-thin
-smal
-tough
-tuff
-warm
-warm
-wise
-vis
-young
-ung
-*/
+
+extension String {
+    
+    func slice(from: String, to: String) -> String? {
+        
+        return (range(of: from)?.upperBound).flatMap { substringFrom in
+            (range(of: to, range: substringFrom..<endIndex)?.lowerBound).map { substringTo in
+                String(self[substringFrom..<substringTo])
+            }
+        }
+    }
+}

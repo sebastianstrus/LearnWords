@@ -1,130 +1,28 @@
-big
-stor
-bold
-djärv
-brave
-modig
-bright
-ljus
-busy
-upptagen
-clean
-ren
-clear
-klar
-clever
-smart
-close
-nära
-cold
-kall
-cool
-häftig
-cruel
-rå
-cute
-söt
-dark
-mörk
-deep
-djup
-faint
-svag
-fair
-rättvis
-fast
-snabb
-few
-få
-fierce
-våldsam
-fine
-fin
-fit
-lämplig
-fresh
-fräsh
-great
-stor
-hard
-svår
-high
-hög
-hot
-varm
-kind
-snäll
-large
-stor
-late
-sen
-lonely
-ensam
-long
-lång
-loud
-hög
-mean
-elak
-mild
-mild
-near
-nära
-new
-ny
-near
-nära
-nice
-snäll
-odd
-märklig
-poor
-fattig
-pure
-ren
-quick
-kvick
-quiet
-tyst
-rich
-rik
-rough
-grov
-sad
-ledsen
-safe
-säker
-shallow
-grunt
-sharp
-skarp
-shy
-blyg
-simple
-enkel
-slow
-långsam
-small
-liten
-smart
-smart
-soft
-mjuk
-strange
-konstig
-strong
-stark
-tall
-lång
-thick
-tjock
-thin
-smal
-tough
-tuff
-warm
-warm
-wise
-vis
-young
-ung
+by leaps and bounds – szybko, dynamicznie (np. rozwijać się)
+cease and desist – zaprzestanie stosowania pewnych praktyk
+down and out – bezdomny, przegrany (o osobie)
+first and foremost – przede wszystkim
+give and take – kompromis
+high and dry – samotny jak palec
+high and low – wszędzie
+ins and outs (of) – szczegóły czegoś
+mom-and-pop – rodzinny (interes)
+no ifs and buts – żadnego ale
+null and void – nieważny, bez mocy prawnej
+odds and ends – drobiazgi
+out and about – poza domem (np. w podróży)
+pick and choose – grymasić, przebierać
+prim and proper – sztywny (o osobie)
+rank and file – szeregowi członkowie (np. organizacji)
+rant and rave – ciskać gromy (o osobie)
+rest and recuperation – przerwa na odpoczynek pomiędzy bitwami (R&R)
+rough-and-ready – przybliżony (np.  tłumaczenie), prymitywny (człowiek)
+sink or swim – wóz albo przewóz
+tit for tat – wet za wet
+tried and true/tested – niezawodny,
+wypróbowany
+up-and-coming – dobrze zapowiadający się (np.
+pracownik)
+wear and tear – zużycie (np. produktu)
+willy-nilly – chcąc nie chcąc
+wine and dine – gościć kogoś
