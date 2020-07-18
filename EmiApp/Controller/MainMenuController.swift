@@ -32,11 +32,11 @@ class MainMenuController: UIViewController {
     fileprivate func setupView() {
         self.mainMenuView = MainMenuView()
 
-        mainMenuView.timeAction = handleTime
-        mainMenuView.verbsAction = handleVerbs
-        mainMenuView.adjectivesAction = handleAdjectives
-        mainMenuView.plEnAction = handlePlEn
-        mainMenuView.usefulAction = handleUseful
+        mainMenuView.b1b2Action = handleTime
+        mainMenuView.newLevelAction = handleVerbs
+        mainMenuView.irregularVerbsAction = handleAdjectives
+        mainMenuView.c1Action = handlePlEn
+        mainMenuView.professionsAction = handleUseful
         
         self.view.addSubview(mainMenuView)
         mainMenuView.pinToEdges(view: view, safe: false)

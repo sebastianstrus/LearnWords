@@ -22,11 +22,11 @@ class MainMenuView: UIView {
     }
     
     // MARK: - Public actions
-    var timeAction: (() -> Void)?
-    var verbsAction: (() -> Void)?
-    var adjectivesAction: (() -> Void)?
-    var plEnAction: (() -> Void)?
-    var usefulAction: (() -> Void)?
+    var b1b2Action: (() -> Void)?
+    var newLevelAction: (() -> Void)?
+    var irregularVerbsAction: (() -> Void)?
+    var c1Action: (() -> Void)?
+    var professionsAction: (() -> Void)?
     
     // MARK: - All subviews
     fileprivate var buttonsStackView: UIStackView!
@@ -57,7 +57,7 @@ class MainMenuView: UIView {
     
     fileprivate let newLevelButton: BounceButton = {
         let button = BounceButton(title: "Nowy poziom")
-        button.addTarget(self, action: #selector(handleProfessions), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleNewLevel), for: .touchUpInside)
         return button
     }()
     
@@ -81,23 +81,25 @@ class MainMenuView: UIView {
         
     }
 
-    @objc fileprivate func handleB1B2() {
-        timeAction?()
-    }
     
-    @objc fileprivate func handleVerbs() {
-        verbsAction?()
-    }
     
     @objc fileprivate func handleIrregularVerbs() {
-        adjectivesAction?()
+        irregularVerbsAction?()
+    }
+    
+    @objc fileprivate func handleB1B2() {
+        b1b2Action?()
     }
     
     @objc fileprivate func handleC1() {
-        plEnAction?()
+        c1Action?()
     }
     
     @objc fileprivate func handleProfessions() {
-        usefulAction?()
+        professionsAction?()
+    }
+    
+    @objc fileprivate func handleNewLevel() {
+        newLevelAction?()
     }
 }
