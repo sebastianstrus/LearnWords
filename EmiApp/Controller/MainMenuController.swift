@@ -51,7 +51,7 @@ class MainMenuController: UIViewController {
     }
     
     fileprivate func handleAdjectives() {
-        let learnController = LearnController()
+        let learnController = IrregularVerbsVC()
         learnController.title = "Czasowniki"
         learnController.questions = Data.getHardVerbs()
         navigationController?.pushViewController(learnController, animated: true)

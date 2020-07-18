@@ -20,7 +20,7 @@ extension BounceButton {
         self.layer.borderColor = UIColor.white.cgColor
         self.layer.borderWidth = 1
         self.backgroundColor = AppColors.TRANSPARENT_BLACK
-        self.setAnchor(width: Device.IS_IPHONE ? 160 : 320,
+        self.setAnchor(width: Device.IS_IPHONE ? 240 : 480,
                          height: Device.IS_IPHONE ? 40 : 80)
         
     }

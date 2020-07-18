@@ -25,7 +25,7 @@
 		7DD6083A225A1623009AA0A2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD60839225A1623009AA0A2 /* Constants.swift */; };
 		7DD6083F225A2320009AA0A2 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD6083E225A2320009AA0A2 /* Question.swift */; };
 		7DD60841225A23D8009AA0A2 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD60840225A23D8009AA0A2 /* MainMenuView.swift */; };
-		7DD60843225A2AF6009AA0A2 /* LearnController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD60842225A2AF6009AA0A2 /* LearnController.swift */; };
+		7DD60843225A2AF6009AA0A2 /* IrregularVerbsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD60842225A2AF6009AA0A2 /* IrregularVerbsVC.swift */; };
 		7DD60849225A2B85009AA0A2 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD60848225A2B85009AA0A2 /* Strings.swift */; };
 		7DD6084F225A2BEA009AA0A2 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD6084B225A2BEA009AA0A2 /* AppFonts.swift */; };
 		7DD60850225A2BEA009AA0A2 /* Oswald-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7DD6084C225A2BEA009AA0A2 /* Oswald-Medium.ttf */; };
@@ -61,7 +61,7 @@
 		7DD60839225A1623009AA0A2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7DD6083E225A2320009AA0A2 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		7DD60840225A23D8009AA0A2 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
-		7DD60842225A2AF6009AA0A2 /* LearnController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnController.swift; sourceTree = "<group>"; };
+		7DD60842225A2AF6009AA0A2 /* IrregularVerbsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IrregularVerbsVC.swift; sourceTree = "<group>"; };
 		7DD60848225A2B85009AA0A2 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		7DD6084B225A2BEA009AA0A2 /* AppFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
 		7DD6084C225A2BEA009AA0A2 /* Oswald-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Medium.ttf"; sourceTree = "<group>"; };
@@ -190,7 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				7DD60815225A155B009AA0A2 /* MainMenuController.swift */,
-				7DD60842225A2AF6009AA0A2 /* LearnController.swift */,
+				7DD60842225A2AF6009AA0A2 /* IrregularVerbsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -383,7 +383,7 @@
 				7DD60831225A1602009AA0A2 /* UIViewController+Extension.swift in Sources */,
 				7DD60814225A155B009AA0A2 /* AppDelegate.swift in Sources */,
 				7DD60A90225E9591009AA0A2 /* LongQuestion.swift in Sources */,
-				7DD60843225A2AF6009AA0A2 /* LearnController.swift in Sources */,
+				7DD60843225A2AF6009AA0A2 /* IrregularVerbsVC.swift in Sources */,
 				7DD6083A225A1623009AA0A2 /* Constants.swift in Sources */,
 				7DD60856225A2CCB009AA0A2 /* BounceButton.swift in Sources */,
 			);

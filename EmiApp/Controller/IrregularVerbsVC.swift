@@ -14,7 +14,7 @@ import SwiftySound
 
 import UIKit
 
-class LearnController: UIViewController, UITextFieldDelegate {
+class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
 
     
     var questions: [LongQuestion]!
