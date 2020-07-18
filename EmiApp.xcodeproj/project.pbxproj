@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		64FDD9EFFF6639D7393B9C1A /* Pods_EmiApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A4B72E2E7888EDAE1802439 /* Pods_EmiApp.framework */; };
 		7D1B4EE62277B08900BA5064 /* bravo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7D1B4EE52277B08800BA5064 /* bravo.mp3 */; };
+		7DC0601924C39AE60061B8D9 /* LearnWordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC0601824C39AE60061B8D9 /* LearnWordVC.swift */; };
 		7DD60814225A155B009AA0A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD60813225A155B009AA0A2 /* AppDelegate.swift */; };
 		7DD60816225A155B009AA0A2 /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD60815225A155B009AA0A2 /* MainMenuController.swift */; };
 		7DD60819225A155B009AA0A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DD60817225A155B009AA0A2 /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		1A4B72E2E7888EDAE1802439 /* Pods_EmiApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmiApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23EA5240958E881C90E0734D /* Pods-EmiApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmiApp.debug.xcconfig"; path = "Target Support Files/Pods-EmiApp/Pods-EmiApp.debug.xcconfig"; sourceTree = "<group>"; };
 		7D1B4EE52277B08800BA5064 /* bravo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bravo.mp3; sourceTree = "<group>"; };
+		7DC0601824C39AE60061B8D9 /* LearnWordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnWordVC.swift; sourceTree = "<group>"; };
 		7DD60810225A155B009AA0A2 /* EmiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD60813225A155B009AA0A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DD60815225A155B009AA0A2 /* MainMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			children = (
 				7DD60815225A155B009AA0A2 /* MainMenuController.swift */,
 				7DD60842225A2AF6009AA0A2 /* IrregularVerbsVC.swift */,
+				7DC0601824C39AE60061B8D9 /* LearnWordVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DD60835225A1602009AA0A2 /* UITextField+Extension.swift in Sources */,
+				7DC0601924C39AE60061B8D9 /* LearnWordVC.swift in Sources */,
 				7DD60816225A155B009AA0A2 /* MainMenuController.swift in Sources */,
 				7DD60849225A2B85009AA0A2 /* Strings.swift in Sources */,
 				7DD60833225A1602009AA0A2 /* UIImage+Extension.swift in Sources */,

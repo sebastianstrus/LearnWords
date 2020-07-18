@@ -32,40 +32,47 @@ class MainMenuController: UIViewController {
     fileprivate func setupView() {
         self.mainMenuView = MainMenuView()
 
-        mainMenuView.b1b2Action = handleTime
-        mainMenuView.newLevelAction = handleVerbs
-        mainMenuView.irregularVerbsAction = handleAdjectives
-        mainMenuView.c1Action = handlePlEn
-        mainMenuView.professionsAction = handleUseful
+        mainMenuView.b1b2Action = handleB1B2
+        mainMenuView.newLevelAction = handleNewLevel
+        mainMenuView.irregularVerbsAction = handleIrregularVerbs
+        mainMenuView.c1Action = handleC1
+        mainMenuView.professionsAction = handleProfessions
         
         self.view.addSubview(mainMenuView)
         mainMenuView.pinToEdges(view: view, safe: false)
     }
 
-    fileprivate func handleTime() {
+    
+    fileprivate func handleIrregularVerbs() {
+        let irregularVerbsVC = IrregularVerbsVC()
+        irregularVerbsVC.title = "Czasowniki"
+        irregularVerbsVC.questions = Data.getHardVerbs()
+        navigationController?.pushViewController(irregularVerbsVC, animated: true)
+    }
+    
+    fileprivate func handleB1B2() {
+        let learnWordVC = LearnWordVC()
+        learnWordVC.title = "Poziom B1-B2"
+        learnWordVC.questions = Data.getB1B2()
+        navigationController?.pushViewController(learnWordVC, animated: true)
+    }
+    
+    fileprivate func handleC1() {
+        let learnWordVC = LearnWordVC()
+        learnWordVC.title = "Poziom C1"
+        learnWordVC.questions = Data.getC1()
+        navigationController?.pushViewController(learnWordVC, animated: true)
+    }
+    
+    fileprivate func handleProfessions() {
+        let learnWordVC = LearnWordVC()
+        learnWordVC.title = "Zawody "
+        learnWordVC.questions = Data.getProfessions()
+        navigationController?.pushViewController(learnWordVC, animated: true)
+    }
+    
+    fileprivate func handleNewLevel() {
 
-    }
-    
-    fileprivate func handleVerbs() {
-
-    }
-    
-    fileprivate func handleAdjectives() {
-        let learnController = IrregularVerbsVC()
-        learnController.title = "Czasowniki"
-        learnController.questions = Data.getHardVerbs()
-        navigationController?.pushViewController(learnController, animated: true)
-    }
-    
-    fileprivate func handlePlEn() {
-
-    }
-    
-    fileprivate func handleUseful() {
-//        let learnController = LearnController()
-//        learnController.title = "Useful words"
-//        learnController.questions = Data.getWeatherWords()
-//        navigationController?.pushViewController(learnController, animated: true)
     }
     
     
