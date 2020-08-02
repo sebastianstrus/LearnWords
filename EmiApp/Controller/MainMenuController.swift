@@ -38,6 +38,22 @@ class MainMenuController: UIViewController {
         mainMenuView.c1Action = handleC1
         mainMenuView.professionsAction = handleProfessions
         
+        mainMenuView.button1Action = handle1Button
+        mainMenuView.button2Action = handle2Button
+        mainMenuView.button3Action = handle3Button
+        mainMenuView.button4Action = handle4Button
+        mainMenuView.button5Action = handle5Button
+        mainMenuView.button6Action = handle6Button
+        mainMenuView.button7Action = handle7Button
+        mainMenuView.button8Action = handle8Button
+        mainMenuView.button9Action = handle9Button
+        mainMenuView.button10Action = handle10Button
+        mainMenuView.button11Action = handle11Button
+        mainMenuView.button12Action = handle12Button
+        mainMenuView.button13Action = handle13Button
+        mainMenuView.button14Action = handle14Button
+        
+        
         self.view.addSubview(mainMenuView)
         mainMenuView.pinToEdges(view: view, safe: false)
     }
@@ -46,7 +62,7 @@ class MainMenuController: UIViewController {
     fileprivate func handleIrregularVerbs() {
         let irregularVerbsVC = IrregularVerbsVC()
         irregularVerbsVC.title = "Czasowniki"
-        irregularVerbsVC.questions = Data.getHardVerbs()
+        irregularVerbsVC.questions = Data.getHardVerbs()// getProblematicVerbs
         navigationController?.pushViewController(irregularVerbsVC, animated: true)
     }
     
@@ -74,6 +90,108 @@ class MainMenuController: UIViewController {
     fileprivate func handleNewLevel() {
 
     }
+    
+   
+    
+    fileprivate func handle1Button() {
+        let learnWordVC = LearnWordVC()
+        learnWordVC.title = "1. Animals and insects (zwierzęta i owady)"
+        learnWordVC.questions = Data.get1()
+        navigationController?.pushViewController(learnWordVC, animated: true)
+    }
+    
+    fileprivate func handle2Button() {
+        let learnWordVC = LearnWordVC()
+        learnWordVC.title = "2. Appliances and technology (urządzenia i technologia)"
+        learnWordVC.questions = Data.get2()
+        navigationController?.pushViewController(learnWordVC, animated: true)
+    }
+    
+    fileprivate func handle3Button() {
+        let learnWordVC = LearnWordVC()
+        learnWordVC.title = "3. Buildings and institutions (budynki i instytucje)"
+        learnWordVC.questions = Data.get3()
+        navigationController?.pushViewController(learnWordVC, animated: true)
+    }
+    
+    fileprivate func handle4Button() {
+        let learnWordVC = LearnWordVC()
+        learnWordVC.title = "4. Clothes and accessories (ubrania i akcesoria)"
+        learnWordVC.questions = Data.get4()
+        navigationController?.pushViewController(learnWordVC, animated: true)
+    }
+    
+    fileprivate func handle5Button() {
+        let learnWordVC = LearnWordVC()
+        learnWordVC.title = "5. Emotions and feelings (emocje i uczucia)"
+        learnWordVC.questions = Data.get5()
+        navigationController?.pushViewController(learnWordVC, animated: true)
+    }
+    
+    fileprivate func handle6Button() {
+        let learnWordVC = LearnWordVC()
+        learnWordVC.title = "6. Furniture (meble)"
+        learnWordVC.questions = Data.get6()
+        navigationController?.pushViewController(learnWordVC, animated: true)
+    }
+    
+    fileprivate func handle7Button() {
+        let learnWordVC = LearnWordVC()
+        learnWordVC.title = "7. Geography (geografia)"
+        learnWordVC.questions = Data.get7()
+        navigationController?.pushViewController(learnWordVC, animated: true)
+    }
+    
+    fileprivate func handle8Button() {
+        let learnWordVC = LearnWordVC()
+        learnWordVC.title = "8. Musical instruments (instrumenty muzyczne)"
+        learnWordVC.questions = Data.get8()
+        navigationController?.pushViewController(learnWordVC, animated: true)
+    }
+    
+    fileprivate func handle9Button() {
+        let learnWordVC = LearnWordVC()
+        learnWordVC.title = "9. Office and business (biuro i biznes)"
+        learnWordVC.questions = Data.get9()
+        navigationController?.pushViewController(learnWordVC, animated: true)
+    }
+    
+    fileprivate func handle10Button() {
+        let learnWordVC = LearnWordVC()
+        learnWordVC.title = "10. Science (nauka)"
+        learnWordVC.questions = Data.get10()
+        navigationController?.pushViewController(learnWordVC, animated: true)
+    }
+    
+    fileprivate func handle11Button() {
+        let learnWordVC = LearnWordVC()
+        learnWordVC.title = "11. Tools (narzędzia)"
+        learnWordVC.questions = Data.get11()
+        navigationController?.pushViewController(learnWordVC, animated: true)
+    }
+    
+    fileprivate func handle12Button() {
+        let learnWordVC = LearnWordVC()
+        learnWordVC.title = "12. Weapons (bronie)"
+        learnWordVC.questions = Data.get12()
+        navigationController?.pushViewController(learnWordVC, animated: true)
+    }
+    
+    fileprivate func handle13Button() {
+        let learnWordVC = LearnWordVC()
+        learnWordVC.title = "13. Weight and measures (waga i jednostki miary)"
+        learnWordVC.questions = Data.get13()
+        navigationController?.pushViewController(learnWordVC, animated: true)
+    }
+    
+    fileprivate func handle14Button() {
+        let learnWordVC = LearnWordVC()
+        learnWordVC.title = "14. Yard (podwórze)"
+        learnWordVC.questions = Data.get14()
+        navigationController?.pushViewController(learnWordVC, animated: true)
+    }
+    
+    
     
     
 

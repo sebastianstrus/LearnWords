@@ -266,6 +266,32 @@ class Data {
                 Question(swedish: "rzucać", english: "fling")]
     }
     
+    
+    // -ung / -ang etc
+    class func getProblematicVerbs() -> [LongQuestion] {
+    return [
+        LongQuestion(polish: "pić", english1: "drink", english2: "drank", english3: "drunk"),
+        LongQuestion(polish: "dzwonić", english1: "ring", english2: "rang", english3: "rung"),
+        LongQuestion(polish: "śpiewać", english1: "sing", english2: "sang", english3: "sung"),
+        LongQuestion(polish: "pływać", english1: "swim", english2: "swam", english3: "swum"),
+        LongQuestion(polish: "tonąć (o statku), zapadać się", english1: "sink", english2: "sank", english3: "sunk"),
+        LongQuestion(polish: "kurczyć się, zbiegać", english1: "shrink", english2: "shrank", english3: "shrunk"),
+        LongQuestion(polish: "śmierdzieć, cuchnąć", english1: "stink", english2: "stank", english3: "stunk"),
+        LongQuestion(polish: "przeskakiwać, wyskakiwać", english1: "spring", english2: "sprang", english3: "sprung"),
+
+    
+        
+        LongQuestion(polish: "uderzyć, wybijać", english1: "strike", english2: "struck", english3: "struck"),
+        LongQuestion(polish: "machnąć, zakołysać", english1: "swing", english2: "swung", english3: "swung"),
+        LongQuestion(polish: "przywrzeć, uczepić się, trzymać się kurczowo", english1: "cling", english2: "clung", english3: "clung"),
+        LongQuestion(polish: "rzucić, cisnąć", english1: "fling", english2: "flung", english3: "flung"),
+        LongQuestion(polish: "cisnąć, miotać", english1: "sling", english2: "slung", english3: "slung"),
+        LongQuestion(polish: "żądlić", english1: "sting", english2: "stung", english3: "stung"),
+        LongQuestion(polish: "wykręcić, wyżąć coś, wycisnąć", english1: "wring", english2: "wrung", english3: "wrung"),
+        LongQuestion(polish: "wbijać, wtykać, przyklejać, wystawić", english1: "stick", english2: "stuck", english3: "stuck"),
+        ]
+    }
+    
     class func getHardVerbs() -> [LongQuestion] {
         return [
             LongQuestion(polish: "stawać się, zostawać kimś/czymś", english1: "become", english2: "became", english3: "become"),
@@ -363,7 +389,6 @@ class Data {
             LongQuestion(polish: "podnosić się, wzrastać, wschodzić (o słońcu)", english1: "rise", english2: "rose", english3: "risen"),
             LongQuestion(polish: "trząść, potrząsać", english1: "shake", english2: "shook", english3: "shaken"),
             LongQuestion(polish: "świecić, błyszczeć", english1: "shine", english2: "shone", english3: "shone"),
-            
             LongQuestion(polish: "strzelać", english1: "shoot", english2: "shot", english3: "shot"),
             LongQuestion(polish: "tonąć (o statku), zapadać się", english1: "sink", english2: "sank", english3: "sunk"),
             
@@ -438,8 +463,8 @@ class Data {
                 Question(swedish: "mniej więcej", english: "more or less"),
                 Question(swedish: "uporządkowany", english: "neat and tidy"),
                 Question(swedish: "nigdy przenigdy", english: "never ever"),
-                Question(swedish: "od czasu do czasu", english: "now and then"),
-                Question(swedish: "od czasu do czasu", english: "on and off"),
+                Question(swedish: "od czasu do czasu (n...)", english: "now and then"),
+                Question(swedish: "od czasu do czasu (o...)", english: "on and off"),
                 Question(swedish: "wiele razy", english: "over and over again"),
                 Question(swedish: "nieodłączna część czegoś", english: "part and parcel"),
                 Question(swedish: "święty spokój", english: "peace and quiet"),
@@ -474,6 +499,7 @@ class Data {
                 Question(swedish: "samotny jak palec", english: "high and dry"),
                 Question(swedish: "wszędzie", english: "high and low"),
                 Question(swedish: "szczegóły czegoś", english: "ins and outs (of)"),
+                //It takes a newcomer some time to learn the ins and outs
                 Question(swedish: "rodzinny (interes)", english: "mom-and-pop"),
                 Question(swedish: "żadnego ale", english: "no ifs and buts"),
                 Question(swedish: "nieważny, bez mocy prawnej", english: "null and void"),
@@ -488,7 +514,7 @@ class Data {
                 Question(swedish: "wóz albo przewóz", english: "sink or swim"),
                 Question(swedish: "wet za wet", english: "tit for tat"),
                 Question(swedish: "niezawodny,", english: "tried and true/tested"),
-                Question(swedish: "dobrze zapowiadający się (np.", english: "up-and-coming"),
+                Question(swedish: "dobrze zapowiadający się (np. pracownik)", english: "up-and-coming"),
                 Question(swedish: "zużycie (np. produktu)", english: "wear and tear"),
                 Question(swedish: "chcąc nie chcąc", english: "willy-nilly"),
                 Question(swedish: "gościć kogoś", english: "wine and dine")
@@ -564,7 +590,7 @@ class Data {
                 Question(swedish: "polityk", english: "politician"),
                 Question(swedish: "listonosz", english: "postman"),
                 Question(swedish: "ksiądz", english: "priest"),
-                Question(swedish: "aaa", english: "reporter"),
+                Question(swedish: "reporter", english: "reporter"),
                 Question(swedish: "marynarz, żeglarz", english: "sailor"),
                 Question(swedish: "sprzedawca, handlarz", english: "salesman"),
                 Question(swedish: "sprzedawczyni", english: "saleswoman"),
@@ -672,6 +698,407 @@ class Data {
                 Question(swedish: "bileterka", english: "usherette"),
                 Question(swedish: "garderobiana/garderobiany", english: "wardrobe supervisor"),
                 Question(swedish: "tkacz", english: "weaver")]
+    }
+    
+    class func get1() -> [Question] {
+        return [
+            Question(swedish: "płaz", english: "amphibian"),
+            Question(swedish: "lis polarny", english: "arctic fox"),
+            Question(swedish: "pawian", english: "baboon"),
+            Question(swedish: "borsuk", english: "badger"),
+            Question(swedish: "chrząszcz, żuk", english: "beetle"),
+            Question(swedish: "kolcobrzuch (gatunek ryby)", english: "blowfish"),
+            Question(swedish: "bizon", english: "buffalo"),
+            Question(swedish: "mięsożerca", english: "carnivore"),
+            Question(swedish: "gąsienica", english: "caterpillar"),
+            Question(swedish: "puma", english: "cougar"),
+            Question(swedish: "gołąb", english: "dove"),
+            Question(swedish: "węgorz", english: "eel"),
+            Question(swedish: "słoń morski", english: "elephant seal"),
+            Question(swedish: "wymarły", english: "extinct"),
+            Question(swedish: "sokół", english: "falcon"),
+            Question(swedish: "świetlik", english: "firefly"),
+            Question(swedish: "konik polny", english: "grasshopper"),
+            Question(swedish: "świstak", english: "groundhog"),
+            Question(swedish: "zając", english: "hare"),
+            Question(swedish: "jeż", english: "hedgehog"),
+            Question(swedish: "owadożerca", english: "insectivore"),
+            Question(swedish: "wszy", english: "lice"),
+            Question(swedish: "ryś", english: "lynx"),
+            Question(swedish: "ssak", english: "mammal"),
+            Question(swedish: "słowik", english: "nightingale"),
+            Question(swedish: "ośmiornica", english: "octopus"),
+            Question(swedish: "struś", english: "ostrich"),
+            Question(swedish: "paw", english: "peacock"),
+            Question(swedish: "mops", english: "pug"),
+            Question(swedish: "przepiórka", english: "quail"),
+            Question(swedish: "szop pracz", english: "raccoon"),
+            Question(swedish: "gad", english: "reptile"),
+            Question(swedish: "nosorożec", english: "rhino"),
+            Question(swedish: "płotka", english: "roach"),
+            Question(swedish: "gryzoń", english: "rodent"),
+            Question(swedish: "krowa morska", english: "sea cow"),
+            Question(swedish: "żółw morski", english: "sea turtle"),
+            Question(swedish: "skunks", english: "skunk"),
+            Question(swedish: "kałamarnica", english: "squid"),
+            Question(swedish: "wiewiórka", english: "squirrel"),
+            Question(swedish: "łabędź", english: "swan"),
+            Question(swedish: "ropucha", english: "toad"),
+            Question(swedish: "pstrąg", english: "trout"),
+            Question(swedish: "jadowity", english: "venomous"),
+            Question(swedish: "mors", english: "walrus"),
+            Question(swedish: "rosomak", english: "wolverine"),
+            Question(swedish: "jak", english: "yak"),
+            Question(swedish: "zorilla (zwierzę z rodziny łasicowatych)", english: "zorilla")
+        ]
+    }
+    
+    
+    class func get2() -> [Question] {
+        return [
+            Question(swedish: "analogowy", english: "analog"),
+            Question(swedish: "automatyczna sekretarka", english: "answering machine"),
+            Question(swedish: "test wydajności", english: "benchmark"),
+            Question(swedish: "procesor", english: "CPU (central processing unit)"),
+            Question(swedish: "baza danych", english: "database"),
+            Question(swedish: "domena", english: "domain"),
+            Question(swedish: "szyfrowanie", english: "encryption"),
+            Question(swedish: "ekspres do kawy", english: "espresso machine"),
+            Question(swedish: "oprogramowanie mikroprogramowe", english: "firmware"),
+            Question(swedish: "dysk pamięci typu flash", english: "flash drive"),
+            Question(swedish: "robot kuchenny", english: "food processor"),
+            Question(swedish: "grafika", english: "graphics"),
+            Question(swedish: "sprzęt", english: "hardware"),
+            Question(swedish: "drukarka laserowa", english: "laser printer"),
+            Question(swedish: "płyta główna", english: "motherboard"),
+            Question(swedish: "system operacyjny", english: "operating system"),
+            Question(swedish: "rozdzielczość", english: "resolution"),
+            Question(swedish: "maszyna do szycia", english: "sewing machine"),
+            Question(swedish: "pamięć", english: "storage"),
+            Question(swedish: "pasek narzędzi", english: "toolbar"),
+            Question(swedish: "edytor tekstu", english: "word processor")
+        ]
+    }
+    
+    class func get3() -> [Question] {
+        return [
+            Question(swedish: "opactwo", english: "abbey"),
+            Question(swedish: "amfiteatr", english: "amphitheater"),
+            Question(swedish: "dom parterowy", english: "bungalow"),
+            Question(swedish: "bunkier", english: "bunker"),
+            Question(swedish: "kabina plażowa", english: "cabana"),
+            Question(swedish: "domek w górach", english: "chalet"),
+            Question(swedish: "kapliczka", english: "chapel"),
+            Question(swedish: "ratusz", english: "city hall"),
+            Question(swedish: "gmach sądu", english: "courthouse"),
+            Question(swedish: "bliźniak", english: "duplex"),
+            Question(swedish: "szklarnia", english: "greenhouse"),
+            Question(swedish: "siedziba", english: "headquarters"),
+            Question(swedish: "chata, szałas", english: "hut"),
+            Question(swedish: "domek z bali", english: "log cabin"),
+            Question(swedish: "przystań", english: "marina"),
+            Question(swedish: "dom spokojnej starości", english: "nursing home"),
+            Question(swedish: "elektrownia", english: "power plant"),
+            Question(swedish: "plebania", english: "rectory"),
+            Question(swedish: "ranczo", english: "ranch"),
+            Question(swedish: "silos", english: "silo"),
+            Question(swedish: "iglica", english: "spire"),
+            Question(swedish: "stajnia", english: "stable"),
+            Question(swedish: "dom dla trzech rodzin", english: "triplex"),
+            Question(swedish: "młyn wodny", english: "watermill")
+        ]
+    }
+    
+    class func get4() -> [Question] {
+        return [
+            Question(swedish: "odzież", english: "apparel"),
+            Question(swedish: "kominiarka", english: "balaclava"),
+            Question(swedish: "czapeczka", english: "beanie"),
+            Question(swedish: "muszka", english: "bow tie"),
+            Question(swedish: "slipy, figi", english: "briefs"),
+            Question(swedish: "sweter rozpinany", english: "cardigan"),
+            Question(swedish: "spinka do mankietu", english: "cufflink"),
+            Question(swedish: "koszula flanelowa", english: "flannel shirt"),
+            Question(swedish: "sukmana, suknia", english: "frock"),
+            Question(swedish: "kamizelka", english: "gilet"),
+            Question(swedish: "bluza z kapturem", english: "hoodie"),
+            Question(swedish: "koszulka sportowa", english: "jersey"),
+            Question(swedish: "apaszka", english: "neckerchief"),
+            Question(swedish: "ogrodniczki, kombinezon", english: "overalls"),
+            Question(swedish: "kapcie", english: "slippers"),
+            Question(swedish: "bezrękawnik", english: "tank top"),
+            Question(swedish: "cylinder", english: "top hat"),
+            Question(swedish: "welon", english: "veil"),
+            Question(swedish: "zamek błyskawiczny", english: "zipper")
+        ]
+    }
+    
+    class func get5() -> [Question] {
+        return [
+            Question(swedish: "uwielbienie", english: "adoration"),
+            Question(swedish: "wyobcowanie", english: "alienation"),
+            Question(swedish: "cierpienie", english: "anguish"),
+            Question(swedish: "podziw", english: "awe"),
+            Question(swedish: "szczęście, rozkosz", english: "bliss"),
+            Question(swedish: "bliskość", english: "closeness"),
+            Question(swedish: "pogarda", english: "contempt"),
+            Question(swedish: "poirytowany", english: "cross"),
+            Question(swedish: "niepokój", english: "dismay"),
+            Question(swedish: "euforia", english: "elation"),
+            Question(swedish: "wściekły", english: "enraged"),
+            Question(swedish: "zazdrosny", english: "envious"),
+            Question(swedish: "entuzjastyczny", english: "exuberant"),
+            Question(swedish: "skołowany", english: "flustered"),
+            Question(swedish: "zrzędliwy", english: "grumpy"),
+            Question(swedish: "zauroczony", english: "infatuated"),
+            Question(swedish: "zmęczony", english: "jaded"),
+            Question(swedish: "odraza", english: "loathing"),
+            Question(swedish: "nędza", english: "misery"),
+            Question(swedish: "zniewaga", english: "outrage"),
+            Question(swedish: "łagodny", english: "placid"),
+            Question(swedish: "zachwyt", english: "rapture"),
+            Question(swedish: "wyrzuty sumienia", english: "remorse"),
+            Question(swedish: "próżny", english: "smug"),
+            Question(swedish: "przygnębiony", english: "subdued"),
+            Question(swedish: "cichy", english: "tranquil"),
+            Question(swedish: "pełen życia", english: "vivacious"),
+            Question(swedish: "ostrożny", english: "wary")
+        ]
+    }
+    
+    class func get6() -> [Question] {
+        return [
+            Question(swedish: "łóżko piętrowe", english: "bunk bed"),
+            Question(swedish: "kołyska", english: "cradle"),
+            Question(swedish: "łóżeczko dziecięce", english: "crib"),
+            Question(swedish: "gablota", english: "display cabinet"),
+            Question(swedish: "sofa", english: "divan"),
+            Question(swedish: "sztaluga", english: "easel"),
+            Question(swedish: "krzesło składane", english: "folding chair"),
+            Question(swedish: "podnóżek", english: "hassock"),
+            Question(swedish: "kredens", english: "hutch"),
+            Question(swedish: "stolik nocny", english: "nightstand"),
+            Question(swedish: "otomana, sofa", english: "ottoman"),
+            Question(swedish: "ławka kościelna", english: "pew"),
+            Question(swedish: "leżanka", english: "recliner"),
+            Question(swedish: "dywan", english: "rug"),
+            Question(swedish: "toaletka", english: "vanity"),
+            Question(swedish: "łóżko wodne", english: "waterbed"),
+            Question(swedish: "biurko", english: "writing desk")
+        ]
+    }
+    
+    class func get7() -> [Question] {
+        return [
+            Question(swedish: "wysokość", english: "altitude"),
+            Question(swedish: "Antypody", english: "Antipodes"),
+            Question(swedish: "azymut", english: "azimuth"),
+            Question(swedish: "kartografia", english: "cartography"),
+            Question(swedish: "diagram, mapa", english: "chart"),
+            Question(swedish: "wysokość nad poziomem morza", english: "elevation"),
+            Question(swedish: "równik", english: "equator"),
+            Question(swedish: "półkula", english: "hemisphere"),
+            Question(swedish: "szerokość geograficzna", english: "latitude"),
+            Question(swedish: "długość geograficzna", english: "longitude"),
+            Question(swedish: "biegun magnetyczny", english: "magnetic pole"),
+            Question(swedish: "południk", english: "meridian"),
+            Question(swedish: "morski", english: "nautical"),
+            Question(swedish: "równoleżnik", english: "parallel"),
+            Question(swedish: "stosunek", english: "ratio"),
+            Question(swedish: "mapa plastyczna", english: "relief map"),
+            Question(swedish: "skala", english: "scale"),
+            Question(swedish: "poziom morza", english: "sea level"),
+            Question(swedish: "strefa czasowa", english: "time zone"),
+            Question(swedish: "topografia", english: "topography"),
+            Question(swedish: "mapa pogody", english: "weather map")
+        ]
+    }
+    
+    class func get8() -> [Question] {
+        return [
+            Question(swedish: "akordeon", english: "accordion"),
+            Question(swedish: "gitara akustyczna", english: "acoustic guitar"),
+            Question(swedish: "duda", english: "bagpipe"),
+            Question(swedish: "fagot", english: "bassoon"),
+            Question(swedish: "instrumenty dęte", english: "brass instruments"),
+            Question(swedish: "wiolonczela", english: "cello"),
+            Question(swedish: "klarnet", english: "clarinet"),
+            Question(swedish: "kontrabas", english: "double bass"),
+            Question(swedish: "flet", english: "flute"),
+            Question(swedish: "harfa", english: "harp"),
+            Question(swedish: "organy", english: "pipe organ"),
+            Question(swedish: "saksofon", english: "saxophone"),
+            Question(swedish: "struny", english: "strings"),
+            Question(swedish: "tuba kontrabasowa", english: "tuba"),
+            Question(swedish: "altówka", english: "viola"),
+            Question(swedish: "skrzypce", english: "violin"),
+            Question(swedish: "ksylofon", english: "xylophone"),
+            Question(swedish: "cytra", english: "zither")
+        ]
+    }
+    
+    class func get9() -> [Question] {
+        return [
+            Question(swedish: "księgowy", english: "accountant"),
+            Question(swedish: "kwota narosła", english: "accrual"),
+            Question(swedish: "terminarz", english: "agenda"),
+            Question(swedish: "obligacja", english: "bond"),
+            Question(swedish: "saldo", english: "bottom line"),
+            Question(swedish: "zabezpieczenie pożyczki", english: "collateral"),
+            Question(swedish: "dobro, towar", english: "commodity"),
+            Question(swedish: "prawo autorskie", english: "copyright"),
+            Question(swedish: "deflacja", english: "deflation"),
+            Question(swedish: "dzielna, dywidenda", english: "dividend"),
+            Question(swedish: "przedsiębiorca", english: "entrepreneur"),
+            Question(swedish: "koszty", english: "expenses"),
+            Question(swedish: "liczby", english: "figures"),
+            Question(swedish: "fundusz", english: "fund"),
+            Question(swedish: "brutto", english: "gross"),
+            Question(swedish: "zachęta", english: "incentive"),
+            Question(swedish: "inwestycja", english: "investment"),
+            Question(swedish: "faktura", english: "invoice"),
+            Question(swedish: "odpowiedzialność", english: "liability"),
+            Question(swedish: "oferta", english: "offer"),
+            Question(swedish: "właściciel", english: "owner"),
+            Question(swedish: "koszty stałe", english: "overhead"),
+            Question(swedish: "polityka, zasady", english: "policy"),
+            Question(swedish: "akcjonariusz", english: "shareholder"),
+            Question(swedish: "cło", english: "tariff"),
+            Question(swedish: "przedsięwzięcie", english: "venture"),
+            Question(swedish: "sprzedaż hurtowa", english: "wholesale"),
+            Question(swedish: "korzyść", english: "yield")
+        ]
+    }
+    
+    class func get10() -> [Question] {
+        return [
+            Question(swedish: "astronomia", english: "astronomy"),
+            Question(swedish: "atom", english: "atom"),
+            Question(swedish: "biochemia", english: "biochemistry"),
+            Question(swedish: "botanika", english: "botany"),
+            Question(swedish: "klimatolog", english: "climatologist"),
+            Question(swedish: "dane", english: "data"),
+            Question(swedish: "elektrochemik", english: "electrochemist"),
+            Question(swedish: "pierwiastek", english: "element"),
+            Question(swedish: "skamieniałość", english: "fossil"),
+            Question(swedish: "hipoteza", english: "hypothesis"),
+            Question(swedish: "meteorologia", english: "meteorology"),
+            Question(swedish: "molekuła", english: "molecule"),
+            Question(swedish: "ornitologia", english: "ornithology"),
+            Question(swedish: "etap", english: "phase"),
+            Question(swedish: "kwantowy", english: "quantum"),
+            Question(swedish: "sejsmologia", english: "seismology"),
+            Question(swedish: "tkanka", english: "tissue"),
+            Question(swedish: "zmienna", english: "variable"),
+            Question(swedish: "ilość, wielkość", english: "volume")
+        ]
+    }
+    
+    class func get11() -> [Question] {
+        return [
+            Question(swedish: "siekiera", english: "axe"),
+            Question(swedish: "miechy", english: "bellows"),
+            Question(swedish: "szczotka, pędzel", english: "brush"),
+            Question(swedish: "dłuto", english: "chisel"),
+            Question(swedish: "zacisk", english: "clamp"),
+            Question(swedish: "łom", english: "crowbar"),
+            Question(swedish: "piłka do metalu", english: "hacksaw"),
+            Question(swedish: "motyka", english: "hoe"),
+            Question(swedish: "wyrzynarka", english: "jigsaw"),
+            Question(swedish: "lewarek", english: "lever"),
+            Question(swedish: "koło pasowe", english: "pulley"),
+            Question(swedish: "brzytwa", english: "razor"),
+            Question(swedish: "nit", english: "rivet"),
+            Question(swedish: "miarka, linijka", english: "ruler"),
+            Question(swedish: "papier ścierny", english: "sandpaper"),
+            Question(swedish: "skrobaczka", english: "scraper"),
+            Question(swedish: "łopata", english: "shovel"),
+            Question(swedish: "szpadel", english: "spade"),
+            Question(swedish: "zszywacz", english: "staple gun"),
+            Question(swedish: "imadło", english: "vise"),
+            Question(swedish: "klin", english: "wedge"),
+            Question(swedish: "klucz", english: "wrench")
+        ]
+    }
+    
+    class func get12() -> [Question] {
+        return [
+            Question(swedish: "amunicja", english: "ammo"),
+            Question(swedish: "broń", english: "arms"),
+            Question(swedish: "strzała", english: "arrow"),
+            Question(swedish: "automatyczny", english: "automatic"),
+            Question(swedish: "ostrze", english: "blade"),
+            Question(swedish: "pocisk", english: "bullet"),
+            Question(swedish: "karabinek", english: "carbine"),
+            Question(swedish: "sztylet", english: "dagger"),
+            Question(swedish: "materiały wybuchowe", english: "explosives"),
+            Question(swedish: "broń palna", english: "firearm"),
+            Question(swedish: "pistolet", english: "gun"),
+            Question(swedish: "proch strzelniczy", english: "gunpowder"),
+            Question(swedish: "łuk", english: "longbow"),
+            Question(swedish: "karabin maszynowy", english: "machine gun"),
+            Question(swedish: "moździerz", english: "mortar"),
+            Question(swedish: "nuklearny", english: "nuclear"),
+            Question(swedish: "karabin", english: "rifle"),
+            Question(swedish: "rakieta", english: "rocket"),
+            Question(swedish: "szabla", english: "saber"),
+            Question(swedish: "dzida", english: "spear"),
+            Question(swedish: "czołg", english: "tank"),
+            Question(swedish: "paralizator", english: "taser"),
+            Question(swedish: "bicz", english: "whip")
+        ]
+    }
+    
+    class func get13() -> [Question] {
+        return [
+            Question(swedish: "akr", english: "acre"),
+            Question(swedish: "bela", english: "bale"),
+            Question(swedish: "trzynaście", english: "baker's dozen"),
+            Question(swedish: "karat", english: "carat"),
+            Question(swedish: "metr sześcienny", english: "cubic meter"),
+            Question(swedish: "decymetr", english: "decimeter"),
+            Question(swedish: "tuzin", english: "dozen"),
+            Question(swedish: "stopa", english: "foot"),
+            Question(swedish: "galon", english: "gallon"),
+            Question(swedish: "brutto", english: "gross"),
+            Question(swedish: "hektar", english: "hectare"),
+            Question(swedish: "cal", english: "inch"),
+            Question(swedish: "kilogram", english: "kilo(gram)"),
+            Question(swedish: "węzeł", english: "knot"),
+            Question(swedish: "mikron", english: "micron"),
+            Question(swedish: "mol", english: "mole"),
+            Question(swedish: "miligram", english: "miligram"),
+            Question(swedish: "mila morska", english: "nautical mile"),
+            Question(swedish: "uncja", english: "ounce"),
+            Question(swedish: "parsek", english: "parsec"),
+            Question(swedish: "szczypta", english: "pinch"),
+            Question(swedish: "funt", english: "pound"),
+            Question(swedish: "kapka", english: "smidgen"),
+            Question(swedish: "łyżka", english: "spoonful"),
+            Question(swedish: "kwadratowy", english: "square"),
+            Question(swedish: "brytyjska jednostka wagi równa 6,35 kilograma", english: "stone"),
+            Question(swedish: "tona", english: "ton")
+        ]
+    }
+    
+    class func get14() -> [Question] {
+        return [
+            Question(swedish: "podwórko", english: "backyard"),
+            Question(swedish: "ławka", english: "bench"),
+            Question(swedish: "kompost", english: "compost"),
+            Question(swedish: "buda dla psa", english: "doghouse"),
+            Question(swedish: "rabata", english: "flowerbed"),
+            Question(swedish: "drzewo owocowe", english: "fruit tree"),
+            Question(swedish: "rynna", english: "gutter"),
+            Question(swedish: "hamak", english: "hammock"),
+            Question(swedish: "kosiarka do trawy", english: "lawnmower"),
+            Question(swedish: "grabie", english: "rake"),
+            Question(swedish: "szopa", english: "shed"),
+            Question(swedish: "krzew", english: "shrub"),
+            Question(swedish: "kontener na śmieci", english: "trash can"),
+            Question(swedish: "winorośl", english: "vine"),
+            Question(swedish: "chodnik", english: "walkway")
+        ]
     }
 }
 

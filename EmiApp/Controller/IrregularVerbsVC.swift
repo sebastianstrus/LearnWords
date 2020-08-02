@@ -333,7 +333,7 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
                 
                 if (currentNumber + 1 >= questions.count) && answeredSecond && answeredSecond {
                     self.timer.invalidate()
-                    showMessage("You are very smart!", withTitle: "Congratulations!")
+                    showMessage("Well done!", withTitle: "Congratulations!")
                 }
             }
             else {
@@ -352,7 +352,7 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
                 
                 if (currentNumber + 1 >= questions.count) && answeredFirst && answeredThird {
                     self.timer.invalidate()
-                    showMessage("You are very smart!", withTitle: "Congratulations!")
+                    showMessage("Well done!", withTitle: "Congratulations!")
                 }
             }
             else {
@@ -371,8 +371,8 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
                 //nextButton.stat = UIControl.State.focused
                 
                 if (currentNumber + 1 >= questions.count) && answeredFirst && answeredSecond {
-                    self.timer.invalidate()
-                    showMessage("\nYour time: \(Int(time/60)):\(time - Int(time/60)*60),\nYou used \(usedHints) \( usedHints == 1 ? "hint" : "hints").\(usedHints == 0 ? "\nYou are very smart!" : "")", withTitle: "Congratulations!")
+                    self.timer.invalidate()//\(Int(time/60)):\(time - Int(time/60)*60)
+                    showMessage("\nYour time: \(secondsLabel.text!),\nYou used \(usedHints) \( usedHints == 1 ? "hint" : "hints").\(usedHints == 0 ? "\nWell done!" : "")", withTitle: "Congratulations!")
                     if (usedHints == 0) && (!gotPrize) {
                         gotPrize = !gotPrize
                         createParticles()
@@ -578,7 +578,7 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
             answerTF3.text = ""
             
         } else {
-            showMessage("There is no more questions!", withTitle: "Try again!")
+            showMessage("There are no more questions!", withTitle: "Try again!")
         }
         
     }

@@ -188,7 +188,7 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
         tf.textAlignment = .center
         tf.autocapitalizationType = UITextAutocapitalizationType.none
         tf.font = UIFont.systemFont(ofSize: 36)
-        tf.placeholder = "infinitive"
+        tf.placeholder = "Translate..."
         tf.layer.borderWidth = 3
         tf.layer.cornerRadius = 10
         tf.layer.borderColor = AppColors.ACCENT_PURPLE.cgColor
@@ -296,7 +296,7 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
                 
                 if (currentNumber + 1 >= questions.count) {
                     self.timer.invalidate()
-                    showMessage("You are very smart!", withTitle: "Congratulations!")
+                    showMessage("Well done!", withTitle: "Congratulations!")
                 }
             }
             else {
@@ -315,7 +315,7 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
                 
                 if (currentNumber + 1 >= questions.count) && answeredFirst && answeredThird {
                     self.timer.invalidate()
-                    showMessage("You are very smart!", withTitle: "Congratulations!")
+                    showMessage("Well done!", withTitle: "Congratulations!")
                 }
             }
             else {
@@ -335,7 +335,7 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
                 
                 if (currentNumber + 1 >= questions.count) && answeredFirst && answeredSecond {
                     self.timer.invalidate()
-                    showMessage("\nYour time: \(Int(time/60)):\(time - Int(time/60)*60),\nYou used \(usedHints) \( usedHints == 1 ? "hint" : "hints").\(usedHints == 0 ? "\nYou are very smart!" : "")", withTitle: "Congratulations!")
+                    showMessage("\nYour time: \(Int(time/60)):\(time - Int(time/60)*60),\nYou used \(usedHints) \( usedHints == 1 ? "hint" : "hints").\(usedHints == 0 ? "\nWell done!" : "")", withTitle: "Congratulations!")
                     if (usedHints == 0) && (!gotPrize) {
                         gotPrize = !gotPrize
                         createParticles()
@@ -526,7 +526,7 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
 
             
         } else {
-            showMessage("There is no more questions!", withTitle: "Try again!")
+            showMessage("There are no more questions!", withTitle: "Try again!")
         }
         
     }

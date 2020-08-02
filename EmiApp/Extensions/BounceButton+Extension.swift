@@ -16,12 +16,12 @@ extension BounceButton {
         
         let attributedString = NSMutableAttributedString(attributedString: NSAttributedString(string: title, attributes: [NSAttributedString.Key.font: AppFonts.BUTTONS_FONT!, .foregroundColor: UIColor.white]))
         self.setAttributedTitle(attributedString, for: .normal)
-        self.layer.cornerRadius = Device.IS_IPHONE ? 20 : 40
+        self.layer.cornerRadius = 10
         self.layer.borderColor = UIColor.white.cgColor
         self.layer.borderWidth = 1
         self.backgroundColor = AppColors.TRANSPARENT_BLACK
-        self.setAnchor(width: Device.IS_IPHONE ? 240 : 480,
-                         height: Device.IS_IPHONE ? 40 : 80)
+        self.setAnchor(width: 0,
+                         height: 50)
         
     }
     
