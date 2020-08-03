@@ -513,7 +513,7 @@ class Data {
                 Question(swedish: "przybliżony (np.  tłumaczenie), prymitywny (człowiek)", english: "rough-and-ready"),
                 Question(swedish: "wóz albo przewóz", english: "sink or swim"),
                 Question(swedish: "wet za wet", english: "tit for tat"),
-                Question(swedish: "niezawodny,", english: "tried and true/tested"),
+                Question(swedish: "niezawodny", english: "tried and true/tested"),
                 Question(swedish: "dobrze zapowiadający się (np. pracownik)", english: "up-and-coming"),
                 Question(swedish: "zużycie (np. produktu)", english: "wear and tear"),
                 Question(swedish: "chcąc nie chcąc", english: "willy-nilly"),
@@ -773,7 +773,7 @@ class Data {
             Question(swedish: "płyta główna", english: "motherboard"),
             Question(swedish: "system operacyjny", english: "operating system"),
             Question(swedish: "rozdzielczość", english: "resolution"),
-            Question(swedish: "maszyna do szycia", english: "sewing machine"),
+            Question(swedish: "maszyna do szycia", english: "w"),
             Question(swedish: "pamięć", english: "storage"),
             Question(swedish: "pasek narzędzi", english: "toolbar"),
             Question(swedish: "edytor tekstu", english: "word processor")

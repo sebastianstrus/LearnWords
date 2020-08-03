@@ -20,6 +20,7 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
     var questions: [Question]!
     var gotPrize = false
     var timer = Timer()
+    let mySynthesizer = AVSpeechSynthesizer()
     
     var time: Int = 0 {
         didSet {
@@ -424,7 +425,7 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
     }
     
     func handleSound(text: String) {
-        let mySynthesizer = AVSpeechSynthesizer()
+        //let mySynthesizer = AVSpeechSynthesizer()
         let helloUtterance = AVSpeechUtterance(string: text)
         helloUtterance.voice = AVSpeechSynthesisVoice(language: setUK ? "en-GB" : "en-US")
         helloUtterance.pitchMultiplier = 1.25
@@ -438,7 +439,7 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
 
     
     @objc fileprivate func handleSoundUK(text: String) {
-        let mySynthesizer = AVSpeechSynthesizer()
+        //let mySynthesizer = AVSpeechSynthesizer()
         let helloUtterance = AVSpeechUtterance(string: text)
         helloUtterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
         helloUtterance.pitchMultiplier = 1.25
@@ -447,7 +448,7 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
     }
     
     @objc fileprivate func handleSoundUS(text: String) {
-        let mySynthesizer = AVSpeechSynthesizer()
+        //let mySynthesizer = AVSpeechSynthesizer()
         let helloUtterance = AVSpeechUtterance(string: text)
         helloUtterance.voice = AVSpeechSynthesisVoice(language: "en-US")
         helloUtterance.pitchMultiplier = 1.25
