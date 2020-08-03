@@ -55,33 +55,7 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
         }
     }
     
-    /*var answeredSecond: Bool = false {
-        didSet {
-            if (answeredFirst && answeredThird) {
-                nextButton.isEnabled = answeredSecond ? true : false
-                nextButton.alpha = answeredFirst ? 1 : 0.5
-            }
-        }
-    }*/
-    
-    /*var answeredThird: Bool = false {
-        didSet {
-            if (answeredFirst && answeredSecond) {
-                if answeredThird {
-                    nextButton.isEnabled = true
-                    nextButton.alpha = 1
-                    print("becomeFirstResponder")
-                    tempTF.becomeFirstResponder()
-                }
-                else {
-                    nextButton.isEnabled = false
-                    nextButton.alpha = 0.5
-                }
-            }
 
-        }
-    }*/
-    
     var currentNumber = 0 {
         didSet {
             numberLabel.text = "\(currentNumber + 1)/\(questions.count)"
@@ -287,9 +261,7 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
         
         switch textField.tag {
         case 1:
-            print("case1")
             if answerTF.text?.uppercased() == currentQuestion.english.uppercased() {
-                print("case11")
                 answerTF.layer.borderColor = AppColors.BORDER_GREEN.cgColor
                 answeredFirst = true
                 handleSound(text: answerTF.text!)
@@ -312,15 +284,11 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
                 answerTF.becomeFirstResponder()
             }
         case 2:
-            print("case 2")
             setNextQuestion()
         default:
             print("defult")
         }
         
-        //print("test textField.tag: \(textField.tag)")
-        //textField.resignFirstResponder()
-        //checkAnswer()
         return true
     }
     
@@ -470,8 +438,6 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
     
     func setNextQuestion() {
         if (currentNumber < questions.count - 1) {
-            print("currentNumber: \(currentNumber)")
-            print("questions.count: \(questions.count)")
             currentNumber += 1
             questionLabel.text = shuffledQuestions[currentNumber].swedish
             currentQuestion = shuffledQuestions[currentNumber]
@@ -497,10 +463,6 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
     @objc func handleHint() {
         usedHints += 1
         showMessage(nil, withTitle: "\(currentQuestion.english)")
-    }
-    
-    override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
-        print("didUpdateFocus")
     }
     
     public func createParticles() {

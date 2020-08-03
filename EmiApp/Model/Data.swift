@@ -1092,7 +1092,7 @@ class Data {
             Question(swedish: "ławka", english: "bench"),
             Question(swedish: "kompost", english: "compost"),
             Question(swedish: "buda dla psa", english: "doghouse"),
-            Question(swedish: "rabata", english: "flowerbed"),
+            Question(swedish: "kwietnik", english: "flowerbed"),
             Question(swedish: "drzewo owocowe", english: "fruit tree"),
             Question(swedish: "rynna", english: "gutter"),
             Question(swedish: "hamak", english: "hammock"),

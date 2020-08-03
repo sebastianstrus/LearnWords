@@ -67,7 +67,6 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
                 if answeredThird {
                     nextButton.isEnabled = true
                     nextButton.alpha = 1
-                    print("becomeFirstResponder")
                     tempTF.becomeFirstResponder()
                 }
                 else {
@@ -325,13 +324,10 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
         
         switch textField.tag {
         case 1:
-            print("case1")
             if answerTF.text?.uppercased() == currentQuestion.english1.uppercased() {
-                print("case11")
                 answerTF.layer.borderColor = AppColors.BORDER_GREEN.cgColor
                 answeredFirst = true
                 handleSound(text: answerTF.text!)
-                //answerTF.resignFirstResponder()
                 answerTF2.becomeFirstResponder()
                 
                 if (currentNumber + 1 >= questions.count) && answeredSecond && answeredSecond {
@@ -344,9 +340,7 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
                 answerTF.becomeFirstResponder()
             }
         case 2:
-            print("case2")
             if answerTF2.text?.uppercased() == currentQuestion.english2.uppercased() {
-                print("case22")
                 answerTF2.layer.borderColor = AppColors.BORDER_GREEN.cgColor
                 answeredSecond = true
                 handleSound(text: answerTF2.text!)
@@ -363,9 +357,7 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
                 answerTF2.becomeFirstResponder()
             }
         case 3:
-            print("case3")
             if answerTF3.text?.uppercased() == currentQuestion.english3.uppercased() {
-                print("case33")
                 answerTF3.layer.borderColor = AppColors.BORDER_GREEN.cgColor
                 answeredThird = true
                 handleSound(text: answerTF3.text!)
@@ -389,15 +381,11 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
                 answerTF3.becomeFirstResponder()
             }
         case 4:
-            print("case 4")
             setNextQuestion()
         default:
             print("defult")
         }
         
-        //print("test textField.tag: \(textField.tag)")
-        //textField.resignFirstResponder()
-        //checkAnswer()
         return true
     }
     
@@ -559,8 +547,6 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
     
     func setNextQuestion() {
         if (currentNumber < questions.count - 1) {
-            print("currentNumber: \(currentNumber)")
-            print("questions.count: \(questions.count)")
             currentNumber += 1
             questionLabel.text = shuffledQuestions[currentNumber].polish
             currentQuestion = shuffledQuestions[currentNumber]
@@ -589,10 +575,6 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
     @objc func handleHint() {
         usedHints += 1
         showMessage(nil, withTitle: "\(currentQuestion.english1) \(currentQuestion.english2) \(currentQuestion.english3)")
-    }
-    
-    override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
-        print("didUpdateFocus")
     }
     
     public func createParticles() {

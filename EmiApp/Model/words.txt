@@ -1,2 +1,70 @@
-backyard – podwórko
-bench – ławka
+afraid – fearful
+angry – enraged
+annoying – exasperating
+bad – lousy
+beautiful – gorgeous
+big – immense/ tremendous
+boring – tedious/ mundane
+busy – swamped
+calm – serene
+careful – cautious
+clean – spotless
+clear – obvious/ lucid
+competitive – cutthroat
+confused – perplexed
+crowded – bustling
+damaged – battered
+dangerous – perilous
+dear – cherished
+deep – profound
+detailed – meticulous
+dirty – filthy
+easy – effortless
+empty – desolate
+excited – thrilled
+exciting – exhilarating
+expensive – pricey
+fancy – lavish
+fat – obese
+friendly – amiable
+funny – hilarious
+glad – overjoyed
+great – terrific
+happy – jubilant
+hot – scorching/ sweltering
+huge – vast
+hungry – starving
+important – vital/ crucial
+interesting – captivating
+lazy – idle
+little – tiny/ slight
+loud – thunderous
+mean – wicked
+messy – slovenly
+necessary – essential/ imperative
+noisy – clamorous
+old – obsolete
+painful – excruciating
+perfect – flawless
+poor – destitute
+quick – hasty
+quiet – secluded
+rich – well-off/ affluent
+sad – sorrowful/ blue
+scared – petrified/ terrified
+sensible – prudent
+serious – grave
+shy – timid
+slim – slender/ lean
+slow – sluggish
+strong – robust
+stupid – dumb/ moronic
+tasty – mouth-watering
+tired – wasted/ fatigued
+ugly – hideous
+unpleasant – gross/ obnoxious
+unhappy – miserable
+weak – frail/ fragile
+wet – soaked
+willing – eager
+worried – distressed
