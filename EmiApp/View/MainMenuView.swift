@@ -59,25 +59,25 @@ class MainMenuView: UIView {
     fileprivate var rightButtonsStackView: UIStackView!
     
     fileprivate let irregularVerbsButton: BounceButton = {
-        let button = BounceButton(title: "Czasowniki nieregularne")
+        let button = BounceButton(title: "Czasowniki nieregularne (\(Data.getVerbs().count))")
         button.addTarget(self, action: #selector(handleIrregularVerbs), for: .touchUpInside)
         return button
     }()
     
     fileprivate let levelB1B2Button: BounceButton = {
-        let button = BounceButton(title: "Poziom B1-B2")
+        let button = BounceButton(title: "Poziom B1-B2 (\(Data.getB1B2().count))")
         button.addTarget(self, action: #selector(handleB1B2), for: .touchUpInside)
         return button
     }()
     
     fileprivate let levelC1Button: BounceButton = {
-        let button = BounceButton(title: "Poziom C1")
+        let button = BounceButton(title: "Poziom C1 (\(Data.getC1().count))")
         button.addTarget(self, action: #selector(handleC1), for: .touchUpInside)
         return button
     }()
     
     fileprivate let professionsButton: BounceButton = {
-        let button = BounceButton(title: "Zawody")
+        let button = BounceButton(title: "Zawody (\(Data.getProfessions().count))")
         button.addTarget(self, action: #selector(handleProfessions), for: .touchUpInside)
         return button
     }()
@@ -90,85 +90,85 @@ class MainMenuView: UIView {
     
     
     fileprivate let c1Button: BounceButton = {
-        let button = BounceButton(title: "1. Animals and insects (zwierzęta i owady)")
+        let button = BounceButton(title: "1. Animals and insects (zwierzęta i owady) (\(Data.get1().count))")
         button.addTarget(self, action: #selector(handle1button), for: .touchUpInside)
         return button
     }()
     
     fileprivate let c2Button: BounceButton = {
-        let button = BounceButton(title: "2. Appliances and technology (urządzenia i technologia)")
+        let button = BounceButton(title: "2. Appliances and technology (urządzenia i technologia) (\(Data.get2().count))")
         button.addTarget(self, action: #selector(handle2button), for: .touchUpInside)
         return button
     }()
     
     fileprivate let c3Button: BounceButton = {
-        let button = BounceButton(title: "3. Buildings and institutions (budynki i instytucje)")
+        let button = BounceButton(title: "3. Buildings and institutions (budynki i instytucje) (\(Data.get3().count))")
         button.addTarget(self, action: #selector(handle3button), for: .touchUpInside)
         return button
     }()
     
     fileprivate let c4Button: BounceButton = {
-        let button = BounceButton(title: "4. Clothes and accessories (ubrania i akcesoria)")
+        let button = BounceButton(title: "4. Clothes and accessories (ubrania i akcesoria) (\(Data.get4().count))")
         button.addTarget(self, action: #selector(handle4button), for: .touchUpInside)
         return button
     }()
     
     fileprivate let c5Button: BounceButton = {
-        let button = BounceButton(title: "5. Emotions and feelings (emocje i uczucia)")
+        let button = BounceButton(title: "5. Emotions and feelings (emocje i uczucia) (\(Data.get5().count))")
         button.addTarget(self, action: #selector(handle5button), for: .touchUpInside)
         return button
     }()
     
     fileprivate let c6Button: BounceButton = {
-        let button = BounceButton(title: "6. Furniture (meble)")
+        let button = BounceButton(title: "6. Furniture (meble) (\(Data.get6().count))")
         button.addTarget(self, action: #selector(handle6button), for: .touchUpInside)
         return button
     }()
     
     fileprivate let c7Button: BounceButton = {
-        let button = BounceButton(title: "7. Geography (geografia)")
+        let button = BounceButton(title: "7. Geography (geografia) (\(Data.get7().count))")
         button.addTarget(self, action: #selector(handle7button), for: .touchUpInside)
         return button
     }()
     
     fileprivate let c8Button: BounceButton = {
-        let button = BounceButton(title: "8. Musical instruments (instrumenty muzyczne)")
+        let button = BounceButton(title: "8. Musical instruments (instrumenty muzyczne) (\(Data.get8().count))")
         button.addTarget(self, action: #selector(handle8button), for: .touchUpInside)
         return button
     }()
     
     fileprivate let c9Button: BounceButton = {
-        let button = BounceButton(title: "9. Office and business (biuro i biznes)")
+        let button = BounceButton(title: "9. Office and business (biuro i biznes) (\(Data.get9().count))")
         button.addTarget(self, action: #selector(handle9button), for: .touchUpInside)
         return button
     }()
     
     fileprivate let c10Button: BounceButton = {
-        let button = BounceButton(title: "10. Science (nauka)")
+        let button = BounceButton(title: "10. Science (nauka) (\(Data.get10().count))")
         button.addTarget(self, action: #selector(handle10button), for: .touchUpInside)
         return button
     }()
     
     fileprivate let c11Button: BounceButton = {
-        let button = BounceButton(title: "11. Tools (narzędzia)")
+        let button = BounceButton(title: "11. Tools (narzędzia) (\(Data.get11().count))")
         button.addTarget(self, action: #selector(handle11button), for: .touchUpInside)
         return button
     }()
     
     fileprivate let c12Button: BounceButton = {
-        let button = BounceButton(title: "12. Weapons (bronie)")
+        let button = BounceButton(title: "12. Weapons (bronie) (\(Data.get12().count))")
         button.addTarget(self, action: #selector(handle12button), for: .touchUpInside)
         return button
     }()
     
     fileprivate let c13Button: BounceButton = {
-        let button = BounceButton(title: "13. Weight and measures (waga i jednostki miary)")
+        let button = BounceButton(title: "13. Weight and measures (waga i jednostki miary) (\(Data.get13().count))")
         button.addTarget(self, action: #selector(handle13button), for: .touchUpInside)
         return button
     }()
     
     fileprivate let c14Button: BounceButton = {
-        let button = BounceButton(title: "14. Yard (podwórze)")
+        let button = BounceButton(title: "14. Yard (podwórze) (\(Data.get14().count))")
         button.addTarget(self, action: #selector(handle14button), for: .touchUpInside)
         return button
     }()

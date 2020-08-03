@@ -20,6 +20,7 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
     var questions: [LongQuestion]!
     var gotPrize = false
     var timer = Timer()
+    let mySynthesizer = AVSpeechSynthesizer()
     
     var time: Int = 0 {
         didSet {
@@ -306,6 +307,8 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
         answerTF2.delegate = self
         answerTF3.delegate = self
         tempTF.delegate = self
+        
+        answerTF.becomeFirstResponder()
     }
     
     @objc func updateTimer() {
@@ -504,7 +507,7 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
     }
     
     func handleSound(text: String) {
-        let mySynthesizer = AVSpeechSynthesizer()
+        //let mySynthesizer = AVSpeechSynthesizer()
         let helloUtterance = AVSpeechUtterance(string: text)
         helloUtterance.voice = AVSpeechSynthesisVoice(language: setUK ? "en-GB" : "en-US")
         helloUtterance.pitchMultiplier = 1.25
@@ -525,7 +528,7 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
     }
     
     @objc fileprivate func handleSoundUK(text: String) {
-        let mySynthesizer = AVSpeechSynthesizer()
+        //let mySynthesizer = AVSpeechSynthesizer()
         let helloUtterance = AVSpeechUtterance(string: text)
         helloUtterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
         helloUtterance.pitchMultiplier = 1.25
@@ -534,7 +537,7 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
     }
     
     @objc fileprivate func handleSoundUS(text: String) {
-        let mySynthesizer = AVSpeechSynthesizer()
+        //let mySynthesizer = AVSpeechSynthesizer()
         let helloUtterance = AVSpeechUtterance(string: text)
         helloUtterance.voice = AVSpeechSynthesisVoice(language: "en-US")
         helloUtterance.pitchMultiplier = 1.25

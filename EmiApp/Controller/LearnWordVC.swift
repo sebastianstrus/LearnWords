@@ -200,7 +200,7 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
     
     fileprivate let tempTF: UITextField = {
         let tf = UITextField()
-        tf.tag = 4
+        tf.tag = 2
         tf.placeholder = ""
         return tf
     }()
@@ -268,6 +268,8 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
         mySynthesizer.speak(responseUtterance)*/
         answerTF.delegate = self
         tempTF.delegate = self
+        
+        answerTF.becomeFirstResponder()
     }
     
     @objc func updateTimer() {
@@ -297,6 +299,11 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
                 if (currentNumber + 1 >= questions.count) {
                     self.timer.invalidate()
                     showMessage("Well done!", withTitle: "Congratulations!")
+                    if (usedHints == 0) && (!gotPrize) {
+                        gotPrize = !gotPrize
+                        createParticles()
+                        Sound.play(file: "bravo.mp3")
+                    }
                 }
             }
             else {
@@ -304,52 +311,7 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
                 answerTF.becomeFirstResponder()
             }
         case 2:
-            print("case2")
-            /*if answerTF2.text?.uppercased() == currentQuestion.english2.uppercased() {
-                print("case22")
-                answerTF2.layer.borderColor = AppColors.BORDER_GREEN.cgColor
-                answeredSecond = true
-                handleSound(text: answerTF2.text!)
-                //answerTF2.resignFirstResponder()
-                answerTF3.becomeFirstResponder()
-                
-                if (currentNumber + 1 >= questions.count) && answeredFirst && answeredThird {
-                    self.timer.invalidate()
-                    showMessage("Well done!", withTitle: "Congratulations!")
-                }
-            }
-            else {
-                answerTF2.layer.borderColor = AppColors.BORDER_RED.cgColor
-                answerTF2.becomeFirstResponder()
-            }*/
-        case 3:
-            print("case3")
-            /*if answerTF3.text?.uppercased() == currentQuestion.english3.uppercased() {
-                print("case33")
-                answerTF3.layer.borderColor = AppColors.BORDER_GREEN.cgColor
-                answeredThird = true
-                handleSound(text: answerTF3.text!)
-                answerTF3.resignFirstResponder()
-                nextButton.isSelected = true
-                //nextButton.stat = UIControl.State.focused
-                
-                if (currentNumber + 1 >= questions.count) && answeredFirst && answeredSecond {
-                    self.timer.invalidate()
-                    showMessage("\nYour time: \(Int(time/60)):\(time - Int(time/60)*60),\nYou used \(usedHints) \( usedHints == 1 ? "hint" : "hints").\(usedHints == 0 ? "\nWell done!" : "")", withTitle: "Congratulations!")
-                    if (usedHints == 0) && (!gotPrize) {
-                        gotPrize = !gotPrize
-                        createParticles()
-                        Sound.play(file: "bravo.mp3")
-                    }
-                }
-                
-            }
-            else {
-                answerTF3.layer.borderColor = AppColors.BORDER_RED.cgColor
-                answerTF3.becomeFirstResponder()
-            }*/
-        case 4:
-            print("case 4")
+            print("case 2")
             setNextQuestion()
         default:
             print("defult")

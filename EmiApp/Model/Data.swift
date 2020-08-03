@@ -890,11 +890,11 @@ class Data {
     
     class func get7() -> [Question] {
         return [
-            Question(swedish: "wysokość", english: "altitude"),
-            Question(swedish: "Antypody", english: "Antipodes"),
-            Question(swedish: "azymut", english: "azimuth"),
+            Question(swedish: "wysokość bezwzględna (np. samolotu)", english: "altitude"),
+            Question(swedish: "antypody", english: "antipodes"),
+            Question(swedish: "azymut (kąt od południka niebieskiego)", english: "azimuth"),
             Question(swedish: "kartografia", english: "cartography"),
-            Question(swedish: "diagram, mapa", english: "chart"),
+            Question(swedish: "diagram", english: "chart"),
             Question(swedish: "wysokość nad poziomem morza", english: "elevation"),
             Question(swedish: "równik", english: "equator"),
             Question(swedish: "półkula", english: "hemisphere"),
@@ -1045,39 +1045,44 @@ class Data {
             Question(swedish: "dzida", english: "spear"),
             Question(swedish: "czołg", english: "tank"),
             Question(swedish: "paralizator", english: "taser"),
-            Question(swedish: "bicz", english: "whip")
+            Question(swedish: "bicz", english: "whip"),
+            Question(swedish: "granat", english: "grenade"),
+            Question(swedish: "pułapka", english: "trap"),
+            Question(swedish: "pole mninowe", english: "minefield")
+            
         ]
     }
     
     class func get13() -> [Question] {
         return [
-            Question(swedish: "akr", english: "acre"),
-            Question(swedish: "bela", english: "bale"),
-            Question(swedish: "trzynaście", english: "baker's dozen"),
+            Question(swedish: "akr (4046,86 m2)", english: "acre"),
+            Question(swedish: "bela (10 ryz, zwój banknotów)", english: "bale"),
+            Question(swedish: "trzynaście", english: "baker’s dozen"),
             Question(swedish: "karat", english: "carat"),
             Question(swedish: "metr sześcienny", english: "cubic meter"),
             Question(swedish: "decymetr", english: "decimeter"),
-            Question(swedish: "tuzin", english: "dozen"),
+            Question(swedish: "tuzin (12)", english: "dozen"),
             Question(swedish: "stopa", english: "foot"),
-            Question(swedish: "galon", english: "gallon"),
+            Question(swedish: "galon (4,546 L)", english: "gallon"),
             Question(swedish: "brutto", english: "gross"),
             Question(swedish: "hektar", english: "hectare"),
             Question(swedish: "cal", english: "inch"),
             Question(swedish: "kilogram", english: "kilo(gram)"),
-            Question(swedish: "węzeł", english: "knot"),
-            Question(swedish: "mikron", english: "micron"),
-            Question(swedish: "mol", english: "mole"),
+            Question(swedish: "węzeł (1 mila morska na godzinę)", english: "knot"),
+            Question(swedish: "mikron (mikrometr)", english: "micron"),
+            Question(swedish: "mol (gramocząsteczka)", english: "mole"),
             Question(swedish: "miligram", english: "miligram"),
             Question(swedish: "mila morska", english: "nautical mile"),
             Question(swedish: "uncja", english: "ounce"),
-            Question(swedish: "parsek", english: "parsec"),
+            Question(swedish: "parsek (3,262 roku świetlnego)", english: "parsec"),
             Question(swedish: "szczypta", english: "pinch"),
             Question(swedish: "funt", english: "pound"),
-            Question(swedish: "kapka", english: "smidgen"),
+            Question(swedish: "kapka, odrobina", english: "smidgen"),
             Question(swedish: "łyżka", english: "spoonful"),
             Question(swedish: "kwadratowy", english: "square"),
-            Question(swedish: "brytyjska jednostka wagi równa 6,35 kilograma", english: "stone"),
-            Question(swedish: "tona", english: "ton")
+            Question(swedish: "6,35 kg in UK", english: "stone"),
+            Question(swedish: "tona", english: "ton"),
+            Question(swedish: "rok świetlny", english: "light-year")
         ]
     }
     
