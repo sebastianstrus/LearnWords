@@ -462,7 +462,12 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
     
     @objc func handleHint() {
         usedHints += 1
-        showMessage(nil, withTitle: "\(currentQuestion.english)")
+        let alert = UIAlertController(title: "\(currentQuestion.english)", message: nil, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK".localized, style: .default, handler: { _ in
+            self.answerTF.becomeFirstResponder()
+        })
+        alert.addAction(action)
+        present(alert, animated: true)
     }
     
     public func createParticles() {

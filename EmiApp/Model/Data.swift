@@ -996,8 +996,9 @@ class Data {
     
     class func get11() -> [Question] {
         return [
+            Question(swedish: "młotek", english: "hammer"),
             Question(swedish: "siekiera", english: "axe"),
-            Question(swedish: "miechy", english: "bellows"),
+            Question(swedish: "kombinerki", english: "pliers"),
             Question(swedish: "szczotka, pędzel", english: "brush"),
             Question(swedish: "dłuto", english: "chisel"),
             Question(swedish: "zacisk", english: "clamp"),
@@ -1103,6 +1104,12 @@ class Data {
             Question(swedish: "kontener na śmieci", english: "trash can"),
             Question(swedish: "winorośl", english: "vine"),
             Question(swedish: "chodnik", english: "walkway")
+        ]
+    }
+    
+    class func getInteresting() -> [Question] {
+        return [
+            Question(swedish: "wyrządzenie krzywdy lub zniewagi", english: "infliction of an injury or insult"),
         ]
     }
 }
