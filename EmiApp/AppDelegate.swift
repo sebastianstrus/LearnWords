@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navigationController
         
         
-        let filePath = Bundle.main.path(forResource: "words", ofType: "txt");
+        let filePath = Bundle.main.path(forResource: "words", ofType: "txt");//words
         let URL = NSURL.fileURL(withPath: filePath!)
         
         do {
@@ -76,6 +76,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("b1b2 count:")
             print(myStrings.count)
             for row in myStrings {
+                
+                //print(String(row.prefix(10)))
+                
                 if row.contains("–") {
                     //print(row.slice(from: ">", to: "<")!)
                     
@@ -85,7 +88,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
                     var first = fullNameArr[1]
                     let firstEdited = first.dropFirst()
-                    print("Question(swedish: \"\(firstEdited)\", english: \"\(fullNameArr[0].dropLast())\"),")
+                    print("Question(swedish: \"\(fullNameArr[0].dropLast())\", english: \"\(firstEdited)\"),")
 
                 }
                 

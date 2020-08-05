@@ -32,11 +32,15 @@ class MainMenuController: UIViewController {
     fileprivate func setupView() {
         self.mainMenuView = MainMenuView()
 
-        mainMenuView.b1b2Action = handleB1B2
-        mainMenuView.newLevelAction = handleNewLevel
         mainMenuView.irregularVerbsAction = handleIrregularVerbs
+        mainMenuView.b1b2Action = handleB1B2
         mainMenuView.c1Action = handleC1
         mainMenuView.professionsAction = handleProfessions
+        mainMenuView.adjectivesAction = handleAdjectives
+        mainMenuView.newLevelAction = handleNewLevel
+        
+        
+        
         
         mainMenuView.button1Action = handle1Button
         mainMenuView.button2Action = handle2Button
@@ -82,13 +86,23 @@ class MainMenuController: UIViewController {
     
     fileprivate func handleProfessions() {
         let learnWordVC = LearnWordVC()
-        learnWordVC.title = "Zawody "
+        learnWordVC.title = "Zawody"
         learnWordVC.questions = Data.getProfessions()
         navigationController?.pushViewController(learnWordVC, animated: true)
     }
     
+    fileprivate func handleAdjectives() {
+        let learnWordVC = LearnWordVC()
+        learnWordVC.title = "Przymiotniki"
+        learnWordVC.questions = Data.getHardAdjectivesAdvanced()
+        navigationController?.pushViewController(learnWordVC, animated: true)
+    }
+    
     fileprivate func handleNewLevel() {
-
+        let learnWordVC = LearnWordVC()
+        learnWordVC.title = "Przydate zwroty"
+        learnWordVC.questions = Data.getInteresting()
+        navigationController?.pushViewController(learnWordVC, animated: true)
     }
     
    

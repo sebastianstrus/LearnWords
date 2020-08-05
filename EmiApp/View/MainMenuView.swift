@@ -22,11 +22,12 @@ class MainMenuView: UIView {
     }
     
     // MARK: - Public actions
-    var b1b2Action: (() -> Void)?
-    var newLevelAction: (() -> Void)?
     var irregularVerbsAction: (() -> Void)?
+    var b1b2Action: (() -> Void)?
     var c1Action: (() -> Void)?
+    var adjectivesAction: (() -> Void)?
     var professionsAction: (() -> Void)?
+    var newLevelAction: (() -> Void)?
     
     var button1Action: (() -> Void)?
     var button2Action: (() -> Void)?
@@ -79,6 +80,12 @@ class MainMenuView: UIView {
     fileprivate let professionsButton: BounceButton = {
         let button = BounceButton(title: "Zawody (\(Data.getProfessions().count))")
         button.addTarget(self, action: #selector(handleProfessions), for: .touchUpInside)
+        return button
+    }()
+    
+    fileprivate let adjectivesButton: BounceButton = {
+        let button = BounceButton(title: "Przymiotniki (\(Data.getAdjectives().count))")
+        button.addTarget(self, action: #selector(handleAdjectives), for: .touchUpInside)
         return button
     }()
     
@@ -190,12 +197,12 @@ class MainMenuView: UIView {
         
         
         
-        leftButtonsStackView = createVerticalStackView(views: [irregularVerbsButton, levelB1B2Button, levelC1Button, professionsButton, newLevelButton],
+        leftButtonsStackView = createVerticalStackView(views: [irregularVerbsButton, levelB1B2Button, levelC1Button, professionsButton, adjectivesButton, newLevelButton],
                                                    spacing: 10)
             leftContainer.addSubview(leftButtonsStackView)
         
         leftButtonsStackView.setAnchor(width: 280,
-                                   height: 290)
+                                   height: 340)
         leftButtonsStackView.centerXAnchor.constraint(equalTo: leftContainer.centerXAnchor).isActive = true
         leftButtonsStackView.centerYAnchor.constraint(equalTo: leftContainer.centerYAnchor).isActive = true
         
@@ -230,6 +237,10 @@ class MainMenuView: UIView {
     
     @objc fileprivate func handleProfessions() {
         professionsAction?()
+    }
+    
+    @objc fileprivate func handleAdjectives() {
+        adjectivesAction?()
     }
     
     @objc fileprivate func handleNewLevel() {
