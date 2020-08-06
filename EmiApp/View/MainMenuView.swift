@@ -84,7 +84,7 @@ class MainMenuView: UIView {
     }()
     
     fileprivate let adjectivesButton: BounceButton = {
-        let button = BounceButton(title: "Przymiotniki (\(Data.getAdjectives().count))")
+        let button = BounceButton(title: "Przymiotniki (\(Data.getHardAdjectivesAdvanced().count))")
         button.addTarget(self, action: #selector(handleAdjectives), for: .touchUpInside)
         return button
     }()

@@ -783,7 +783,7 @@ class Data {
             Question(swedish: "zły, parszywy", english: "bad, lousy"),
             Question(swedish: "piękny, wspaniały", english: "beautiful, gorgeous"),
             Question(swedish: "duży, ogromny, olbrzymi", english: "big, immense, tremendous"),
-            Question(swedish: "nydny, marudny, doczesny", english: "boring, tedious, mundane"),
+            Question(swedish: "nudny, marudny, doczesny", english: "boring, tedious, mundane"),
             Question(swedish: "zajety, zalany (np. pracą)", english: "busy, swamped"),
             Question(swedish: "spokojny, pogodny", english: "calm, serene"),
             Question(swedish: "ostrożny, przezorny", english: "careful, cautious"),
@@ -791,6 +791,7 @@ class Data {
             Question(swedish: "jasny, oczywisty, przejrzysty, ", english: "clear, obvious, lucid"),
             Question(swedish: "konkurencyjny, konkurencyjny bardzo", english: "competitive, cut-throat"),
             Question(swedish: "zmieszany, zakłopotany", english: "confused, perplexed"),
+            /*
             Question(swedish: "zatłoczony, tętniący życiem", english: "crowded, bustling"),
             Question(swedish: "zniszczony, poobijany", english: "damaged, battered"),
             Question(swedish: "niebezpieczny, ryzykowny", english: "dangerous, perilous"),
@@ -805,6 +806,7 @@ class Data {
             Question(swedish: "drogi, cenny", english: "expensive, pricey"),
             Question(swedish: "fantazyjny, wystawny", english: "fancy, lavish"),
             Question(swedish: "gruby, otyły", english: "fat, obese"),
+            
             Question(swedish: "przyjazny, sympatyczny", english: "friendly, amiable"),
             Question(swedish: "zabawny, przezabawny", english: "funny, hilarious"),
             Question(swedish: "zadowolony, uszczęśliwiony", english: "glad, overjoyed"),
@@ -819,6 +821,7 @@ class Data {
             Question(swedish: "mały, malutki, nieznaczny", english: "little, tiny, slight"),
             Question(swedish: "głośny, grzmiący", english: "loud, thunderous"),
             Question(swedish: "podły, nikczemny", english: "mean, wicked"),
+            
             Question(swedish: "niechlujny, bardzo niechlujny", english: "messy, slovenly"),
             Question(swedish: "niezbędny, kluczowy, konieczny", english: "necessary, essential, imperative"),
             Question(swedish: "hałaśliwy, wrzaskliwy", english: "noisy, clamorous"),
@@ -833,6 +836,7 @@ class Data {
             Question(swedish: "przerażony, bardzo przerażony,  przestraszony", english: "scared, petrified, terrified"),
             Question(swedish: "sensowny, rozważny", english: "sensible, prudent"),
             Question(swedish: "poważny, grobowy", english: "serious, grave"),
+            
             Question(swedish: "nieśmiały, bojaźliwy", english: "shy, timid"),
             Question(swedish: "szczupły, smukły, chudy", english: "slim, slender, lean"),
             Question(swedish: "powolny, niemrawy", english: "slow, sluggish"),
@@ -846,7 +850,7 @@ class Data {
             Question(swedish: "słaby, wątły, kruchy", english: "weak, frail, fragile"),
             Question(swedish: "mokry, przemoczony", english: "wet, soaked"),
             Question(swedish: "chętny, żądny", english: "willing, eager"),
-            Question(swedish: "zmartwiony, strapiony", english: "worried, distressed")
+            Question(swedish: "zmartwiony, strapiony", english: "worried, distressed")*/
         ]
     }
     
