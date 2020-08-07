@@ -21,6 +21,7 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
     var gotPrize = false
     var timer = Timer()
     let mySynthesizer = AVSpeechSynthesizer()
+    var hintAvailable = true
     
     var time: Int = 0 {
         didSet {
@@ -157,6 +158,18 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
         return label
     }()
     
+    fileprivate let hintLabel: UILabel = {
+        let label = UILabel()
+        label.text = ""
+        label.font = UIFont.systemFont(ofSize: 30)
+        label.textColor = AppColors.BORDER_RED
+
+        label.textAlignment = NSTextAlignment.center
+        return label
+    }()
+    
+    
+    
     fileprivate let answerTF: UITextField = {
         let tf = UITextField()
         tf.tag = 1
@@ -284,7 +297,7 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
                 answerTF.becomeFirstResponder()
             }
         case 2:
-            setNextQuestion()
+            handleNext()
         default:
             print("defult")
         }
@@ -340,6 +353,9 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
         view.addSubview(questionLabel)
         questionLabel.setAnchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, paddingTop: 100, paddingLeft: 20, paddingBottom: 20, paddingRight: 20, width: 0, height: 140)
         
+        view.addSubview(hintLabel)
+        hintLabel.setAnchor(top: questionLabel.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 20, paddingRight: 20, width: 0, height: 40)
+        
         view.addSubview(answerTF)
         //answerTF.setAnchor(top: questionLabel.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 70)
         
@@ -348,7 +364,7 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
         stackView.distribution = .fillEqually
         stackView.spacing = 30
         view.addSubview(stackView)
-        stackView.setAnchor(top: questionLabel.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 70)
+        stackView.setAnchor(top: questionLabel.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, paddingTop: 60, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 70)
         
         
 
@@ -428,16 +444,18 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
         //checkAnswer()
     }
     
+//    @objc fileprivate func handleNext() {
+//
+//        setNextQuestion()
+//
+//    }
+    
+    
+    
     @objc fileprivate func handleNext() {
-        
-        setNextQuestion()
-        
-    }
-    
-    
-    
-    func setNextQuestion() {
         if (currentNumber < questions.count - 1) {
+            hintLabel.text = ""
+            hintAvailable = true
             currentNumber += 1
             questionLabel.text = shuffledQuestions[currentNumber].swedish
             currentQuestion = shuffledQuestions[currentNumber]
@@ -461,13 +479,15 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
     }
     
     @objc func handleHint() {
-        usedHints += 1
-        let alert = UIAlertController(title: "\(currentQuestion.english)", message: nil, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK".localized, style: .default, handler: { _ in
-            self.answerTF.becomeFirstResponder()
-        })
-        alert.addAction(action)
-        present(alert, animated: true)
+        if hintAvailable {
+            usedHints += 1
+            hintLabel.text = currentQuestion.english
+            hintAvailable = false
+        }
+
+        answerTF.becomeFirstResponder()
+        
+        
     }
     
     public func createParticles() {

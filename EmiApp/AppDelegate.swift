@@ -74,7 +74,69 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             var i = 0
             print("b1b2 count:")
-            print(myStrings.count)
+            print("Lines: \(myStrings.count)")
+            
+            var k2int = 0
+            var k3int = 0
+            let allQuestions = Data.getMoreVerbs()
+            for k in allQuestions {
+                let k0 = k.polish
+                let k1 = k.english1
+                let k2 = k.english2
+                let k3 = k.english3
+                let k2edited = k2.replacingOccurrences(of: ", ", with: "/")
+                let k3edited = k3.replacingOccurrences(of: ", ", with: "/")
+                
+                
+
+                
+                
+                //print("LongQuestion(polish: \"\(k0)\", english1: \"\(k1)\", english2: \"\(k2edited)\", english3: \"\(k3edited)\"),")
+                
+            }
+
+            
+            
+            for row in myStrings {
+                
+                let row2 = row.replacingOccurrences(of: "Question", with: "LongQuestion")
+                let row3 = row2.replacingOccurrences(of: "swedish", with: "polish")
+                
+//                let sentence = "This is \"table\". There is an \"apple\" on the \"table\""
+//
+//                let pattern = "[[^\"]]" //everything between " and "
+//                let replacement = ""
+//                let newSentence = row.replacingOccurrences(
+//                    of: pattern,
+//                    with: replacement,
+//                    options: .regularExpression
+//                )
+
+//                let replacedRow = row.replacingOccurrences(of: " \",", with: "\",")
+//                let replacedRow2 = replacedRow.replacingOccurrences(of: " ,", with: ",")
+//                let replacedRow3 = replacedRow2.replacingOccurrences(of: " \"),", with: "\"),")
+//                print(replacedRow3) // This is ____. There is an ____ on the ____
+//
+//
+                
+                
+                if row.contains("|") {
+                    //print(row.slice(from: ">", to: "<")!)
+                    
+                    let fullNameArr = row.split{$0 == "|"}.map(String.init)
+                    // or simply:
+                    // let fullNameArr = fullName.characters.split{" "}.map(String.init)
+
+                    //let firstEdited = first.dropFirst()
+                    
+                    if (fullNameArr.count == 4) {
+                        //print("Question(swedish: \"\(fullNameArr[3].dropFirst())\", english1: \"\(fullNameArr[0].dropLast())\", english2: \"\(fullNameArr[1].dropLast().dropFirst())\", english3: \"\(fullNameArr[2].dropLast().dropFirst())\"),")
+                    }
+
+
+                }
+                
+            }
             for row in myStrings {
                 
                 //print(String(row.prefix(10)))
@@ -88,45 +150,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
                     var first = fullNameArr[1]
                     let firstEdited = first.dropFirst()
-                    print("Question(swedish: \"\(fullNameArr[0].dropLast())\", english: \"\(firstEdited)\"),")
+                    //print("Question(swedish: \"\(fullNameArr[0].dropLast())\", english: \"\(firstEdited)\"),")
 
                 }
                 
-                
-                
-
-                
-                //let verbs:[String] = row.components(separatedBy: " ")
-                
-                
-                
-                
-                /*if (verbs.count == 4) {
-                    print("LongQuestion(polish: \"\(verbs[3])\", english1: \"\(verbs[0])\", english2: \"\(verbs[1])\", english3: \"\(verbs[2])\"),")
-                }
-                else if (verbs.count == 5) {
-                    print("LongQuestion(polish: \"\(verbs[3]) \(verbs[4])\", english1: \"\(verbs[0])\", english2: \"\(verbs[1])\", english3: \"\(verbs[2])\"),")
-                }
-                else if (verbs.count == 6) {
-                    print("LongQuestion(polish: \"\(verbs[3]) \(verbs[4]) \(verbs[5])\", english1: \"\(verbs[0])\", english2: \"\(verbs[1])\", english3: \"\(verbs[2])\"),")
-                }
-                else if (verbs.count == 7) {
-                    print("LongQuestion(polish: \"\(verbs[3]) \(verbs[4]) \(verbs[5]) \(verbs[6])\", english1: \"\(verbs[0])\", english2: \"\(verbs[1])\", english3: \"\(verbs[2])\"),")
-                }
-                else if (verbs.count == 8) {
-                    print("LongQuestion(polish: \"\(verbs[3]) \(verbs[4]) \(verbs[5]) \(verbs[6]) \(verbs[7])\", english1: \"\(verbs[0])\", english2: \"\(verbs[1])\", english3: \"\(verbs[2])\"),")
-                }
-                else if (verbs.count == 9) {
-                    print("LongQuestion(polish: \"\(verbs[3]) \(verbs[4]) \(verbs[5]) \(verbs[6]) \(verbs[7]) \(verbs[8])\", english1: \"\(verbs[0])\", english2: \"\(verbs[1])\", english3: \"\(verbs[2])\"),")
-                }*/
-                
-                
-              
-                //print("One: \(verbs[0]!) two: \(verbs[1]!) three: \(verbs[2]!) four: \(verbs[3] ?? "") \(verbs[4] ?? "") \(verbs[5] ?? "") \(verbs[6] ?? "") \(verbs[7] ?? "") \(verbs[8] ?? "") \(verbs[9] ?? "")")
-                
-                /*let splittedPair = pair.components(separatedBy: " - ")
-                
-                print("Question(swedish: \"\(splittedPair[0])\", english: \"\(splittedPair[1])\"),")*/
             }
             print(i)
             
@@ -191,4 +218,23 @@ extension String {
             }
         }
     }
+}
+
+
+extension String {
+
+    mutating func replace(from: String, to: String, by new: String) {
+        guard let from = range(of: from)?.lowerBound, let to = range(of: to)?.upperBound else { return }
+
+        let range = from..<to
+        self = replacingCharacters(in: range, with: new)
+    }
+
+    func replaced(from: String, to: String, by new: String) -> String {
+        guard let from = range(of: from)?.lowerBound, let to = range(of: to)?.upperBound else { return self }
+
+        let range = from..<to
+        return replacingCharacters(in: range, with: new)
+    }
+
 }
