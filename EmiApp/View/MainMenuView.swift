@@ -60,7 +60,7 @@ class MainMenuView: UIView {
     fileprivate var rightButtonsStackView: UIStackView!
     
     fileprivate let irregularVerbsButton: BounceButton = {
-        let button = BounceButton(title: "Czasowniki nieregularne (\(Data.getVerbs().count))")
+        let button = BounceButton(title: "Czasowniki nieregularne (\(Data.getMoreVerbs().count))")
         button.addTarget(self, action: #selector(handleIrregularVerbs), for: .touchUpInside)
         return button
     }()

@@ -82,16 +82,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             for k in allQuestions {
                 let k0 = k.polish
                 let k1 = k.english1
+                
                 let k2 = k.english2
+                
                 let k3 = k.english3
-                let k2edited = k2.replacingOccurrences(of: ", ", with: "/")
-                let k3edited = k3.replacingOccurrences(of: ", ", with: "/")
                 
                 
+                if k3.contains("/") {
+                    let k3splited = k3.split(separator: "/")
+                    let newk3 = k3splited[1] + "/" + k3splited[0]
+                    print("LongQuestion(polish: \"\(k0)\", english1: \"\(k1)\", english2: \"\(newk3)\", english3: \"\(k3)\"),")
+                } else {
+                    print("LongQuestion(polish: \"\(k0)\", english1: \"\(k1)\", english2: \"\(k2)\", english3: \"\(k3)\"),")
+                }
 
                 
                 
-                //print("LongQuestion(polish: \"\(k0)\", english1: \"\(k1)\", english2: \"\(k2edited)\", english3: \"\(k3edited)\"),")
+                
                 
             }
 

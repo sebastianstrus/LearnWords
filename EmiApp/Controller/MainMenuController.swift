@@ -66,7 +66,7 @@ class MainMenuController: UIViewController {
     fileprivate func handleIrregularVerbs() {
         let irregularVerbsVC = IrregularVerbsVC()
         irregularVerbsVC.title = "Czasowniki"
-        irregularVerbsVC.questions = Data.getHardVerbs()// getProblematicVerbs
+        irregularVerbsVC.questions = Data.getMoreVerbs()// getProblematicVerbs
         navigationController?.pushViewController(irregularVerbsVC, animated: true)
     }
     
