@@ -1078,7 +1078,7 @@ class Data {
             Question(swedish: "płyta główna", english: "motherboard"),
             Question(swedish: "system operacyjny", english: "operating system"),
             Question(swedish: "rozdzielczość", english: "resolution"),
-            Question(swedish: "maszyna do szycia", english: "w"),
+            Question(swedish: "maszyna do szycia", english: "sewing machine"),
             Question(swedish: "pamięć", english: "storage"),
             Question(swedish: "pasek narzędzi", english: "toolbar"),
             Question(swedish: "edytor tekstu", english: "word processor")
