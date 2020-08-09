@@ -957,7 +957,7 @@ class Data {
             Question(swedish: "drogi, cenny", english: "expensive, pricey"),
             Question(swedish: "fantazyjny, wystawny", english: "fancy, lavish"),
             Question(swedish: "gruby, otyły", english: "fat, obese"),
-            */
+            
             Question(swedish: "przyjazny, sympatyczny", english: "friendly, amiable"),
             Question(swedish: "zabawny, przezabawny", english: "funny, hilarious"),
             Question(swedish: "zadowolony, uszczęśliwiony", english: "glad, overjoyed"),
@@ -972,14 +972,14 @@ class Data {
             Question(swedish: "mały, malutki, nieznaczny", english: "little, tiny, slight"),
             Question(swedish: "głośny, grzmiący", english: "loud, thunderous"),
             Question(swedish: "podły, nikczemny", english: "mean, wicked"),
-            /*
+            */
             Question(swedish: "niechlujny, bardzo niechlujny", english: "messy, slovenly"),
             Question(swedish: "niezbędny, kluczowy, konieczny", english: "necessary, essential, imperative"),
             Question(swedish: "hałaśliwy, wrzaskliwy", english: "noisy, clamorous"),
             Question(swedish: "stary, przestarzały", english: "old, obsolete"),
             Question(swedish: "bolesny, rozdzierający", english: "painful, excruciating"),
             Question(swedish: "idealny, bez skazy", english: "perfect, flawless"),
-            Question(swedish: "biedny, pozbawiony", english: "poor, destitute"),
+            Question(swedish: "biedny, w nędzy", english: "poor, destitute"),
             Question(swedish: "szybki, pochopny", english: "quick, hasty"),
             Question(swedish: "cichy, odosobniony", english: "quiet, secluded"),
             Question(swedish: "bogaty, zamożny (sosiety), majętny", english: "rich, well-off, affluent"),
@@ -987,7 +987,7 @@ class Data {
             Question(swedish: "przerażony, bardzo przerażony,  przestraszony", english: "scared, petrified, terrified"),
             Question(swedish: "sensowny, rozważny", english: "sensible, prudent"),
             Question(swedish: "poważny, grobowy", english: "serious, grave"),
-            
+            /*
             Question(swedish: "nieśmiały, bojaźliwy", english: "shy, timid"),
             Question(swedish: "szczupły, smukły, chudy", english: "slim, slender, lean"),
             Question(swedish: "powolny, niemrawy", english: "slow, sluggish"),

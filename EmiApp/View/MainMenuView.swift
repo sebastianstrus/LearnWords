@@ -89,7 +89,7 @@ class MainMenuView: UIView {
     fileprivate let adjectivesButton: BounceButton = {
         let button = BounceButton(title: "Przymiotniki (\(Data.getHardAdjectivesAdvanced().count))")
         button.addTarget(self, action: #selector(handleAdjectives), for: .touchUpInside)
-        button.layer.borderColor = UIColor.green.cgColor
+        button.layer.borderColor = UIColor.orange.cgColor
         return button
     }()
     
