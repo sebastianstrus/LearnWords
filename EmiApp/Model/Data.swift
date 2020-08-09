@@ -928,7 +928,7 @@ class Data {
     
     class func getHardAdjectivesAdvanced() -> [Question] {
         return [
-            Question(swedish: "zlękniony, pełen strachu", english: "afraid, fearful"),
+            /*Question(swedish: "zlękniony, pełen strachu", english: "afraid, fearful"),
             Question(swedish: "zły, rozwścieczony", english: "angry, enraged"),
             Question(swedish: "denerwujący, nieznośny", english: "annoying, exasperating"),
             Question(swedish: "zły, parszywy", english: "bad, lousy"),
@@ -942,7 +942,7 @@ class Data {
             Question(swedish: "jasny, oczywisty, przejrzysty, ", english: "clear, obvious, lucid"),
             Question(swedish: "konkurencyjny, konkurencyjny bardzo", english: "competitive, cut-throat"),
             Question(swedish: "zmieszany, zakłopotany", english: "confused, perplexed"),
-            /*
+            
             Question(swedish: "zatłoczony, tętniący życiem", english: "crowded, bustling"),
             Question(swedish: "zniszczony, poobijany", english: "damaged, battered"),
             Question(swedish: "niebezpieczny, ryzykowny", english: "dangerous, perilous"),
@@ -957,11 +957,11 @@ class Data {
             Question(swedish: "drogi, cenny", english: "expensive, pricey"),
             Question(swedish: "fantazyjny, wystawny", english: "fancy, lavish"),
             Question(swedish: "gruby, otyły", english: "fat, obese"),
-            
+            */
             Question(swedish: "przyjazny, sympatyczny", english: "friendly, amiable"),
             Question(swedish: "zabawny, przezabawny", english: "funny, hilarious"),
             Question(swedish: "zadowolony, uszczęśliwiony", english: "glad, overjoyed"),
-            Question(swedish: "great, wspaniały", english: "great, terrific"),
+            Question(swedish: "świetny, wspaniały", english: "great, terrific"),
             Question(swedish: "szczęśliwy, uradowany", english: "happy, jubilant"),
             Question(swedish: "gorący, upalny, skwarny", english: "hot, scorching, sweltering"),
             Question(swedish: "olbrzymi, rozległy", english: "huge, vast"),
@@ -972,7 +972,7 @@ class Data {
             Question(swedish: "mały, malutki, nieznaczny", english: "little, tiny, slight"),
             Question(swedish: "głośny, grzmiący", english: "loud, thunderous"),
             Question(swedish: "podły, nikczemny", english: "mean, wicked"),
-            
+            /*
             Question(swedish: "niechlujny, bardzo niechlujny", english: "messy, slovenly"),
             Question(swedish: "niezbędny, kluczowy, konieczny", english: "necessary, essential, imperative"),
             Question(swedish: "hałaśliwy, wrzaskliwy", english: "noisy, clamorous"),

@@ -62,18 +62,21 @@ class MainMenuView: UIView {
     fileprivate let irregularVerbsButton: BounceButton = {
         let button = BounceButton(title: "Czasowniki nieregularne (\(Data.getMoreVerbs().count))")
         button.addTarget(self, action: #selector(handleIrregularVerbs), for: .touchUpInside)
+        button.layer.borderColor = UIColor.green.cgColor
         return button
     }()
     
     fileprivate let levelB1B2Button: BounceButton = {
         let button = BounceButton(title: "Poziom B1-B2 (\(Data.getB1B2().count))")
         button.addTarget(self, action: #selector(handleB1B2), for: .touchUpInside)
+        button.layer.borderColor = UIColor.green.cgColor
         return button
     }()
     
     fileprivate let levelC1Button: BounceButton = {
         let button = BounceButton(title: "Poziom C1 (\(Data.getC1().count))")
         button.addTarget(self, action: #selector(handleC1), for: .touchUpInside)
+        button.layer.borderColor = UIColor.green.cgColor
         return button
     }()
     
@@ -86,6 +89,7 @@ class MainMenuView: UIView {
     fileprivate let adjectivesButton: BounceButton = {
         let button = BounceButton(title: "Przymiotniki (\(Data.getHardAdjectivesAdvanced().count))")
         button.addTarget(self, action: #selector(handleAdjectives), for: .touchUpInside)
+        button.layer.borderColor = UIColor.green.cgColor
         return button
     }()
     
@@ -105,6 +109,7 @@ class MainMenuView: UIView {
     fileprivate let c2Button: BounceButton = {
         let button = BounceButton(title: "2. Appliances and technology (urządzenia i technologia) (\(Data.get2().count))")
         button.addTarget(self, action: #selector(handle2button), for: .touchUpInside)
+        button.layer.borderColor = UIColor.green.cgColor
         return button
     }()
     
@@ -135,6 +140,7 @@ class MainMenuView: UIView {
     fileprivate let c7Button: BounceButton = {
         let button = BounceButton(title: "7. Geography (geografia) (\(Data.get7().count))")
         button.addTarget(self, action: #selector(handle7button), for: .touchUpInside)
+        button.layer.borderColor = UIColor.green.cgColor
         return button
     }()
     
@@ -159,24 +165,28 @@ class MainMenuView: UIView {
     fileprivate let c11Button: BounceButton = {
         let button = BounceButton(title: "11. Tools (narzędzia) (\(Data.get11().count))")
         button.addTarget(self, action: #selector(handle11button), for: .touchUpInside)
+        button.layer.borderColor = UIColor.green.cgColor
         return button
     }()
     
     fileprivate let c12Button: BounceButton = {
         let button = BounceButton(title: "12. Weapons (bronie) (\(Data.get12().count))")
         button.addTarget(self, action: #selector(handle12button), for: .touchUpInside)
+        button.layer.borderColor = UIColor.green.cgColor
         return button
     }()
     
     fileprivate let c13Button: BounceButton = {
         let button = BounceButton(title: "13. Weight and measures (waga i jednostki miary) (\(Data.get13().count))")
         button.addTarget(self, action: #selector(handle13button), for: .touchUpInside)
+        button.layer.borderColor = UIColor.green.cgColor
         return button
     }()
     
     fileprivate let c14Button: BounceButton = {
         let button = BounceButton(title: "14. Yard (podwórze) (\(Data.get14().count))")
         button.addTarget(self, action: #selector(handle14button), for: .touchUpInside)
+        button.layer.borderColor = UIColor.green.cgColor
         return button
     }()
     
