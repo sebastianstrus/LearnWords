@@ -37,9 +37,14 @@ class MainMenuController: UIViewController {
         mainMenuView.c1Action = handleC1
         mainMenuView.professionsAction = handleProfessions
         mainMenuView.adjectivesAction = handleAdjectives
-        mainMenuView.newLevelAction = handleNewLevel
-        
-        
+        mainMenuView.bodyAction = handleBody
+        mainMenuView.carAction = handleCar
+        mainMenuView.itAction = handleIT
+        mainMenuView.healthAction = handleHealth
+        mainMenuView.legalTermsAction = handleLegalTerms
+        mainMenuView.personalQualitiesAction = handlePersonalQualities
+        mainMenuView.shapesAction = handleShapes
+        mainMenuView.weatherAction = handleWeather
         
         
         mainMenuView.button1Action = handle1Button
@@ -98,14 +103,61 @@ class MainMenuController: UIViewController {
         navigationController?.pushViewController(learnWordVC, animated: true)
     }
     
-    fileprivate func handleNewLevel() {
+    fileprivate func handleBody() {
         let learnWordVC = LearnWordVC()
-        learnWordVC.title = "Przydate zwroty"
-        learnWordVC.questions = Data.getInteresting()
+        learnWordVC.title = "Body (ciało)"
+        learnWordVC.questions = Data.getBody()
         navigationController?.pushViewController(learnWordVC, animated: true)
     }
     
-   
+    fileprivate func handleCar() {
+        let learnWordVC = LearnWordVC()
+        learnWordVC.title = "Car parts (części samochodowe)"
+        learnWordVC.questions = Data.getCar()
+        navigationController?.pushViewController(learnWordVC, animated: true)
+    }
+    
+    fileprivate func handleIT() {
+        let learnWordVC = LearnWordVC()
+        learnWordVC.title = "Computers and technology"
+        learnWordVC.questions = Data.getIT()
+        navigationController?.pushViewController(learnWordVC, animated: true)
+    }
+    
+    fileprivate func handleHealth() {
+        let learnWordVC = LearnWordVC()
+        learnWordVC.title = "Health (zdrowie)"
+        learnWordVC.questions = Data.getHealth()
+        navigationController?.pushViewController(learnWordVC, animated: true)
+    }
+
+    fileprivate func handleLegalTerms() {
+        let learnWordVC = LearnWordVC()
+        learnWordVC.title = "Legal terms (słownictwo prawnicze)"
+        learnWordVC.questions = Data.getLegalTerms()
+        navigationController?.pushViewController(learnWordVC, animated: true)
+    }
+
+    fileprivate func handlePersonalQualities() {
+        let learnWordVC = LearnWordVC()
+        learnWordVC.title = "Personal qualities (cechy charakteru)"
+        learnWordVC.questions = Data.getPersonalQualities()
+        navigationController?.pushViewController(learnWordVC, animated: true)
+    }
+
+    fileprivate func handleShapes() {
+        let learnWordVC = LearnWordVC()
+        learnWordVC.title = "Shapes (kształty)"
+        learnWordVC.questions = Data.getShapes()
+        navigationController?.pushViewController(learnWordVC, animated: true)
+    }
+
+    fileprivate func handleWeather() {
+        let learnWordVC = LearnWordVC()
+        learnWordVC.title = "Weather (pogoda)"
+        learnWordVC.questions = Data.getWeather()
+        navigationController?.pushViewController(learnWordVC, animated: true)
+    }
     
     fileprivate func handle1Button() {
         let learnWordVC = LearnWordVC()

@@ -8,6 +8,6 @@
 
 
 struct Question {
-    let swedish: String
+    let polish: String
     let english: String
 }

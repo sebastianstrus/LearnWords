@@ -27,7 +27,14 @@ class MainMenuView: UIView {
     var c1Action: (() -> Void)?
     var adjectivesAction: (() -> Void)?
     var professionsAction: (() -> Void)?
-    var newLevelAction: (() -> Void)?
+    var bodyAction: (() -> Void)?
+    var carAction: (() -> Void)?
+    var itAction: (() -> Void)?
+    var healthAction: (() -> Void)?
+    var legalTermsAction: (() -> Void)?
+    var personalQualitiesAction: (() -> Void)?
+    var shapesAction: (() -> Void)?
+    var weatherAction: (() -> Void)?
     
     var button1Action: (() -> Void)?
     var button2Action: (() -> Void)?
@@ -92,10 +99,52 @@ class MainMenuView: UIView {
         button.layer.borderColor = UIColor.orange.cgColor
         return button
     }()
+
+    fileprivate let bodyButton: BounceButton = {
+        let button = BounceButton(title: "Body (ciało) (\(Data.getBody().count))")
+        button.addTarget(self, action: #selector(handleBody), for: .touchUpInside)
+        return button
+    }()
     
-    fileprivate let newLevelButton: BounceButton = {
-        let button = BounceButton(title: "Nowy poziom")
-        button.addTarget(self, action: #selector(handleNewLevel), for: .touchUpInside)
+    fileprivate let carButton: BounceButton = {
+        let button = BounceButton(title: "Car parts (\(Data.getCar().count))")
+        button.addTarget(self, action: #selector(handleCar), for: .touchUpInside)
+        return button
+    }()
+    
+    fileprivate let itButton: BounceButton = {
+        let button = BounceButton(title: "Computers and technology (\(Data.getIT().count))")
+        button.addTarget(self, action: #selector(handleIT), for: .touchUpInside)
+        return button
+    }()
+    
+    fileprivate let healthButton: BounceButton = {
+        let button = BounceButton(title: "Health (zdrowie) (\(Data.getHealth().count))")
+        button.addTarget(self, action: #selector(handleHealth), for: .touchUpInside)
+        return button
+    }()
+    
+    fileprivate let legalTermsButton: BounceButton = {
+        let button = BounceButton(title: "Legal terms (słownictwo prawnicze) (\(Data.getLegalTerms().count))")
+        button.addTarget(self, action: #selector(handleLegalTerms), for: .touchUpInside)
+        return button
+    }()
+    
+    fileprivate let personalQualitiesButton: BounceButton = {
+        let button = BounceButton(title: "Personal qualities (cechy charakteru) (\(Data.getPersonalQualities().count))")
+        button.addTarget(self, action: #selector(handlePersonalQualities), for: .touchUpInside)
+        return button
+    }()
+    
+    fileprivate let shapesButton: BounceButton = {
+        let button = BounceButton(title: "Shapes (kształty) (\(Data.getShapes().count))")
+        button.addTarget(self, action: #selector(handleShapes), for: .touchUpInside)
+        return button
+    }()
+    
+    fileprivate let weatherButton: BounceButton = {
+        let button = BounceButton(title: "Weather (pogoda) (\(Data.getWeather().count))")
+        button.addTarget(self, action: #selector(handleWeather), for: .touchUpInside)
         return button
     }()
     
@@ -207,12 +256,12 @@ class MainMenuView: UIView {
         
         
         
-        leftButtonsStackView = createVerticalStackView(views: [irregularVerbsButton, levelB1B2Button, levelC1Button, professionsButton, adjectivesButton, newLevelButton],
+        leftButtonsStackView = createVerticalStackView(views: [irregularVerbsButton, levelB1B2Button, levelC1Button, professionsButton, adjectivesButton, bodyButton, carButton, itButton, healthButton, legalTermsButton, personalQualitiesButton, shapesButton, weatherButton],
                                                    spacing: 10)
             leftContainer.addSubview(leftButtonsStackView)
         
-        leftButtonsStackView.setAnchor(width: 280,
-                                   height: 340)
+        leftButtonsStackView.setAnchor(width: 480,
+                                   height: 770) //50 + 10, Body, Car parts, Computers and technology, Health, Legal terms, Personal qualities, Shapes, Weather
         leftButtonsStackView.centerXAnchor.constraint(equalTo: leftContainer.centerXAnchor).isActive = true
         leftButtonsStackView.centerYAnchor.constraint(equalTo: leftContainer.centerYAnchor).isActive = true
         
@@ -253,8 +302,36 @@ class MainMenuView: UIView {
         adjectivesAction?()
     }
     
-    @objc fileprivate func handleNewLevel() {
-        newLevelAction?()
+    @objc fileprivate func handleBody() {
+        bodyAction?()
+    }
+    
+    @objc fileprivate func handleCar() {
+        carAction?()
+    }
+    
+    @objc fileprivate func handleIT() {
+        itAction?()
+    }
+    
+    @objc fileprivate func handleHealth() {
+        healthAction?()
+    }
+    
+    @objc fileprivate func handleLegalTerms() {
+        legalTermsAction?()
+    }
+    
+    @objc fileprivate func handlePersonalQualities() {
+        personalQualitiesAction?()
+    }
+    
+    @objc fileprivate func handleShapes() {
+        shapesAction?()
+    }
+    
+    @objc fileprivate func handleWeather() {
+        weatherAction?()
     }
     
     @objc fileprivate func handle1button() {

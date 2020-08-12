@@ -21,7 +21,7 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
     var gotPrize = false
     var timer = Timer()
     let mySynthesizer = AVSpeechSynthesizer()
-    
+    var hintsLines: [String] = []
     var time: Int = 0 {
         didSet {
             //secondsLabel.text = "\(seconds)"
@@ -31,6 +31,7 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
             
         }
     }
+    
     
     var shuffledQuestions: [LongQuestion]!
     
@@ -333,6 +334,9 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
                 if (currentNumber + 1 >= questions.count) && answeredSecond && answeredSecond {
                     self.timer.invalidate()
                     showMessage("Well done!", withTitle: "Congratulations!")
+                    for line in hintsLines {
+                        print(line)
+                    }
                 }
             }
             else {
@@ -350,6 +354,9 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
                 if (currentNumber + 1 >= questions.count) && answeredFirst && answeredThird {
                     self.timer.invalidate()
                     showMessage("Well done!", withTitle: "Congratulations!")
+                    for line in hintsLines {
+                        print(line)
+                    }
                 }
             }
             else {
@@ -368,6 +375,12 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
                 if (currentNumber + 1 >= questions.count) && answeredFirst && answeredSecond {
                     self.timer.invalidate()//\(Int(time/60)):\(time - Int(time/60)*60)
                     showMessage("\nYour time: \(secondsLabel.text!),\nYou used \(usedHints) \( usedHints == 1 ? "hint" : "hints").\(usedHints == 0 ? "\nWell done!" : "")", withTitle: "Congratulations!")
+                    print("Used hints:")
+                    for line in hintsLines {
+                        print(line)
+                    }
+                    print("\n\n")
+
                     if (usedHints == 0) && (!gotPrize) {
                         gotPrize = !gotPrize
                         createParticles()
@@ -575,6 +588,8 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
     @objc func handleHint() {
         usedHints += 1
         showMessage(nil, withTitle: "\(currentQuestion.english1) \(currentQuestion.english2) \(currentQuestion.english3)")
+
+        hintsLines.append("LongQuestion(polish: \"\(currentQuestion.polish)\", english1: \"\(currentQuestion.english1)\", english2: \"\(currentQuestion.english2)\", english3: \"\(currentQuestion.english3)\"),")
     }
     
     public func createParticles() {

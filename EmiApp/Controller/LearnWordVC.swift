@@ -22,6 +22,7 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
     var timer = Timer()
     let mySynthesizer = AVSpeechSynthesizer()
     var hintAvailable = true
+    var hintsLines: [String] = []
     
     var time: Int = 0 {
         didSet {
@@ -285,6 +286,13 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
                 if (currentNumber + 1 >= questions.count) {
                     self.timer.invalidate()
                     showMessage("Well done!", withTitle: "Congratulations!")
+                    
+                    print("Used hints:")
+                    for line in hintsLines {
+                        print(line)
+                    }
+                    print("\n\n")
+                    
                     if (usedHints == 0) && (!gotPrize) {
                         gotPrize = !gotPrize
                         createParticles()
@@ -387,7 +395,7 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
         buttonsStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 150).isActive = true
         
         // set first
-        questionLabel.text = shuffledQuestions[0].swedish
+        questionLabel.text = shuffledQuestions[0].polish
         currentQuestion = shuffledQuestions[0]
         nextButton.isEnabled = false
         nextButton.alpha = 0.5
@@ -457,7 +465,7 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
             hintLabel.text = ""
             hintAvailable = true
             currentNumber += 1
-            questionLabel.text = shuffledQuestions[currentNumber].swedish
+            questionLabel.text = shuffledQuestions[currentNumber].polish
             currentQuestion = shuffledQuestions[currentNumber]
             
             questionLabel.textColor = AppColors.ACCENT_PURPLE
@@ -482,6 +490,8 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
         if hintAvailable {
             usedHints += 1
             hintLabel.text = currentQuestion.english
+            print("Question(polish: \"\(currentQuestion.polish)\", english: \"\(currentQuestion.english)\"),")
+            hintsLines.append("Question(polish: \"\(currentQuestion.polish)\", english: \"\(currentQuestion.english)\"),")
             hintAvailable = false
         }
 
