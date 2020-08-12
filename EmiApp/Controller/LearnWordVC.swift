@@ -150,7 +150,6 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
         label.text = "test"
         label.font = UIFont.systemFont(ofSize: 48)
         label.textColor = AppColors.ACCENT_PURPLE
-
         label.numberOfLines = 2
         label.textAlignment = NSTextAlignment.center
         label.shadowColor = .black
@@ -164,7 +163,6 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
         label.text = ""
         label.font = UIFont.systemFont(ofSize: 30)
         label.textColor = AppColors.BORDER_RED
-
         label.textAlignment = NSTextAlignment.center
         return label
     }()

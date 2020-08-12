@@ -21,6 +21,7 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
     var gotPrize = false
     var timer = Timer()
     let mySynthesizer = AVSpeechSynthesizer()
+    var hintAvailable = true
     var hintsLines: [String] = []
     var time: Int = 0 {
         didSet {
@@ -174,7 +175,6 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
         let attributedString = NSMutableAttributedString(attributedString: NSAttributedString(string: "US", attributes: [NSAttributedString.Key.font: AppFonts.NUMBER_FONT!, .foregroundColor: AppColors.ACCENT_PURPLE]))
         label.attributedText = attributedString
         label.textAlignment = NSTextAlignment.center
-        //label.backgroundColor = UIColor.lightGray
         return label
     }()
     
@@ -190,6 +190,15 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
         label.shadowColor = .black
         label.shadowOffset = CGSize(width: 1.0, height: 1.0)
         //label.backgroundColor = UIColor.lightGray
+        return label
+    }()
+    
+    fileprivate let hintLabel: UILabel = {
+        let label = UILabel()
+        label.text = ""
+        label.font = UIFont.systemFont(ofSize: 30)
+        label.textColor = AppColors.BORDER_RED
+        label.textAlignment = NSTextAlignment.center
         return label
     }()
     
@@ -394,7 +403,7 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
                 answerTF3.becomeFirstResponder()
             }
         case 4:
-            setNextQuestion()
+            handleNext()
         default:
             print("defult")
         }
@@ -450,7 +459,10 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
         view.addSubview(questionLabel)
         questionLabel.setAnchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, paddingTop: 100, paddingLeft: 20, paddingBottom: 20, paddingRight: 20, width: 0, height: 140)
         
-        view.addSubview(answerTF)
+        view.addSubview(hintLabel)
+        hintLabel.setAnchor(top: questionLabel.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 20, paddingRight: 20, width: 0, height: 40)
+        
+        //view.addSubview(answerTF)
         //answerTF.setAnchor(top: questionLabel.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 70)
         
         let stackView = UIStackView(arrangedSubviews: [answerTF, answerTF2, answerTF3])
@@ -458,7 +470,7 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
         stackView.distribution = .fillEqually
         stackView.spacing = 30
         view.addSubview(stackView)
-        stackView.setAnchor(top: questionLabel.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 70)
+        stackView.setAnchor(top: questionLabel.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, paddingTop: 70, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 70)
         
         
 
@@ -550,16 +562,14 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
         //checkAnswer()
     }
     
+
+    
+    
+    
     @objc fileprivate func handleNext() {
-        
-        setNextQuestion()
-        
-    }
-    
-    
-    
-    func setNextQuestion() {
         if (currentNumber < questions.count - 1) {
+            hintLabel.text = ""
+            hintAvailable = true
             currentNumber += 1
             questionLabel.text = shuffledQuestions[currentNumber].polish
             currentQuestion = shuffledQuestions[currentNumber]
@@ -586,10 +596,17 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
     }
     
     @objc func handleHint() {
-        usedHints += 1
-        showMessage(nil, withTitle: "\(currentQuestion.english1) \(currentQuestion.english2) \(currentQuestion.english3)")
+        if hintAvailable {
+            usedHints += 1
+            hintLabel.text = "\(currentQuestion.english1) \(currentQuestion.english2) \(currentQuestion.english3)"
+            //showMessage(nil, withTitle: "\(currentQuestion.english1) \(currentQuestion.english2) \(currentQuestion.english3)")
 
-        hintsLines.append("LongQuestion(polish: \"\(currentQuestion.polish)\", english1: \"\(currentQuestion.english1)\", english2: \"\(currentQuestion.english2)\", english3: \"\(currentQuestion.english3)\"),")
+            hintsLines.append("LongQuestion(polish: \"\(currentQuestion.polish)\", english1: \"\(currentQuestion.english1)\", english2: \"\(currentQuestion.english2)\", english3: \"\(currentQuestion.english3)\"),")
+            hintsLines.append("LongQuestion(polish: \"\(currentQuestion.polish)\", english1: \"\(currentQuestion.english1)\", english2: \"\(currentQuestion.english2)\", english3: \"\(currentQuestion.english3)\"),")
+            hintAvailable = false
+        
+        }
+        
     }
     
     public func createParticles() {

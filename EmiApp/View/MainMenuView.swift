@@ -69,7 +69,7 @@ class MainMenuView: UIView {
     fileprivate let irregularVerbsButton: BounceButton = {
         let button = BounceButton(title: "Czasowniki nieregularne (\(Data.getMoreVerbs().count))")
         button.addTarget(self, action: #selector(handleIrregularVerbs), for: .touchUpInside)
-        button.layer.borderColor = UIColor.green.cgColor
+        button.layer.borderColor = UIColor.orange.cgColor
         return button
     }()
     
