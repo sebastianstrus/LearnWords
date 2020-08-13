@@ -204,7 +204,7 @@ class Data {
             LongQuestion(polish: "poderżnąć, podcinać", english1: "slit", english2: "slit", english3: "slit"),
             LongQuestion(polish: "zakładać się, obstawiać", english1: "bet", english2: "betted/bet", english3: "betted/bet"),
             LongQuestion(polish: "wąchać, pachnieć", english1: "smell", english2: "smelled/smelt", english3: "smelled/smelt"),
-            LongQuestion(polish: "rozgrzeszać", english1: "shrive", english2: "shrived/shriven", english3: "shrived/shriven"),
+            LongQuestion(polish: "rozgrzeszać", english1: "shrive", english2: "shrived/shrove", english3: "shrived/shriven"),
             LongQuestion(polish: "kosić", english1: "mow", english2: "mowed/mown", english3: "mowed/mown"),
             LongQuestion(polish: "pozbawiać, osierocić", english1: "bereave", english2: "bereaved/bereft", english3: "bereaved/bereft"),
             LongQuestion(polish: "psuć", english1: "spoil", english2: "spoiled/spoilt", english3: "spoiled/spoilt"),

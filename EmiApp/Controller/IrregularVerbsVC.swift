@@ -222,7 +222,7 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
         tf.textAlignment = .center
         tf.autocapitalizationType = UITextAutocapitalizationType.none
         tf.font = UIFont.systemFont(ofSize: 36)
-        tf.placeholder = "simple past"
+        tf.placeholder = "past simple"
         tf.layer.borderWidth = 3
         tf.layer.cornerRadius = 10
         tf.layer.borderColor = AppColors.ACCENT_PURPLE.cgColor
@@ -499,6 +499,10 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
         
         // set first
         questionLabel.text = shuffledQuestions[0].polish
+        
+        answerTF2.placeholder = "past simple (\(shuffledQuestions[0].english2.split(separator: "/").count))"
+        answerTF3.placeholder = "past participle (\(shuffledQuestions[0].english3.split(separator: "/").count))"
+        
         currentQuestion = shuffledQuestions[0]
         nextButton.isEnabled = false
         nextButton.alpha = 0.5
@@ -588,6 +592,10 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
             answerTF.text = ""
             answerTF2.text = ""
             answerTF3.text = ""
+            
+            answerTF2.placeholder = "past simple (\(currentQuestion.english2.split(separator: "/").count))"
+            answerTF3.placeholder = "past participle (\(currentQuestion.english3.split(separator: "/").count))"
+            
             
         } else {
             showMessage("There are no more questions!", withTitle: "Try again!")
