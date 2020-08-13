@@ -132,7 +132,7 @@ class Data {
         LongQuestion(polish: "strzelać", english1: "shoot", english2: "shot", english3: "shot"),
         LongQuestion(polish: "pokazywać", english1: "show", english2: "showed/shown", english3: "showed/shown"),
         LongQuestion(polish: "kurczyć się", english1: "shrink", english2: "shrank", english3: "shrunk"),
-        LongQuestion(polish: "rozgrzeszać", english1: "shrive", english2: "shrived/shriven", english3: "shrived/shriven"),
+        LongQuestion(polish: "rozgrzeszać", english1: "shrive", english2: "shrived/shrove", english3: "shrived/shriven"),
         LongQuestion(polish: "zamykać", english1: "shut", english2: "shut", english3: "shut"),
         LongQuestion(polish: "śpiewać", english1: "sing", english2: "sang", english3: "sung"),
         LongQuestion(polish: "tonąć", english1: "sink", english2: "sank", english3: "sunk"),
@@ -244,50 +244,47 @@ class Data {
         ]
     }
     
-    class func getB1B2() -> [Question] { // okolo 50 getB1B2
-        return [
-            Question(polish: "rozlewać, rozsypać", english: "spill"),
-            Question(polish: "rozrzucać", english: "strew"),
-            Question(polish: "wybuchnąć", english: "burst"),
-            Question(polish: "uderzyć", english: "smite"),
-            Question(polish: "pluć", english: "spit"),
-            Question(polish: "poderżnąć, podcinać", english: "slit"),
-            Question(polish: "rozgrzeszać", english: "shrive"),
-            Question(polish: "kosić", english: "mow"),
-            Question(polish: "pozbawiać, osierocić", english: "bereave"),
-            Question(polish: "psuć", english: "spoil"),
-            Question(polish: "błagać", english: "beseech"),
-            Question(polish: "wytrzymywać, znosić", english: "abide"),
-            Question(polish: "ślizgać się", english: "slide"),
-            Question(polish: "ubierać, odziewać", english: "clothe"),
-            Question(polish: "tkać", english: "weave"),
-            Question(polish: "siać", english: "sow"),
-            Question(polish: "kroczyć, przechadzać się", english: "stride"),
-            Question(polish: "mieszkać", english: "dwell"),
-            Question(polish: "skradać się", english: "slink"),
-            Question(polish: "pomylić", english: "mistake"),
-            Question(polish: "dostać", english: "get"),
-            Question(polish: "szyć", english: "sew"),
-            Question(polish: "świadczyć (o czymś)", english: "bespeak"),
-            Question(polish: "puchnąć", english: "swell"),
-            Question(polish: "powstrzymywać się", english: "forbear"),
-            Question(polish: "strzyc", english: "shear"),
-            Question(polish: "budzić", english: "wake"),
-            Question(polish: "pojawić się, nadarzać się, powstawać", english: "arise"),
-            Question(polish: "rozwijać się, prosperować", english: "thrive"),
-            Question(polish: "prognoozować", english: "forecast"),
-            Question(polish: "oblężyć, osaczać", english: "beset"),
-            Question(polish: "wepchnąć", english: "thrust"),
-            Question(polish: "składać ofertę, licytować", english: "bid"),
-            Question(polish: "napinać", english: "string"),
-            Question(polish: "pochylać się", english: "lean"),
-            Question(polish: "strofować", english: "chide"),
-            Question(polish: "rozłupać, rozszczepiać", english: "cleave")
-        ]
-    }
+//    class func getSingeHardVerbs() -> [Question] { // okolo 50 getB1B2
+//        return [
+//            Question(polish: "rozlewać, rozsypać", english: "spill"),
+//            Question(polish: "rozrzucać", english: "strew"),
+//            Question(polish: "wybuchnąć", english: "burst"),
+//            Question(polish: "uderzyć", english: "smite"),
+//            Question(polish: "pluć", english: "spit"),
+//            Question(polish: "poderżnąć, podcinać", english: "slit"),
+//            Question(polish: "rozgrzeszać", english: "shrive"),
+//            Question(polish: "kosić", english: "mow"),
+//            Question(polish: "pozbawiać, osierocić", english: "bereave"),
+//            Question(polish: "psuć", english: "spoil"),
+//            Question(polish: "błagać", english: "beseech"),
+//            Question(polish: "wytrzymywać, znosić", english: "abide"),
+//            Question(polish: "ubierać, odziewać", english: "clothe"),
+//            Question(polish: "tkać", english: "weave"),
+//            Question(polish: "siać", english: "sow"),
+//            Question(polish: "kroczyć, przechadzać się", english: "stride"),
+//            Question(polish: "mieszkać", english: "dwell"),
+//            Question(polish: "skradać się", english: "slink"),
+//            Question(polish: "pomylić", english: "mistake"),
+//            Question(polish: "szyć", english: "sew"),
+//            Question(polish: "świadczyć (o czymś)", english: "bespeak"),
+//            Question(polish: "puchnąć", english: "swell"),
+//            Question(polish: "powstrzymywać się", english: "forbear"),
+//            Question(polish: "strzyc", english: "shear"),
+//            Question(polish: "pojawić się, nadarzać się, powstawać", english: "arise"),
+//            Question(polish: "rozwijać się, prosperować", english: "thrive"),
+//            Question(polish: "prognoozować", english: "forecast"),
+//            Question(polish: "oblężyć, osaczać", english: "beset"),
+//            Question(polish: "wepchnąć", english: "thrust"),
+//            Question(polish: "składać ofertę, licytować", english: "bid"),
+//            Question(polish: "napinać", english: "string"),
+//            Question(polish: "pochylać się", english: "lean"),
+//            Question(polish: "strofować", english: "chide"),
+//            Question(polish: "rozłupać, rozszczepiać", english: "cleave")
+//        ]
+//    }
     
     
-    class func getSingeHardVerbs() -> [Question] { // getB1B2
+    class func getB1B2() -> [Question] { // getB1B2
         return [Question(polish: "tam i z powrotem", english: "back and forth"),
                 Question(polish: "tył na przód (założyć np. ubranie)", english: "back to front"),
                 Question(polish: "krok po kroku, po trochu", english: "bit by bit"),
