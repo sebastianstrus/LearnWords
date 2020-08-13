@@ -500,7 +500,7 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
         // set first
         questionLabel.text = shuffledQuestions[0].polish
         
-        answerTF2.placeholder = "past simple (\(shuffledQuestions[0].english2.split(separator: "/").count))"
+        answerTF2.placeholder = "simple past (\(shuffledQuestions[0].english2.split(separator: "/").count))"
         answerTF3.placeholder = "past participle (\(shuffledQuestions[0].english3.split(separator: "/").count))"
         
         currentQuestion = shuffledQuestions[0]
@@ -593,7 +593,7 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
             answerTF2.text = ""
             answerTF3.text = ""
             
-            answerTF2.placeholder = "past simple (\(currentQuestion.english2.split(separator: "/").count))"
+            answerTF2.placeholder = "simple past (\(currentQuestion.english2.split(separator: "/").count))"
             answerTF3.placeholder = "past participle (\(currentQuestion.english3.split(separator: "/").count))"
             
             
