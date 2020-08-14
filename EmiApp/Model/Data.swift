@@ -14,7 +14,7 @@ class Data {
     
     
     // -ung / -ang etc
-    class func getHardVerbs() -> [LongQuestion] {
+    class func getMoreVerbs() -> [LongQuestion] {
     return [
         LongQuestion(polish: "wytrzymywać, znosić", english1: "abide", english2: "abided/abode", english3: "abided/abode"),
         LongQuestion(polish: "pojawić się, nadarzać się, powstawać", english1: "arise", english2: "arose", english3: "arisen"),
@@ -42,7 +42,7 @@ class Data {
         LongQuestion(polish: "wybuchnąć", english1: "burst", english2: "burst", english3: "burst"),
         LongQuestion(polish: "kupować", english1: "buy", english2: "bought", english3: "bought"),
         LongQuestion(polish: "łapać", english1: "catch", english2: "caught", english3: "caught"),
-        LongQuestion(polish: "rzucać", english1: "cast", english2: "cast", english3: "cast"),
+        LongQuestion(polish: "rzucać, odlewać", english1: "cast", english2: "cast", english3: "cast"),
         LongQuestion(polish: "strofować", english1: "chide", english2: "chidded/chid/chode", english3: "chidded/chid/chidden"),
         LongQuestion(polish: "wybierać", english1: "choose", english2: "chose", english3: "chosen"),
         LongQuestion(polish: "rozłupać, rozszczepiać", english1: "cleave", english2: "cleaved/clove", english3: "cleaved/cloven/cleft"),
@@ -83,7 +83,7 @@ class Data {
         LongQuestion(polish: "wieszać", english1: "hang", english2: "hanged/hung", english3: "hanged/hung"),
         LongQuestion(polish: "mieć", english1: "have", english2: "had", english3: "had"),
         LongQuestion(polish: "słyszeć", english1: "hear", english2: "heard", english3: "heard"),
-        LongQuestion(polish: "chować", english1: "hide", english2: "hid/hidden", english3: "hid/hidden"),
+        LongQuestion(polish: "chować", english1: "hide", english2: "hid", english3: "hid/hidden"),
         LongQuestion(polish: "uderzać", english1: "hit", english2: "hit", english3: "hit"),
         LongQuestion(polish: "trzymać", english1: "hold", english2: "held", english3: "held"),
         LongQuestion(polish: "ranić, kaleczyć", english1: "hurt", english2: "hurt", english3: "hurt"),
@@ -106,9 +106,9 @@ class Data {
         LongQuestion(polish: "znaczyć, mieć na myśli", english1: "mean", english2: "meant", english3: "meant"),
         LongQuestion(polish: "spotykać", english1: "meet", english2: "met", english3: "met"),
         LongQuestion(polish: "pomylić", english1: "mistake", english2: "mistook", english3: "mistaken"),
-        LongQuestion(polish: "kosić", english1: "mow", english2: "mowed/mown", english3: "mowed/mown"),
+        LongQuestion(polish: "kosić", english1: "mow", english2: "mowed", english3: "mowed/mown"),
         LongQuestion(polish: "płacić", english1: "pay", english2: "paid", english3: "paid"),
-        LongQuestion(polish: "udowadniać", english1: "prove", english2: "proved/proven", english3: "proved/proven"),
+        LongQuestion(polish: "udowadniać", english1: "prove", english2: "proved", english3: "proved/proven"),
         LongQuestion(polish: "kłaść", english1: "put", english2: "put", english3: "put"),
         LongQuestion(polish: "rzucać (coś), rezygnować", english1: "quit", english2: "quitted/quit", english3: "quitted/quit"),
         LongQuestion(polish: "czytać", english1: "read", english2: "read", english3: "read"),
@@ -192,7 +192,7 @@ class Data {
         ]
     }
     
-    class func getMoreVerbs() -> [LongQuestion] { // okolo 50
+    class func getHardVerbs() -> [LongQuestion] { // okolo 50
         return [
             LongQuestion(polish: "pozbyć się", english1: "rid", english2: "ridded/rid", english3: "ridded/rid"),
             LongQuestion(polish: "rozlewać, rozsypać", english1: "spill", english2: "spilled/spilt", english3: "spilled/spilt"),
@@ -218,7 +218,7 @@ class Data {
             LongQuestion(polish: "mieszkać", english1: "dwell", english2: "dwelled/dwelt", english3: "dwelled/dwelt"),
             LongQuestion(polish: "skradać się", english1: "slink", english2: "slunk", english3: "slunk"),
             LongQuestion(polish: "pomylić", english1: "mistake", english2: "mistook", english3: "mistaken"),
-            LongQuestion(polish: "dostać", english1: "get", english2: "gotten/got", english3: "gotten/got"),
+            LongQuestion(polish: "dostać", english1: "get", english2: "got", english3: "gotten/got"),
             LongQuestion(polish: "szyć", english1: "sew", english2: "sewed", english3: "sewed/sewn"),
             LongQuestion(polish: "świadczyć (o czymś)", english1: "bespeak", english2: "bespoke", english3: "bespoken"),
             LongQuestion(polish: "rosnąć, uprawiać", english1: "grow", english2: "grew", english3: "grown"),
