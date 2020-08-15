@@ -53,15 +53,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navigationController
         
         
-//        let filePath = Bundle.main.path(forResource: "words", ofType: "txt");//words
-//        let URL = NSURL.fileURL(withPath: filePath!)
-//
-//        do {
-//            let string = try String.init(contentsOf: URL)
-//
-//            // use string here
-//
-//            let myStrings: [String] = string.components(separatedBy: .newlines)
+        let filePath = Bundle.main.path(forResource: "words", ofType: "txt");//words
+        let URL = NSURL.fileURL(withPath: filePath!)
+
+        do {
+            let string = try String.init(contentsOf: URL)
+
+            // use string here
+
+            let myStrings: [String] = string.components(separatedBy: .newlines)
+            var all = 0
+            for row in myStrings {
+                
+                var temp1 = row.replacingOccurrences(of: "LongQuestion", with: "LongestQuestion")
+                var temp2 = temp1.replacingOccurrences(of: "),", with: ", example: \"xxx\"),")
+                print(temp2)
+                all += 1
+            }
+            print(all)
 //
 //            //var newStrings:[String] = myStrings.reversed()
 //            //newStrings.remove(at: 0)
@@ -166,9 +175,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //
             
             //print(myStrings)
-//        } catch  {
-//            print(error);
-//        }
+        } catch  {
+            print(error);
+        }
 //        
         
         /*

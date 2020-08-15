@@ -17,7 +17,7 @@ import UIKit
 class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
 
     
-    var questions: [LongQuestion]!
+    var questions: [LongestQuestion]!
     var gotPrize = false
     var timer = Timer()
     let mySynthesizer = AVSpeechSynthesizer()
@@ -34,7 +34,7 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
     }
     
     
-    var shuffledQuestions: [LongQuestion]!
+    var shuffledQuestions: [LongestQuestion]!
     
     var setUK: Bool = true
     
@@ -69,6 +69,16 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
                 if answeredThird {
                     nextButton.isEnabled = true
                     nextButton.alpha = 1
+                    
+                    let exampleText = currentQuestion.example
+                    let splitExampleText:[String] = exampleText.components(separatedBy: ". ")
+                    var newExample = ""
+                    for row in splitExampleText {
+                        newExample += row
+                        newExample += ".\n"
+                    }
+                    
+                    exampleTV.text = String(newExample.dropLast().dropLast())
                     tempTF.becomeFirstResponder()
                 }
                 else {
@@ -86,7 +96,7 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
         }
     }
     
-    var currentQuestion: LongQuestion!
+    var currentQuestion: LongestQuestion!
     
     
     
@@ -189,7 +199,6 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
         label.textAlignment = NSTextAlignment.center
         label.shadowColor = .black
         label.shadowOffset = CGSize(width: 1.0, height: 1.0)
-        //label.backgroundColor = UIColor.lightGray
         return label
     }()
     
@@ -249,6 +258,14 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
         tf.tag = 4
         tf.placeholder = ""
         return tf
+    }()
+    
+    
+    fileprivate let exampleTV: UITextView = {
+        let tv = UITextView()
+        tv.font = UIFont.systemFont(ofSize: 30)
+        tv.textAlignment = .center
+        return tv
     }()
     
     fileprivate let okButton: UIButton = {
@@ -488,14 +505,17 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
 
         numberLabel.text = "1/\(questions.count)"
         
-        let buttonsStackView = UIStackView(arrangedSubviews: [okButton, nextButton])
-        buttonsStackView.axis = .horizontal
-        buttonsStackView.distribution = .fillEqually
-        buttonsStackView.spacing = 140
-        view.addSubview(buttonsStackView)
-        buttonsStackView.setAnchor(width: 540, height: 200)
-        buttonsStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        buttonsStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 100).isActive = true
+//        let buttonsStackView = UIStackView(arrangedSubviews: [okButton, nextButton])
+//        buttonsStackView.axis = .horizontal
+//        buttonsStackView.distribution = .fillEqually
+//        buttonsStackView.spacing = 140
+//
+        
+        view.addSubview(exampleTV)
+        exampleTV.setAnchor(width: 1200, height: 300)
+        
+        exampleTV.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        exampleTV.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 160).isActive = true
         
         // set first
         questionLabel.text = shuffledQuestions[0].polish
@@ -573,6 +593,7 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
     @objc fileprivate func handleNext() {
         if (currentNumber < questions.count - 1) {
             hintLabel.text = ""
+            exampleTV.text = ""
             hintAvailable = true
             currentNumber += 1
             questionLabel.text = shuffledQuestions[currentNumber].polish
