@@ -180,6 +180,13 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
         return button
     }()
     
+    let exampleSoundButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "sound_icon"), for: .normal)
+        button.addTarget(self, action: #selector(handleExampleSound), for: .touchUpInside)
+        return button
+    }()
+    
     let usLabel: UILabel = {
         let label = UILabel()
         let attributedString = NSMutableAttributedString(attributedString: NSAttributedString(string: "US", attributes: [NSAttributedString.Key.font: AppFonts.NUMBER_FONT!, .foregroundColor: AppColors.ACCENT_PURPLE]))
@@ -499,9 +506,13 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
         view.addSubview(soundStackView)
         soundStackView.setAnchor(top: stackView.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, paddingTop: 0, paddingLeft: 200, paddingBottom: 0, paddingRight: 200, width: 0, height: 100)
         
-        soundButton1.setAnchor(width: 70, height: 70)
-        soundButton2.setAnchor(width: 70, height: 70)
-        soundButton3.setAnchor(width: 70, height: 70)
+        soundButton1.setAnchor(width: 70, height: 0)
+        soundButton2.setAnchor(width: 70, height: 0)
+        soundButton3.setAnchor(width: 70, height: 0)
+        
+        view.addSubview(exampleSoundButton)
+        exampleSoundButton.setAnchor(top: nil, leading: nil, bottom: view.bottomAnchor, trailing: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 80, paddingRight: 0, width: 70, height: 70)
+        exampleSoundButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
 
         numberLabel.text = "1/\(questions.count)"
         
@@ -557,11 +568,13 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
     }
     @objc func handleSound2() {
         handleSound(text: answerTF2.text ?? "")
-
     }
     @objc func handleSound3() {
         handleSound(text: answerTF3.text ?? "")
-
+    }
+    
+    @objc func handleExampleSound() {
+        handleSound(text: exampleTV.text ?? "")
     }
     
     @objc fileprivate func handleSoundUK(text: String) {
