@@ -289,10 +289,10 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
     fileprivate let nextButton: UIButton = {
         let button = BounceButton()
         button.setTitle("Next", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 60)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.setTitleColor(UIColor.white, for: .normal)
         button.backgroundColor = AppColors.ACCENT_PURPLE
-        button.layer.cornerRadius = 100
+        button.layer.cornerRadius = 50
         button.addTarget(self, action: #selector(handleNext), for: .touchUpInside)
         return button
     }()
@@ -541,6 +541,8 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
         view.addSubview(hintButton)
         hintButton.setAnchor(top: nil, leading: nil, bottom: view.bottomAnchor, trailing: view.trailingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 80, paddingRight: 20, width: 100, height: 60)
         
+        view.addSubview(nextButton)
+        nextButton.setAnchor(top: nil, leading: nil, bottom: hintButton.topAnchor, trailing: hintButton.trailingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 20, paddingRight: 0, width: 100, height: 100)
         
         view.addSubview(missedLabel)
         missedLabel.setAnchor(top: nil, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: nil, paddingTop: 0, paddingLeft: 10, paddingBottom: 80, paddingRight: 0, width: 250, height: 60)
