@@ -187,6 +187,13 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
         return button
     }()
     
+    let copyButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "copy_icon"), for: .normal)
+        button.addTarget(self, action: #selector(handleCopy), for: .touchUpInside)
+        return button
+    }()
+    
     let usLabel: UILabel = {
         let label = UILabel()
         let attributedString = NSMutableAttributedString(attributedString: NSAttributedString(string: "US", attributes: [NSAttributedString.Key.font: AppFonts.NUMBER_FONT!, .foregroundColor: AppColors.ACCENT_PURPLE]))
@@ -427,7 +434,8 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
                 answerTF3.becomeFirstResponder()
             }
         case 4:
-            handleNext()
+            //handleNext()
+            print("handleNext")
         default:
             print("defult")
         }
@@ -511,10 +519,14 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
         soundButton3.setAnchor(width: 70, height: 0)
         
         view.addSubview(exampleSoundButton)
-        exampleSoundButton.setAnchor(top: nil, leading: nil, bottom: view.bottomAnchor, trailing: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 80, paddingRight: 0, width: 70, height: 70)
+        exampleSoundButton.setAnchor(top: nil, leading: nil, bottom: view.bottomAnchor, trailing: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 100, paddingRight: 0, width: 70, height: 70)
         exampleSoundButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
 
         numberLabel.text = "1/\(questions.count)"
+        
+        view.addSubview(copyButton)
+        copyButton.setAnchor(top: exampleSoundButton.topAnchor, leading: nil, bottom: exampleSoundButton.bottomAnchor, trailing: exampleSoundButton.leadingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 70, height: 70)
+
         
 //        let buttonsStackView = UIStackView(arrangedSubviews: [okButton, nextButton])
 //        buttonsStackView.axis = .horizontal
@@ -523,10 +535,9 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
 //
         
         view.addSubview(exampleTV)
-        exampleTV.setAnchor(width: 1200, height: 300)
-        
+        exampleTV.setAnchor(width: 1200, height: 260)
         exampleTV.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        exampleTV.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 160).isActive = true
+        exampleTV.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 170).isActive = true
         
         // set first
         questionLabel.text = shuffledQuestions[0].polish
@@ -577,6 +588,10 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
     
     @objc func handleExampleSound() {
         handleSound(text: exampleTV.text ?? "")
+    }
+    
+    @objc func handleCopy() {
+        UIPasteboard.general.string = currentQuestion.example
     }
     
     @objc fileprivate func handleSoundUK(text: String) {
