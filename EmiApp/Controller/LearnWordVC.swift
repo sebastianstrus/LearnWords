@@ -273,7 +273,7 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
         
         switch textField.tag {
         case 1:
-            if answerTF.text?.uppercased() == currentQuestion.english.uppercased() {
+            if answerTF.text?.uppercased().replacingOccurrences(of: " ", with: "", options: NSString.CompareOptions.literal, range: nil) == currentQuestion.english.uppercased().replacingOccurrences(of: " ", with: "", options: NSString.CompareOptions.literal, range: nil) {
                 answerTF.layer.borderColor = AppColors.BORDER_GREEN.cgColor
                 answeredFirst = true
                 handleSound(text: answerTF.text!)

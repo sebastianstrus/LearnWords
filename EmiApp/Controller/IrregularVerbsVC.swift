@@ -365,7 +365,7 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
         
         switch textField.tag {
         case 1:
-            if answerTF.text?.uppercased() == currentQuestion.english1.uppercased() {
+            if answerTF.text?.uppercased().replacingOccurrences(of: " ", with: "", options: NSString.CompareOptions.literal, range: nil) == currentQuestion.english1.uppercased().replacingOccurrences(of: " ", with: "", options: NSString.CompareOptions.literal, range: nil) {
                 answerTF.layer.borderColor = AppColors.BORDER_GREEN.cgColor
                 answeredFirst = true
                 handleSound(text: answerTF.text!)
@@ -384,7 +384,7 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
                 answerTF.becomeFirstResponder()
             }
         case 2:
-            if answerTF2.text?.uppercased() == currentQuestion.english2.uppercased() {
+            if answerTF2.text?.uppercased().replacingOccurrences(of: " ", with: "", options: NSString.CompareOptions.literal, range: nil) == currentQuestion.english2.uppercased().replacingOccurrences(of: " ", with: "", options: NSString.CompareOptions.literal, range: nil) {
                 answerTF2.layer.borderColor = AppColors.BORDER_GREEN.cgColor
                 answeredSecond = true
                 handleSound(text: answerTF2.text!)
@@ -404,7 +404,7 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
                 answerTF2.becomeFirstResponder()
             }
         case 3:
-            if answerTF3.text?.uppercased() == currentQuestion.english3.uppercased() {
+            if answerTF3.text?.uppercased().replacingOccurrences(of: " ", with: "", options: NSString.CompareOptions.literal, range: nil) == currentQuestion.english3.uppercased().replacingOccurrences(of: " ", with: "", options: NSString.CompareOptions.literal, range: nil) {
                 answerTF3.layer.borderColor = AppColors.BORDER_GREEN.cgColor
                 answeredThird = true
                 handleSound(text: answerTF3.text!)
