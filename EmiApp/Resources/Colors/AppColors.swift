@@ -16,4 +16,5 @@ struct AppColors {
     static let CRIMSON_RED: UIColor = UIColor(r: 220, g: 20, b: 60)
     static let BORDER_RED: UIColor = UIColor(r: 200, g: 50, b: 50)
     static let BORDER_GREEN: UIColor = UIColor(r: 100, g: 200, b: 100)
+    static let DARK_RED: UIColor = UIColor(r: 180, g: 0, b: 0)
 }

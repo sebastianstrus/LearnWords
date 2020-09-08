@@ -27,7 +27,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
-        /*let times: [Question] = Data.getWeatherWords()
+        
+//        let longestWords = Data.getLongestQuestions()
+//        for question in longestWords {
+//            let examples =  question.examples
+//            var exampleString = ""
+//            for examp in examples {
+//                exampleString += "\"\(examp)\", "
+//            }
+//            print("LongestQuestion(polish: \"\(question.polish)\", english1: \"\(question.english1)\", english2: \"\(question.english2)\", english3: \"\(question.english3)\", examples: [\(exampleString.dropLast().dropLast())]),")
+//        }
+        
+        /*
+        
+        let times: [Question] = Data.getWeatherWords()
         print("TIME (\(times.count))")
         for question in times {
             print("\(question.swedish)  -  \(question.english)")

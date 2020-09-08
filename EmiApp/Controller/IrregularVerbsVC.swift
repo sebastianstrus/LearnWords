@@ -40,7 +40,7 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
     
     var usedHints: Int = 0 {
         didSet {
-            missedLabel.text = "Hints: \(usedHints)"
+            missedLabel.text = "\(usedHints)"
         }
     }
     
@@ -70,15 +70,38 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
                     nextButton.isEnabled = true
                     nextButton.alpha = 1
                     
-                    let exampleText = currentQuestion.example
-                    let splitExampleText:[String] = exampleText.components(separatedBy: ". ")
+                    let splitExampleText = currentQuestion.examples
                     var newExample = ""
                     for row in splitExampleText {
-                        newExample += row
-                        newExample += ".\n"
+                        newExample += row!
+                        newExample += "\n"
                     }
                     
-                    exampleTV.text = String(newExample.dropLast().dropLast())
+                    if splitExampleText.count > 0 {
+                        example1Label.text = splitExampleText[0]
+                        example1Button.alpha = 1
+                        copy1Button.alpha = 1
+                    }
+                    if splitExampleText.count > 1 {
+                        example2Label.text = splitExampleText[1]
+                        example2Button.alpha = 1
+                        copy2Button.alpha = 1
+                    }
+                    if splitExampleText.count > 2 {
+                        example3Label.text = splitExampleText[2]
+                        example3Button.alpha = 1
+                        copy3Button.alpha = 1
+                    }
+                    if splitExampleText.count > 3 {
+                        example4Label.text = splitExampleText[3]
+                        example4Button.alpha = 1
+                        copy4Button.alpha = 1
+                    }
+
+                    
+                    
+                    
+                    
                     tempTF.becomeFirstResponder()
                 }
                 else {
@@ -123,9 +146,9 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
     
     let missedLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor(r: 180, g: 0, b: 0)
+        label.textColor = AppColors.DARK_RED
         label.font = AppFonts.NUMBER_FONT
-        label.text = "Hints: \(0)"
+        label.text = "\(0)"
         label.textAlignment = NSTextAlignment.center
         return label
     }()
@@ -142,7 +165,7 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
     
     let switchButton: UISwitch = {
         let sw = UISwitch()
-        sw.transform = CGAffineTransform(scaleX: 2, y: 2)
+        sw.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
         sw.onTintColor = AppColors.ACCENT_PURPLE
         sw.tintColor = AppColors.ACCENT_PURPLE
         sw.thumbTintColor = AppColors.WHITE_GRAY
@@ -159,38 +182,24 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
         // Do something
     }
     
-    let soundButton1: UIButton = {
-        let button = UIButton()
+    let soundButton1: BounceButton = {
+        let button = BounceButton()
         button.setImage(UIImage(named: "sound_icon"), for: .normal)
         button.addTarget(self, action: #selector(handleSound1), for: .touchUpInside)
         return button
     }()
     
-    let soundButton2: UIButton = {
-        let button = UIButton()
+    let soundButton2: BounceButton = {
+        let button = BounceButton()
         button.setImage(UIImage(named: "sound_icon"), for: .normal)
         button.addTarget(self, action: #selector(handleSound2), for: .touchUpInside)
         return button
     }()
     
-    let soundButton3: UIButton = {
-        let button = UIButton()
+    let soundButton3: BounceButton = {
+        let button = BounceButton()
         button.setImage(UIImage(named: "sound_icon"), for: .normal)
         button.addTarget(self, action: #selector(handleSound3), for: .touchUpInside)
-        return button
-    }()
-    
-    let exampleSoundButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(named: "sound_icon"), for: .normal)
-        button.addTarget(self, action: #selector(handleExampleSound), for: .touchUpInside)
-        return button
-    }()
-    
-    let copyButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(named: "copy_icon"), for: .normal)
-        button.addTarget(self, action: #selector(handleCopy), for: .touchUpInside)
         return button
     }()
     
@@ -275,12 +284,96 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
     }()
     
     
-    fileprivate let exampleTV: UITextView = {
-        let tv = UITextView()
-        tv.font = UIFont.systemFont(ofSize: 30)
-        tv.textAlignment = .center
-        return tv
+    fileprivate let copy1Button: BounceButton = {
+        let button = BounceButton()
+        button.setImage(UIImage(named: "copy_icon"), for: .normal)
+        button.addTarget(self, action: #selector(handleCopy1), for: .touchUpInside)
+        button.alpha = 0
+        return button
     }()
+    fileprivate let copy2Button: BounceButton = {
+        let button = BounceButton()
+        button.setImage(UIImage(named: "copy_icon"), for: .normal)
+        button.addTarget(self, action: #selector(handleCopy2), for: .touchUpInside)
+        button.alpha = 0
+        return button
+    }()
+    fileprivate let copy3Button: BounceButton = {
+        let button = BounceButton()
+        button.setImage(UIImage(named: "copy_icon"), for: .normal)
+        button.addTarget(self, action: #selector(handleCopy3), for: .touchUpInside)
+        button.alpha = 0
+        return button
+    }()
+    fileprivate let copy4Button: BounceButton = {
+        let button = BounceButton()
+        button.setImage(UIImage(named: "copy_icon"), for: .normal)
+        button.addTarget(self, action: #selector(handleCopy4), for: .touchUpInside)
+        button.alpha = 0
+        return button
+    }()
+    
+    fileprivate let example1Button: BounceButton = {
+        let button = BounceButton()
+        button.setImage(UIImage(named: "sound_icon"), for: .normal)
+        button.addTarget(self, action: #selector(handleExample1Sound), for: .touchUpInside)
+        button.alpha = 0
+        return button
+    }()
+    fileprivate let example2Button: BounceButton = {
+        let button = BounceButton()
+        button.setImage(UIImage(named: "sound_icon"), for: .normal)
+        button.addTarget(self, action: #selector(handleExample2Sound), for: .touchUpInside)
+        button.alpha = 0
+        return button
+    }()
+    fileprivate let example3Button: BounceButton = {
+        let button = BounceButton()
+        button.setImage(UIImage(named: "sound_icon"), for: .normal)
+        button.addTarget(self, action: #selector(handleExample3Sound), for: .touchUpInside)
+        button.alpha = 0
+        return button
+    }()
+    fileprivate let example4Button: BounceButton = {
+        let button = BounceButton()
+        button.setImage(UIImage(named: "sound_icon"), for: .normal)
+        button.addTarget(self, action: #selector(handleExample4Sound), for: .touchUpInside)
+        button.alpha = 0
+        return button
+    }()
+    
+    
+    fileprivate let example1Label: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 22)
+        label.textColor = AppColors.ACCENT_PURPLE
+        label.textAlignment = NSTextAlignment.left
+        return label
+    }()
+    fileprivate let example2Label: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 22)
+        label.textColor = AppColors.ACCENT_PURPLE
+        label.textAlignment = NSTextAlignment.left
+        return label
+    }()
+    fileprivate let example3Label: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 22)
+        label.textColor = AppColors.ACCENT_PURPLE
+        label.textAlignment = NSTextAlignment.left
+        return label
+    }()
+    fileprivate let example4Label: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 22)
+        label.textColor = AppColors.ACCENT_PURPLE
+        label.textAlignment = NSTextAlignment.left
+        return label
+    }()
+    
+    
+
     
     fileprivate let okButton: UIButton = {
         let button = BounceButton()
@@ -299,17 +392,19 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.setTitleColor(UIColor.white, for: .normal)
         button.backgroundColor = AppColors.ACCENT_PURPLE
-        button.layer.cornerRadius = 50
+        button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(handleNext), for: .touchUpInside)
         return button
     }()
     
-    fileprivate let hintButton: UIButton = {
-        let button = UIButton()
+    fileprivate let hintButton: BounceButton = {
+        let button = BounceButton()
         button.setTitle("Hint", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        button.setTitleColor(AppColors.ACCENT_PURPLE, for: .normal)
-        button.layer.cornerRadius = 5
+        button.setTitleColor(AppColors.DARK_RED, for: .normal)
+        button.layer.cornerRadius = 10
+        button.layer.borderColor = AppColors.DARK_RED.cgColor
+        button.layer.borderWidth =  1
         button.addTarget(self, action: #selector(handleHint), for: .touchUpInside)
         return button
     }()
@@ -475,13 +570,13 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
         //ukLabel.centerYAnchor.constraint(equalTo: soundButtonUK.centerYAnchor).isActive = true
         
         view.addSubview(switchButton)
-        switchButton.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: ukLabel.leadingAnchor, paddingTop: 38, paddingLeft: 0, paddingBottom: 0, paddingRight: 30)
+        switchButton.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: ukLabel.leadingAnchor, paddingTop: 38, paddingLeft: 0, paddingBottom: 0, paddingRight: 10)
         
 //        view.addSubview(soundButtonUS)
 //        soundButtonUS.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: switchButton.leadingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 40, width: 100, height: 100)
         
         view.addSubview(usLabel)
-        usLabel.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: switchButton.leadingAnchor, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 26, width: 80, height: 60)
+        usLabel.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: switchButton.leadingAnchor, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 6, width: 80, height: 60)
         //usLabel.centerYAnchor.constraint(equalTo: soundButtonUS.centerYAnchor).isActive = true
         
         
@@ -512,21 +607,12 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
         soundStackView.alignment = .fill
         soundStackView.distribution = .equalSpacing
         view.addSubview(soundStackView)
-        soundStackView.setAnchor(top: stackView.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, paddingTop: 0, paddingLeft: 200, paddingBottom: 0, paddingRight: 200, width: 0, height: 100)
+        soundStackView.setAnchor(top: stackView.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, paddingTop: 0, paddingLeft: 200, paddingBottom: 0, paddingRight: 200, width: 0, height: 60)
         
-        soundButton1.setAnchor(width: 70, height: 0)
-        soundButton2.setAnchor(width: 70, height: 0)
-        soundButton3.setAnchor(width: 70, height: 0)
+        soundButton1.setAnchor(width: 60, height: 0)
+        soundButton2.setAnchor(width: 60, height: 0)
+        soundButton3.setAnchor(width: 60, height: 0)
         
-        view.addSubview(exampleSoundButton)
-        exampleSoundButton.setAnchor(top: nil, leading: nil, bottom: view.bottomAnchor, trailing: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 100, paddingRight: 0, width: 70, height: 70)
-        exampleSoundButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-
-        numberLabel.text = "1/\(questions.count)"
-        
-        view.addSubview(copyButton)
-        copyButton.setAnchor(top: exampleSoundButton.topAnchor, leading: nil, bottom: exampleSoundButton.bottomAnchor, trailing: exampleSoundButton.leadingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 70, height: 70)
-
         
 //        let buttonsStackView = UIStackView(arrangedSubviews: [okButton, nextButton])
 //        buttonsStackView.axis = .horizontal
@@ -534,10 +620,50 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
 //        buttonsStackView.spacing = 140
 //
         
-        view.addSubview(exampleTV)
-        exampleTV.setAnchor(width: 1200, height: 260)
-        exampleTV.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        exampleTV.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 170).isActive = true
+
+        
+        view.addSubview(copy1Button)
+        copy1Button.setAnchor(top: soundButton1.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, paddingTop: 20, paddingLeft: 30, paddingBottom: 0, paddingRight: 0, width: 60, height: 60)
+        
+        view.addSubview(copy2Button)
+        copy2Button.setAnchor(top: copy1Button.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, paddingTop: 0, paddingLeft: 30, paddingBottom: 0, paddingRight: 0, width: 60, height: 60)
+        
+        view.addSubview(copy3Button)
+        copy3Button.setAnchor(top: copy2Button.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, paddingTop: 0, paddingLeft: 30, paddingBottom: 0, paddingRight: 0, width: 60, height: 60)
+        
+        view.addSubview(copy4Button)
+        copy4Button.setAnchor(top: copy3Button.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, paddingTop: 0, paddingLeft: 30, paddingBottom: 0, paddingRight: 0, width: 60, height: 60)
+        
+        
+        view.addSubview(example1Button)
+        example1Button.setAnchor(top: copy1Button.topAnchor, leading: copy1Button.trailingAnchor, bottom: nil, trailing: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 60, height: 60)
+        
+        view.addSubview(example2Button)
+        example2Button.setAnchor(top: copy2Button.topAnchor, leading: copy2Button.trailingAnchor, bottom: nil, trailing: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 60, height: 60)
+        
+        view.addSubview(example3Button)
+        example3Button.setAnchor(top: copy3Button.topAnchor, leading: copy3Button.trailingAnchor, bottom: nil, trailing: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 60, height: 60)
+        
+        view.addSubview(example4Button)
+        example4Button.setAnchor(top: copy4Button.topAnchor, leading: copy4Button.trailingAnchor, bottom: nil, trailing: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 60, height: 60)
+        
+        
+        view.addSubview(example1Label)
+        example1Label.setAnchor(top: example1Button.topAnchor, leading: example1Button.trailingAnchor, bottom: example1Button.bottomAnchor, trailing: view.trailingAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 60)
+        
+        view.addSubview(example2Label)
+        example2Label.setAnchor(top: example2Button.topAnchor, leading: example2Button.trailingAnchor, bottom: example2Button.bottomAnchor, trailing: view.trailingAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 60)
+        
+        view.addSubview(example3Label)
+        example3Label.setAnchor(top: example3Button.topAnchor, leading: example3Button.trailingAnchor, bottom: example3Button.bottomAnchor, trailing: view.trailingAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 60)
+        
+        view.addSubview(example4Label)
+        example4Label.setAnchor(top: example4Button.topAnchor, leading: example4Button.trailingAnchor, bottom: example4Button.bottomAnchor, trailing: view.trailingAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 60)
+        
+        
+        
+
+        
         
         // set first
         questionLabel.text = shuffledQuestions[0].polish
@@ -550,13 +676,13 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
         nextButton.alpha = 0.5
         
         view.addSubview(hintButton)
-        hintButton.setAnchor(top: nil, leading: nil, bottom: view.bottomAnchor, trailing: view.trailingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 80, paddingRight: 20, width: 100, height: 60)
+        hintButton.setAnchor(top: nil, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: nil, paddingTop: 0, paddingLeft: 20, paddingBottom: 90, paddingRight: 20, width: 80, height: 50)
         
         view.addSubview(nextButton)
-        nextButton.setAnchor(top: nil, leading: nil, bottom: hintButton.topAnchor, trailing: hintButton.trailingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 20, paddingRight: 0, width: 100, height: 100)
+        nextButton.setAnchor(top: nil, leading: nil, bottom: view.bottomAnchor, trailing: view.trailingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 90, paddingRight: 20, width: 80, height: 50)
         
         view.addSubview(missedLabel)
-        missedLabel.setAnchor(top: nil, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: nil, paddingTop: 0, paddingLeft: 10, paddingBottom: 80, paddingRight: 0, width: 250, height: 60)
+        missedLabel.setAnchor(top: nil, leading: hintButton.trailingAnchor, bottom: hintButton.bottomAnchor, trailing: nil, paddingTop: 0, paddingLeft: 4, paddingBottom: 0, paddingRight: 0, width: 60, height: 50)
         
         view.addSubview(secondsLabel)
         secondsLabel.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: nil, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 150, height: 60)
@@ -586,13 +712,35 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
         handleSound(text: answerTF3.text ?? "")
     }
     
-    @objc func handleExampleSound() {
-        handleSound(text: exampleTV.text ?? "")
+    
+    
+    @objc func handleExample1Sound() {
+        handleSound(text: example1Label.text ?? "")
+    }
+    @objc func handleExample2Sound() {
+        handleSound(text: example2Label.text ?? "")
+    }
+    @objc func handleExample3Sound() {
+        handleSound(text: example3Label.text ?? "")
+    }
+    @objc func handleExample4Sound() {
+        handleSound(text: example4Label.text ?? "")
     }
     
-    @objc func handleCopy() {
-        UIPasteboard.general.string = currentQuestion.example
+    
+    @objc func handleCopy1() {
+        UIPasteboard.general.string = example1Label.text
     }
+    @objc func handleCopy2() {
+        UIPasteboard.general.string = example2Label.text
+    }
+    @objc func handleCopy3() {
+        UIPasteboard.general.string = example3Label.text
+    }
+    @objc func handleCopy4() {
+        UIPasteboard.general.string = example4Label.text
+    }
+    
     
     @objc fileprivate func handleSoundUK(text: String) {
         //let mySynthesizer = AVSpeechSynthesizer()
@@ -623,7 +771,18 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
     @objc fileprivate func handleNext() {
         if (currentNumber < questions.count - 1) {
             hintLabel.text = ""
-            exampleTV.text = ""
+            example1Label.text = ""
+            example2Label.text = ""
+            example3Label.text = ""
+            example4Label.text = ""
+            example1Button.alpha = 0
+            example2Button.alpha = 0
+            example3Button.alpha = 0
+            example4Button.alpha = 0
+            copy1Button.alpha = 0
+            copy2Button.alpha = 0
+            copy3Button.alpha = 0
+            copy4Button.alpha = 0
             hintAvailable = true
             currentNumber += 1
             questionLabel.text = shuffledQuestions[currentNumber].polish

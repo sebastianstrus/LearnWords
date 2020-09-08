@@ -12,5 +12,5 @@ struct LongestQuestion {
     let english1: String
     let english2: String
     let english3: String
-    let example: String
+    let examples: [String?]
 }
