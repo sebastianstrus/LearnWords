@@ -28,15 +28,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
-//        let longestWords = Data.getLongestQuestions()
-//        for question in longestWords {
+        let longestWords = Data.getHardAdjectivesAdvanced()
+        for question in longestWords {
 //            let examples =  question.examples
 //            var exampleString = ""
 //            for examp in examples {
 //                exampleString += "\"\(examp)\", "
 //            }
-//            print("LongestQuestion(polish: \"\(question.polish)\", english1: \"\(question.english1)\", english2: \"\(question.english2)\", english3: \"\(question.english3)\", examples: [\(exampleString.dropLast().dropLast())]),")
-//        }
+            //print("Question(polish: \"\(question.polish)\", english: \"\(question.english)\", examples: []),")
+            print(question.english)
+        }
         
         /*
         

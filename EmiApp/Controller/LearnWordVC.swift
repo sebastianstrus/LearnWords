@@ -23,7 +23,6 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
     let mySynthesizer = AVSpeechSynthesizer()
     var hintAvailable = true
     var hintsLines: [String] = []
-    
     var time: Int = 0 {
         didSet {
             //secondsLabel.text = "\(seconds)"
@@ -40,7 +39,7 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
     
     var usedHints: Int = 0 {
         didSet {
-            missedLabel.text = "Hints: \(usedHints)"
+            missedLabel.text = "\(usedHints)"
         }
     }
     
@@ -52,6 +51,39 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
                 nextButton.alpha = answeredFirst ? 1 : 0.5
             if answeredFirst {
                 tempTF.becomeFirstResponder()
+                
+                let splitExampleText = currentQuestion.examples
+                var newExample = ""
+                
+                if splitExampleText != nil {
+                    for row in splitExampleText! {
+                        newExample += row!
+                        newExample += "\n"
+                    }
+                    
+                    
+                    if splitExampleText!.count > 0 {
+                        example1Label.text = splitExampleText?[0]
+                        example1Button.alpha = 1
+                        copy1Button.alpha = 1
+                    }
+                    if splitExampleText!.count > 1 {
+                        example2Label.text = splitExampleText?[1]
+                        example2Button.alpha = 1
+                        copy2Button.alpha = 1
+                    }
+                    if splitExampleText!.count > 2 {
+                        example3Label.text = splitExampleText?[2]
+                        example3Button.alpha = 1
+                        copy3Button.alpha = 1
+                    }
+                    if splitExampleText!.count > 3 {
+                        example4Label.text = splitExampleText?[3]
+                        example4Button.alpha = 1
+                        copy4Button.alpha = 1
+                    }
+                }
+                
             }
             //}
         }
@@ -93,7 +125,7 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
         let label = UILabel()
         label.textColor = UIColor(r: 180, g: 0, b: 0)
         label.font = AppFonts.NUMBER_FONT
-        label.text = "Hints: \(0)"
+        label.text = "\(0)"
         label.textAlignment = NSTextAlignment.center
         return label
     }()
@@ -110,7 +142,7 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
     
     let switchButton: UISwitch = {
         let sw = UISwitch()
-        sw.transform = CGAffineTransform(scaleX: 2, y: 2)
+        sw.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
         sw.onTintColor = AppColors.ACCENT_PURPLE
         sw.tintColor = AppColors.ACCENT_PURPLE
         sw.thumbTintColor = AppColors.WHITE_GRAY
@@ -127,8 +159,8 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
         // Do something
     }
     
-    let soundButton1: UIButton = {
-        let button = UIButton()
+    let soundButton1: BounceButton = {
+        let button = BounceButton()
         button.setImage(UIImage(named: "sound_icon"), for: .normal)
         button.addTarget(self, action: #selector(handleSound1), for: .touchUpInside)
         return button
@@ -192,6 +224,99 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
         return tf
     }()
     
+    
+    
+    fileprivate let copy1Button: BounceButton = {
+        let button = BounceButton()
+        button.setImage(UIImage(named: "copy_icon"), for: .normal)
+        button.addTarget(self, action: #selector(handleCopy1), for: .touchUpInside)
+        button.alpha = 0
+        return button
+    }()
+    fileprivate let copy2Button: BounceButton = {
+        let button = BounceButton()
+        button.setImage(UIImage(named: "copy_icon"), for: .normal)
+        button.addTarget(self, action: #selector(handleCopy2), for: .touchUpInside)
+        button.alpha = 0
+        return button
+    }()
+    fileprivate let copy3Button: BounceButton = {
+        let button = BounceButton()
+        button.setImage(UIImage(named: "copy_icon"), for: .normal)
+        button.addTarget(self, action: #selector(handleCopy3), for: .touchUpInside)
+        button.alpha = 0
+        return button
+    }()
+    fileprivate let copy4Button: BounceButton = {
+        let button = BounceButton()
+        button.setImage(UIImage(named: "copy_icon"), for: .normal)
+        button.addTarget(self, action: #selector(handleCopy4), for: .touchUpInside)
+        button.alpha = 0
+        return button
+    }()
+    
+    fileprivate let example1Button: BounceButton = {
+        let button = BounceButton()
+        button.setImage(UIImage(named: "sound_icon"), for: .normal)
+        button.addTarget(self, action: #selector(handleExample1Sound), for: .touchUpInside)
+        button.alpha = 0
+        return button
+    }()
+    fileprivate let example2Button: BounceButton = {
+        let button = BounceButton()
+        button.setImage(UIImage(named: "sound_icon"), for: .normal)
+        button.addTarget(self, action: #selector(handleExample2Sound), for: .touchUpInside)
+        button.alpha = 0
+        return button
+    }()
+    fileprivate let example3Button: BounceButton = {
+        let button = BounceButton()
+        button.setImage(UIImage(named: "sound_icon"), for: .normal)
+        button.addTarget(self, action: #selector(handleExample3Sound), for: .touchUpInside)
+        button.alpha = 0
+        return button
+    }()
+    fileprivate let example4Button: BounceButton = {
+        let button = BounceButton()
+        button.setImage(UIImage(named: "sound_icon"), for: .normal)
+        button.addTarget(self, action: #selector(handleExample4Sound), for: .touchUpInside)
+        button.alpha = 0
+        return button
+    }()
+    
+    
+    fileprivate let example1Label: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 22)
+        label.textColor = AppColors.ACCENT_PURPLE
+        label.textAlignment = NSTextAlignment.left
+        return label
+    }()
+    fileprivate let example2Label: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 22)
+        label.textColor = AppColors.ACCENT_PURPLE
+        label.textAlignment = NSTextAlignment.left
+        return label
+    }()
+    fileprivate let example3Label: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 22)
+        label.textColor = AppColors.ACCENT_PURPLE
+        label.textAlignment = NSTextAlignment.left
+        return label
+    }()
+    fileprivate let example4Label: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 22)
+        label.textColor = AppColors.ACCENT_PURPLE
+        label.textAlignment = NSTextAlignment.left
+        return label
+    }()
+    
+    
+    
+    
     fileprivate let okButton: UIButton = {
         let button = BounceButton()
         button.setTitle("Ok", for: .normal)
@@ -203,23 +328,25 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
         return button
     }()
     
-    fileprivate let nextButton: UIButton = {
+    fileprivate let nextButton: BounceButton = {
         let button = BounceButton()
         button.setTitle("Next", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 60)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.setTitleColor(UIColor.white, for: .normal)
         button.backgroundColor = AppColors.ACCENT_PURPLE
-        button.layer.cornerRadius = 100
+        button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(handleNext), for: .touchUpInside)
         return button
     }()
     
-    fileprivate let hintButton: UIButton = {
-        let button = UIButton()
+    fileprivate let hintButton: BounceButton = {
+        let button = BounceButton()
         button.setTitle("Hint", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        button.setTitleColor(AppColors.ACCENT_PURPLE, for: .normal)
-        button.layer.cornerRadius = 5
+        button.setTitleColor(AppColors.DARK_RED, for: .normal)
+        button.layer.cornerRadius = 10
+        button.layer.borderColor = AppColors.DARK_RED.cgColor
+        button.layer.borderWidth =  1
         button.addTarget(self, action: #selector(handleHint), for: .touchUpInside)
         return button
     }()
@@ -340,17 +467,12 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
         
         view.addSubview(ukLabel)
         ukLabel.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: view.trailingAnchor, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 20, width: 80, height: 60)
-        //ukLabel.centerYAnchor.constraint(equalTo: soundButtonUK.centerYAnchor).isActive = true
-        
+
         view.addSubview(switchButton)
-        switchButton.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: ukLabel.leadingAnchor, paddingTop: 38, paddingLeft: 0, paddingBottom: 0, paddingRight: 30)
-        
-//        view.addSubview(soundButtonUS)
-//        soundButtonUS.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: switchButton.leadingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 40, width: 100, height: 100)
+        switchButton.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: ukLabel.leadingAnchor, paddingTop: 38, paddingLeft: 0, paddingBottom: 0, paddingRight: 10)
         
         view.addSubview(usLabel)
-        usLabel.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: switchButton.leadingAnchor, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 26, width: 80, height: 60)
-        //usLabel.centerYAnchor.constraint(equalTo: soundButtonUS.centerYAnchor).isActive = true
+        usLabel.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: switchButton.leadingAnchor, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 6, width: 80, height: 60)
         
         
         
@@ -383,14 +505,52 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
 
         numberLabel.text = "1/\(questions.count)"
         
-        let buttonsStackView = UIStackView(arrangedSubviews: [okButton, nextButton])
-        buttonsStackView.axis = .horizontal
-        buttonsStackView.distribution = .fillEqually
-        buttonsStackView.spacing = 140
-        view.addSubview(buttonsStackView)
-        buttonsStackView.setAnchor(width: 540, height: 200)
-        buttonsStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        buttonsStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 150).isActive = true
+
+        
+        
+        
+        
+        view.addSubview(copy1Button)
+        copy1Button.setAnchor(top: soundButton1.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, paddingTop: 20, paddingLeft: 30, paddingBottom: 0, paddingRight: 0, width: 60, height: 60)
+        
+        view.addSubview(copy2Button)
+        copy2Button.setAnchor(top: copy1Button.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, paddingTop: 0, paddingLeft: 30, paddingBottom: 0, paddingRight: 0, width: 60, height: 60)
+        
+        view.addSubview(copy3Button)
+        copy3Button.setAnchor(top: copy2Button.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, paddingTop: 0, paddingLeft: 30, paddingBottom: 0, paddingRight: 0, width: 60, height: 60)
+        
+        view.addSubview(copy4Button)
+        copy4Button.setAnchor(top: copy3Button.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, paddingTop: 0, paddingLeft: 30, paddingBottom: 0, paddingRight: 0, width: 60, height: 60)
+        
+        
+        view.addSubview(example1Button)
+        example1Button.setAnchor(top: copy1Button.topAnchor, leading: copy1Button.trailingAnchor, bottom: nil, trailing: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 60, height: 60)
+        
+        view.addSubview(example2Button)
+        example2Button.setAnchor(top: copy2Button.topAnchor, leading: copy2Button.trailingAnchor, bottom: nil, trailing: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 60, height: 60)
+        
+        view.addSubview(example3Button)
+        example3Button.setAnchor(top: copy3Button.topAnchor, leading: copy3Button.trailingAnchor, bottom: nil, trailing: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 60, height: 60)
+        
+        view.addSubview(example4Button)
+        example4Button.setAnchor(top: copy4Button.topAnchor, leading: copy4Button.trailingAnchor, bottom: nil, trailing: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 60, height: 60)
+        
+        
+        view.addSubview(example1Label)
+        example1Label.setAnchor(top: example1Button.topAnchor, leading: example1Button.trailingAnchor, bottom: example1Button.bottomAnchor, trailing: view.trailingAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 60)
+        
+        view.addSubview(example2Label)
+        example2Label.setAnchor(top: example2Button.topAnchor, leading: example2Button.trailingAnchor, bottom: example2Button.bottomAnchor, trailing: view.trailingAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 60)
+        
+        view.addSubview(example3Label)
+        example3Label.setAnchor(top: example3Button.topAnchor, leading: example3Button.trailingAnchor, bottom: example3Button.bottomAnchor, trailing: view.trailingAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 60)
+        
+        view.addSubview(example4Label)
+        example4Label.setAnchor(top: example4Button.topAnchor, leading: example4Button.trailingAnchor, bottom: example4Button.bottomAnchor, trailing: view.trailingAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 60)
+        
+        
+        
+        
         
         // set first
         questionLabel.text = shuffledQuestions[0].polish
@@ -399,11 +559,13 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
         nextButton.alpha = 0.5
         
         view.addSubview(hintButton)
-        hintButton.setAnchor(top: nil, leading: nil, bottom: view.bottomAnchor, trailing: view.trailingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 80, paddingRight: 20, width: 100, height: 60)
+        hintButton.setAnchor(top: nil, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: nil, paddingTop: 0, paddingLeft: 20, paddingBottom: 90, paddingRight: 20, width: 80, height: 50)
         
+        view.addSubview(nextButton)
+        nextButton.setAnchor(top: nil, leading: nil, bottom: view.bottomAnchor, trailing: view.trailingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 90, paddingRight: 20, width: 80, height: 50)
         
         view.addSubview(missedLabel)
-        missedLabel.setAnchor(top: nil, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: nil, paddingTop: 0, paddingLeft: 10, paddingBottom: 80, paddingRight: 0, width: 250, height: 60)
+        missedLabel.setAnchor(top: nil, leading: hintButton.trailingAnchor, bottom: hintButton.bottomAnchor, trailing: nil, paddingTop: 0, paddingLeft: 4, paddingBottom: 0, paddingRight: 0, width: 60, height: 50)
         
         view.addSubview(secondsLabel)
         secondsLabel.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: nil, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 150, height: 60)
@@ -426,6 +588,36 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
     @objc func handleSound1() {
         handleSound(text: answerTF.text ?? "")
     }
+    
+    
+    
+    @objc func handleExample1Sound() {
+        handleSound(text: example1Label.text ?? "")
+    }
+    @objc func handleExample2Sound() {
+        handleSound(text: example2Label.text ?? "")
+    }
+    @objc func handleExample3Sound() {
+        handleSound(text: example3Label.text ?? "")
+    }
+    @objc func handleExample4Sound() {
+        handleSound(text: example4Label.text ?? "")
+    }
+    
+    
+    @objc func handleCopy1() {
+        UIPasteboard.general.string = example1Label.text
+    }
+    @objc func handleCopy2() {
+        UIPasteboard.general.string = example2Label.text
+    }
+    @objc func handleCopy3() {
+        UIPasteboard.general.string = example3Label.text
+    }
+    @objc func handleCopy4() {
+        UIPasteboard.general.string = example4Label.text
+    }
+    
 
     
     @objc fileprivate func handleSoundUK(text: String) {

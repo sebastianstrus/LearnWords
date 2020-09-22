@@ -33,7 +33,6 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
     var shuffledQuestions: [LongestQuestion]!
     
     var setUK: Bool = true
@@ -130,7 +129,7 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
         let label = UILabel()
         label.textColor = AppColors.ACCENT_PURPLE
         label.font = AppFonts.NUMBER_FONT
-        label.text = "1/10"
+        label.text = "1/\(Data.getLongestQuestions().count)"
         label.textAlignment = NSTextAlignment.center
         return label
     }()
@@ -386,7 +385,7 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
         return button
     }()
     
-    fileprivate let nextButton: UIButton = {
+    fileprivate let nextButton: BounceButton = {
         let button = BounceButton()
         button.setTitle("Next", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
@@ -562,22 +561,15 @@ class IrregularVerbsVC: UIViewController, UITextFieldDelegate {
         numberLabel.setAnchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, paddingTop: 20, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 200, height: 60)
         
         
-//        view.addSubview(soundButtonUK)
-//        soundButtonUK.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: view.trailingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 100, height: 100)
-        
         view.addSubview(ukLabel)
         ukLabel.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: view.trailingAnchor, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 20, width: 80, height: 60)
-        //ukLabel.centerYAnchor.constraint(equalTo: soundButtonUK.centerYAnchor).isActive = true
-        
+
         view.addSubview(switchButton)
         switchButton.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: ukLabel.leadingAnchor, paddingTop: 38, paddingLeft: 0, paddingBottom: 0, paddingRight: 10)
         
-//        view.addSubview(soundButtonUS)
-//        soundButtonUS.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: switchButton.leadingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 40, width: 100, height: 100)
-        
         view.addSubview(usLabel)
         usLabel.setAnchor(top: view.topAnchor, leading: nil, bottom: nil, trailing: switchButton.leadingAnchor, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 6, width: 80, height: 60)
-        //usLabel.centerYAnchor.constraint(equalTo: soundButtonUS.centerYAnchor).isActive = true
+
         
         
         
