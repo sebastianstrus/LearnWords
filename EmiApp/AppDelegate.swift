@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                exampleString += "\"\(examp)\", "
 //            }
             //print("Question(polish: \"\(question.polish)\", english: \"\(question.english)\", examples: []),")
-            print(question.english)
+            //print(question.english)
         }
         
         /*
@@ -75,7 +75,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //
 //            // use string here
 //
+//            var i = 0
 //            let myStrings: [String] = string.components(separatedBy: .newlines)
+//            for line in myStrings {
+//                
+//                if line != "" {
+//                    if line.first == "\"" {
+//                        print(line.dropLast())
+//                    }
+//                }
+//                
+//
+//            }
+            //print("\"  \"")
 //            var all = 0
 //            for row in myStrings {
 //                

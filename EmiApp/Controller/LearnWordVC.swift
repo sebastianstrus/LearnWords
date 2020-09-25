@@ -668,6 +668,19 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
             answerTF.becomeFirstResponder()
             
             answerTF.text = ""
+            
+            example1Button.alpha = 0
+            example2Button.alpha = 0
+            example3Button.alpha = 0
+            example4Button.alpha = 0
+            copy1Button.alpha = 0
+            copy2Button.alpha = 0
+            copy3Button.alpha = 0
+            copy4Button.alpha = 0
+            example1Label.text = ""
+            example2Label.text = ""
+            example3Label.text = ""
+            example4Label.text = ""
 
             
         } else {
