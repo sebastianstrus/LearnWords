@@ -1403,10 +1403,32 @@ class Data {
             Question(polish: "szeroki wybór", english: "bread selection"),
             Question(polish: "zgodny", english: "compliant"),
             Question(polish: "robić coś koniecznym/potrzebnym", english: "necessitate"),
+            Question(polish: "różny", english: "miscellaneous"),
+            Question(polish: "nadmierna ilość czasu", english: "inordinate amount of time"),
+            Question(polish: "bezcielesny głos", english: "disembodied voice"),
+            Question(polish: "xxx", english: "yyy"),
+            Question(polish: "przełom", english: "breakthrough"),
+            Question(polish: "a zatem, tak więc", english: "thus"),
+            Question(polish: "z powodu wielu problemów", english: "owing to many problems"),
+            Question(polish: "z powodu złej pogody", english: "due to bad weather,"),
+            Question(polish: "o ile mi wiadomo", english: "os far as I am concerned"),
+            Question(polish: "uważam, że, sądzę, że", english: "I reckon that"),
+            Question(polish: "według mnie", english: "to my mind"),
+            Question(polish: "podejrzewam, że", english: "I suppose that"),
+            Question(polish: "jestem przekonany, że", english: "I am convinced that "),
+            Question(polish: "przeciwnie", english: "on the contrary"),
+            Question(polish: "pomimo", english: "despite"),
+            Question(polish: "podczas gdy", english: "whereas"),
+            Question(polish: "xxx", english: "I agree to the utmost "),
             Question(polish: "xxx", english: "yyy"),
             Question(polish: "xxx", english: "yyy"),
             Question(polish: "xxx", english: "yyy"),
             Question(polish: "xxx", english: "yyy"),
+            
+            
+            Question(polish: "xxx", english: "yyy"),
+            
+            
             
             
             
