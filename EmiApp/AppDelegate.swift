@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
-        let longestWords = Data.getHardAdjectivesAdvanced()
+        let longestWords = Data.getSomeAdjectives()
         for question in longestWords {
 //            let examples =  question.examples
 //            var exampleString = ""
@@ -67,26 +67,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navigationController
         
         
-//        let filePath = Bundle.main.path(forResource: "words", ofType: "txt");//words
-//        let URL = NSURL.fileURL(withPath: filePath!)
-//
-//        do {
-//            let string = try String.init(contentsOf: URL)
-//
-//            // use string here
-//
-//            var i = 0
-//            let myStrings: [String] = string.components(separatedBy: .newlines)
-//            for line in myStrings {
-//                
-//                if line != "" {
-//                    if line.first == "\"" {
-//                        print(line.dropLast())
-//                    }
-//                }
-//                
-//
-//            }
+        let filePath = Bundle.main.path(forResource: "words", ofType: "txt");//words
+        let URL = NSURL.fileURL(withPath: filePath!)
+
+        do {
+            let string = try String.init(contentsOf: URL)
+
+//             use string here
+
+            var i = 0
+            let myStrings: [String] = string.components(separatedBy: .newlines)
+            for line in myStrings {
+
+                if line != "" {
+                    let myTwoStrings: [String] = line.components(separatedBy: "    ")
+
+                    
+                    print("Question(polish: " + "\"\(myTwoStrings[0])\", english: \"" + "\(myTwoStrings[1])" + "\"),")
+
+                }}
+
+
+            } catch {
+                print("Some error")
+            }
             //print("\"  \"")
 //            var all = 0
 //            for row in myStrings {

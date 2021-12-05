@@ -1,1 +1,45 @@
-
+bliski    nah
+brudny    schmutzig
+chłodny    kühl
+cichy    leise
+ciemny    dunkel
+ciepły    warm
+ciężki    schwer
+czysty    rein
+czysty    sauber
+daleki    weit
+długi    lang
+dobry    gut
+drogi    teuer
+duży    groß
+głęboki    tief
+głośny    laut
+głupi    dumm
+gorący    heiß
+jasny    hell
+krótki    kurz
+lekki    leicht
+łatwy    einfach
+mały    klein
+mądry    klug
+młody    jung
+niski    niedrig
+nowy    neu
+ostry    scharf
+piękny    hübsch
+pionowy    senkrecht
+poziomy    waagerecht
+silny    stark
+słaby    schwach
+smaczny    lecker
+stary    alt
+szeroki    breit
+tani    billig
+trudny    schwierig
+wielki    riesig
+wolny (powolny)    langsam
+wysoki    hoch
+zimny    kalt
+zły (ktoś)    böse
+zły (coś)    schlecht
+spokojny    ruhig

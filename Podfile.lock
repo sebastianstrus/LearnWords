@@ -5,7 +5,7 @@ DEPENDENCIES:
   - SwiftySound
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - SwiftySound
 
 SPEC CHECKSUMS:
@@ -13,4 +13,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 903ba69b7a4eb41ceb1eece678df07fa387ffa04
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.11.2

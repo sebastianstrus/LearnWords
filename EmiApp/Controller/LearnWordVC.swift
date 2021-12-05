@@ -579,7 +579,7 @@ class LearnWordVC: UIViewController, UITextFieldDelegate {
     func handleSound(text: String) {
         //let mySynthesizer = AVSpeechSynthesizer()
         let helloUtterance = AVSpeechUtterance(string: text)
-        helloUtterance.voice = AVSpeechSynthesisVoice(language: setUK ? "en-GB" : "en-US")
+        helloUtterance.voice = AVSpeechSynthesisVoice(language: setUK ? "de-DE" : "de-DE")
         helloUtterance.pitchMultiplier = 1.25
         helloUtterance.rate = 0.4
         mySynthesizer.speak(helloUtterance)

@@ -74,40 +74,40 @@ class MainMenuView: UIView {
     }()
     
     fileprivate let levelB1B2Button: BounceButton = {
-        let button = BounceButton(title: "Poziom B1-B2 (\(Data.getB1B2().count))")
+        let button = BounceButton(title: "Dni tygodnia (\(Data.daysOfTheWeek().count))")
         button.addTarget(self, action: #selector(handleB1B2), for: .touchUpInside)
         button.layer.borderColor = UIColor.green.cgColor
         return button
     }()
     
     fileprivate let levelC1Button: BounceButton = {
-        let button = BounceButton(title: "Poziom C1 (\(Data.getC1().count))")
+        let button = BounceButton(title: "Miesiace i pory roku (\(Data.getMonthsAndSeasons().count))")
         button.addTarget(self, action: #selector(handleC1), for: .touchUpInside)
         button.layer.borderColor = UIColor.green.cgColor
         return button
     }()
     
     fileprivate let professionsButton: BounceButton = {
-        let button = BounceButton(title: "Zawody (\(Data.getProfessions().count))")
+        let button = BounceButton(title: "Okreslenia czasu (\(Data.getTime().count))")
         button.addTarget(self, action: #selector(handleProfessions), for: .touchUpInside)
         return button
     }()
     
     fileprivate let adjectivesButton: BounceButton = {
-        let button = BounceButton(title: "Przymiotniki (\(Data.getHardAdjectivesAdvanced().count))")
+        let button = BounceButton(title: "Przymiotniki (\(Data.getSomeAdjectives().count))")
         button.addTarget(self, action: #selector(handleAdjectives), for: .touchUpInside)
         button.layer.borderColor = UIColor.orange.cgColor
         return button
     }()
 
     fileprivate let bodyButton: BounceButton = {
-        let button = BounceButton(title: "Body (ciało) (\(Data.getBody().count))")
-        button.addTarget(self, action: #selector(handleBody), for: .touchUpInside)
+        let button = BounceButton(title: "Czasowniki modalne (\(Data.getModalVerbs().count))")
+        button.addTarget(self, action: #selector(handleModalVerbs), for: .touchUpInside)
         return button
     }()
     
     fileprivate let carButton: BounceButton = {
-        let button = BounceButton(title: "Car parts (\(Data.getCar().count))")
+        let button = BounceButton(title: "Rzeczy w domu (\(Data.getStuffAtHome().count))")
         button.addTarget(self, action: #selector(handleCar), for: .touchUpInside)
         return button
     }()
@@ -143,14 +143,14 @@ class MainMenuView: UIView {
     }()
     
     fileprivate let weatherButton: BounceButton = {
-        let button = BounceButton(title: "Weather (pogoda) (\(Data.getWeather().count))")
+        let button = BounceButton(title: "German (\(Data.getGerman().count))")
         button.addTarget(self, action: #selector(handleWeather), for: .touchUpInside)
         return button
     }()
     
     
     fileprivate let c1Button: BounceButton = {
-        let button = BounceButton(title: "1. Animals and insects (zwierzęta i owady) (\(Data.get1().count))")
+        let button = BounceButton(title: "1. Animals and insects (zwierzęta i owady) (\(Data.someNiceStuff().count))")
         button.addTarget(self, action: #selector(handle1button), for: .touchUpInside)
         return button
     }()
@@ -302,7 +302,7 @@ class MainMenuView: UIView {
         adjectivesAction?()
     }
     
-    @objc fileprivate func handleBody() {
+    @objc fileprivate func handleModalVerbs() {
         bodyAction?()
     }
     

@@ -78,42 +78,42 @@ class MainMenuController: UIViewController {
     fileprivate func handleB1B2() {
         let learnWordVC = LearnWordVC()
         learnWordVC.title = "Poziom B1-B2"
-        learnWordVC.questions = Data.getB1B2()
+        learnWordVC.questions = Data.daysOfTheWeek()
         navigationController?.pushViewController(learnWordVC, animated: true)
     }
     
     fileprivate func handleC1() {
         let learnWordVC = LearnWordVC()
         learnWordVC.title = "Poziom C1"
-        learnWordVC.questions = Data.getC1()
+        learnWordVC.questions = Data.getMonthsAndSeasons()
         navigationController?.pushViewController(learnWordVC, animated: true)
     }
     
     fileprivate func handleProfessions() {
         let learnWordVC = LearnWordVC()
         learnWordVC.title = "Zawody"
-        learnWordVC.questions = Data.getProfessions()
+        learnWordVC.questions = Data.getTime()
         navigationController?.pushViewController(learnWordVC, animated: true)
     }
     
     fileprivate func handleAdjectives() {
         let learnWordVC = LearnWordVC()
         learnWordVC.title = "Przymiotniki"
-        learnWordVC.questions = Data.getHardAdjectivesAdvanced()
+        learnWordVC.questions = Data.getSomeAdjectives()
         navigationController?.pushViewController(learnWordVC, animated: true)
     }
     
     fileprivate func handleBody() {
         let learnWordVC = LearnWordVC()
         learnWordVC.title = "Body (ciało)"
-        learnWordVC.questions = Data.getBody()
+        learnWordVC.questions = Data.getModalVerbs()
         navigationController?.pushViewController(learnWordVC, animated: true)
     }
     
     fileprivate func handleCar() {
         let learnWordVC = LearnWordVC()
         learnWordVC.title = "Car parts (części samochodowe)"
-        learnWordVC.questions = Data.getCar()
+        learnWordVC.questions = Data.getStuffAtHome()
         navigationController?.pushViewController(learnWordVC, animated: true)
     }
     
@@ -154,15 +154,15 @@ class MainMenuController: UIViewController {
 
     fileprivate func handleWeather() {
         let learnWordVC = LearnWordVC()
-        learnWordVC.title = "Weather (pogoda)"
-        learnWordVC.questions = Data.getWeather()
+        learnWordVC.title = "German"
+        learnWordVC.questions = Data.getGerman()
         navigationController?.pushViewController(learnWordVC, animated: true)
     }
     
     fileprivate func handle1Button() {
         let learnWordVC = LearnWordVC()
         learnWordVC.title = "1. Animals and insects (zwierzęta i owady)"
-        learnWordVC.questions = Data.get1()
+        learnWordVC.questions = Data.someNiceStuff()
         navigationController?.pushViewController(learnWordVC, animated: true)
     }
     
