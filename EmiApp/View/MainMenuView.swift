@@ -150,20 +150,20 @@ class MainMenuView: UIView {
     
     
     fileprivate let c1Button: BounceButton = {
-        let button = BounceButton(title: "1. Animals and insects (zwierzęta i owady) (\(Data.someNiceStuff().count))")
+        let button = BounceButton(title: "Zwroty grzecznosciowe (\(Data.someNiceStuff().count))")
         button.addTarget(self, action: #selector(handle1button), for: .touchUpInside)
         return button
     }()
     
     fileprivate let c2Button: BounceButton = {
-        let button = BounceButton(title: "2. Appliances and technology (urządzenia i technologia) (\(Data.get2().count))")
+        let button = BounceButton(title: "2. Uzyteczne (\(Data.getUseful().count))")
         button.addTarget(self, action: #selector(handle2button), for: .touchUpInside)
         button.layer.borderColor = UIColor.green.cgColor
         return button
     }()
     
     fileprivate let c3Button: BounceButton = {
-        let button = BounceButton(title: "3. Buildings and institutions (budynki i instytucje) (\(Data.get3().count))")
+        let button = BounceButton(title: "3. Buildings and institutions (budynki i instytucje) (\(Data.getSomeUseful().count))")
         button.addTarget(self, action: #selector(handle3button), for: .touchUpInside)
         return button
     }()

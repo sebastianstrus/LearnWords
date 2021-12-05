@@ -500,22 +500,36 @@ class Data {
             Question(polish: "Szczęśliwej podróży", english: "Gute Reise! "),
             Question(polish: "Wszystkiego dobrego!", english: "Alles Gute! "),
             Question(polish: "Dobrej zabawy!", english: "Viel SpaSS!"),
+            Question(polish: "Ja uczyłem się niemieckiego w szkole 20 lat temu.", english: "Ich habe vor 20 Jahren Deutsch in der Schule gelernt."),
             Question(polish: "AAA", english: "BBB"),
-            Question(polish: "AAA", english: "BBB"),
-            Question(polish: "AAA", english: "BBB"),
+            
             
             
         ]
     }
     
     
-    class func get2() -> [Question] {
+    class func getUseful() -> [Question] {
         return [
+            Question(polish: "Wylatujemy do szwecji.", english: "Wir fliegen nach Schweden"),
+            Question(polish: "Mam przy sobie komputer i idę do pracy", english: "Ich habe einen Computer dabei und gehe arbeiten"),
+            Question(polish: "Chodze na silownie.", english: "Ich gehe ins Fitnessstudio."),
+            Question(polish: "Pracuję jako programista, więc dużo się uczę.", english: "Ich arbeite als Programmierer, also lerne ich viel."),
+            Question(polish: "Robię kursy online", english: "Ich mache Online-Kurse"),
+            Question(polish: "Większość z nich jest bezpłatna.", english: "Die meisten sind frei."),
+            Question(polish: "Spędzam dużo czasu z Julią i Emilią", english: "Ich verbringe viel Zeit mit Julia und Emilia"),
+            Question(polish: "Nie mam wielu przyjaciół", english: "Ich habe nicht viele Freunde"),
+            Question(polish: "Julia idzie do przedszkola.", english: "Julia geht in den Kindergarten."),
+            Question(polish: "Czasami Julia zostaje w domu i przeszkadza mi w pracy.", english: "Manchmal bleibt Julia zu Hause und stört meine Arbeit."),
+            Question(polish: "Pogoda w Szwecji jest kiepska.", english: "Das Wetter in Schweden ist schlecht."),
+            Question(polish: "Bardzo lubię swoją pracę.", english: "Ich mag meinen Job sehr."),
+            Question(polish: "Ja uczyłem się niemieckiego w szkole 20 lat temu.", english: "Ich habe vor 20 Jahren Deutsch in der Schule gelernt."),
+            Question(polish: "Bardzo duzo zapomnialem.", english: "Ich habe viel vergessen."),
             
         ]
     }
     
-    class func get3() -> [Question] {
+    class func getSomeUseful() -> [Question] {
         return [
             
         ]

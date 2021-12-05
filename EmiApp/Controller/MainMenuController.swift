@@ -169,14 +169,14 @@ class MainMenuController: UIViewController {
     fileprivate func handle2Button() {
         let learnWordVC = LearnWordVC()
         learnWordVC.title = "2. Appliances and technology (urządzenia i technologia)"
-        learnWordVC.questions = Data.get2()
+        learnWordVC.questions = Data.getUseful()
         navigationController?.pushViewController(learnWordVC, animated: true)
     }
     
     fileprivate func handle3Button() {
         let learnWordVC = LearnWordVC()
         learnWordVC.title = "3. Buildings and institutions (budynki i instytucje)"
-        learnWordVC.questions = Data.get3()
+        learnWordVC.questions = Data.getSomeUseful()
         navigationController?.pushViewController(learnWordVC, animated: true)
     }
     
