@@ -48,7 +48,7 @@ class MainMenuView: UIView {
     
     fileprivate let titleLabel: UILabel = {
         let label = UILabel()
-        let attributedString = NSMutableAttributedString(attributedString: NSAttributedString(string: "EmiApp",
+        let attributedString = NSMutableAttributedString(attributedString: NSAttributedString(string: "Julia",
                                                                                               attributes: [NSAttributedString.Key.font: AppFonts.TITLE_FONT!, .foregroundColor: UIColor.white]))
         label.attributedText = attributedString
         label.textAlignment = NSTextAlignment.center
@@ -59,7 +59,7 @@ class MainMenuView: UIView {
     
     fileprivate let subtitleLabel: UILabel = {
         let label = UILabel()
-        let attributedString = NSMutableAttributedString(attributedString: NSAttributedString(string:  "Learn English", attributes: [NSAttributedString.Key.font: AppFonts.SUBTITLE_FONT!, .foregroundColor: UIColor.white]))
+        let attributedString = NSMutableAttributedString(attributedString: NSAttributedString(string:  "Läs på svenska", attributes: [NSAttributedString.Key.font: AppFonts.SUBTITLE_FONT!, .foregroundColor: UIColor.white]))
         label.attributedText = attributedString
         label.textAlignment = NSTextAlignment.center
         label.shadowColor = .black
@@ -70,34 +70,34 @@ class MainMenuView: UIView {
     fileprivate var buttonsStackView: UIStackView!
     
     fileprivate let timeButton: BounceButton = {
-        let button = BounceButton(title: "Time")
+        let button = BounceButton(title: "Texter")
         button.addTarget(self, action: #selector(handleTime), for: .touchUpInside)
         return button
     }()
     
-    fileprivate let verbsButton: BounceButton = {
-        let button = BounceButton(title: "Verbs")
-        button.addTarget(self, action: #selector(handleVerbs), for: .touchUpInside)
-        return button
-    }()
-    
-    fileprivate let adjectivesButton: BounceButton = {
-        let button = BounceButton(title: "Adjectives")
-        button.addTarget(self, action: #selector(handleAdjectives), for: .touchUpInside)
-        return button
-    }()
-    
-    fileprivate let weatherButton: BounceButton = {
-        let button = BounceButton(title: "PL - EN")
-        button.addTarget(self, action: #selector(handlePlEn), for: .touchUpInside)
-        return button
-    }()
-    
-    fileprivate let usefulButton: BounceButton = {
-        let button = BounceButton(title: "Professions")
-        button.addTarget(self, action: #selector(handleUseful), for: .touchUpInside)
-        return button
-    }()
+//    fileprivate let verbsButton: BounceButton = {
+//        let button = BounceButton(title: "Verbs")
+//        button.addTarget(self, action: #selector(handleVerbs), for: .touchUpInside)
+//        return button
+//    }()
+//    
+//    fileprivate let adjectivesButton: BounceButton = {
+//        let button = BounceButton(title: "Adjectives")
+//        button.addTarget(self, action: #selector(handleAdjectives), for: .touchUpInside)
+//        return button
+//    }()
+//    
+//    fileprivate let weatherButton: BounceButton = {
+//        let button = BounceButton(title: "PL - EN")
+//        button.addTarget(self, action: #selector(handlePlEn), for: .touchUpInside)
+//        return button
+//    }()
+//    
+//    fileprivate let usefulButton: BounceButton = {
+//        let button = BounceButton(title: "Professions")
+//        button.addTarget(self, action: #selector(handleUseful), for: .touchUpInside)
+//        return button
+//    }()
     
     // MARK: - private functions
     fileprivate func setup() {
@@ -138,11 +138,11 @@ class MainMenuView: UIView {
         
         
         
-        buttonsStackView = createVerticalStackView(views: [timeButton, verbsButton, adjectivesButton, weatherButton, usefulButton],
+        buttonsStackView = createVerticalStackView(views: [timeButton/*, verbsButton, adjectivesButton, weatherButton, usefulButton*/],
                                                    spacing: 10)
         bottomContainer.addSubview(buttonsStackView)
         buttonsStackView.setAnchor(width: Device.IS_IPHONE ? 160 : 320,//Device.IS_IPHONE ? 200 : 400,
-                                   height: 240)//Device.IS_IPHONE ? 115 : 230)
+                                   height: 80)//Device.IS_IPHONE ? 115 : 230)
         buttonsStackView.centerXAnchor.constraint(equalTo: bottomContainer.centerXAnchor).isActive = true
         buttonsStackView.centerYAnchor.constraint(equalTo: bottomContainer.centerYAnchor).isActive = true
         
@@ -181,19 +181,19 @@ class MainMenuView: UIView {
         timeAction?()
     }
     
-    @objc fileprivate func handleVerbs() {
-        verbsAction?()
-    }
-    
-    @objc fileprivate func handleAdjectives() {
-        adjectivesAction?()
-    }
-    
-    @objc fileprivate func handlePlEn() {
-        plEnAction?()
-    }
-    
-    @objc fileprivate func handleUseful() {
-        usefulAction?()
-    }
+//    @objc fileprivate func handleVerbs() {
+//        verbsAction?()
+//    }
+//    
+//    @objc fileprivate func handleAdjectives() {
+//        adjectivesAction?()
+//    }
+//    
+//    @objc fileprivate func handlePlEn() {
+//        plEnAction?()
+//    }
+//    
+//    @objc fileprivate func handleUseful() {
+//        usefulAction?()
+//    }
 }

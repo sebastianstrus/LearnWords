@@ -11,3 +11,6 @@ struct Question {
     let swedish: String
     let english: String
 }
+
+
+

@@ -33,10 +33,10 @@ class MainMenuController: UIViewController {
         self.mainMenuView = MainMenuView()
 
         mainMenuView.timeAction = handleTime
-        mainMenuView.verbsAction = handleVerbs
-        mainMenuView.adjectivesAction = handleAdjectives
-        mainMenuView.plEnAction = handlePlEn
-        mainMenuView.usefulAction = handleUseful
+//        mainMenuView.verbsAction = handleVerbs
+//        mainMenuView.adjectivesAction = handleAdjectives
+//        mainMenuView.plEnAction = handlePlEn
+//        mainMenuView.usefulAction = handleUseful
         
         self.view.addSubview(mainMenuView)
         mainMenuView.pinToEdges(view: view, safe: false)
@@ -44,38 +44,38 @@ class MainMenuController: UIViewController {
 
     fileprivate func handleTime() {
         let learnController = LearnController()
-        learnController.title = "Time"
+        learnController.title = "Texter"
         learnController.questions = Data.getWeatherWords()
         navigationController?.pushViewController(learnController, animated: true)
     }
     
-    fileprivate func handleVerbs() {
-        let learnController = LearnController()
-        learnController.title = "Verbs"
-        learnController.questions = Data.getVerbs()
-        navigationController?.pushViewController(learnController, animated: true)
-    }
-    
-    fileprivate func handleAdjectives() {
-        let learnController = LearnController()
-        learnController.title = "Adjectives"
-        learnController.questions = Data.getAdjectives()
-        navigationController?.pushViewController(learnController, animated: true)
-    }
-    
-    fileprivate func handlePlEn() {
-        let learnController = LearnController()
-        learnController.title = "PL - EN"
-        learnController.questions = Data.getPlEn()
-        navigationController?.pushViewController(learnController, animated: true)
-    }
-    
-    fileprivate func handleUseful() {
-        let learnController = LearnController()
-        learnController.title = "Professions"
-        learnController.questions = Data.getProfessions()
-        navigationController?.pushViewController(learnController, animated: true)
-    }
+//    fileprivate func handleVerbs() {
+//        let learnController = LearnController()
+//        learnController.title = "Verbs"
+//        learnController.questions = Data.getVerbs()
+//        navigationController?.pushViewController(learnController, animated: true)
+//    }
+//    
+//    fileprivate func handleAdjectives() {
+//        let learnController = LearnController()
+//        learnController.title = "Adjectives"
+//        learnController.questions = Data.getAdjectives()
+//        navigationController?.pushViewController(learnController, animated: true)
+//    }
+//    
+//    fileprivate func handlePlEn() {
+//        let learnController = LearnController()
+//        learnController.title = "PL - EN"
+//        learnController.questions = Data.getPlEn()
+//        navigationController?.pushViewController(learnController, animated: true)
+//    }
+//    
+//    fileprivate func handleUseful() {
+//        let learnController = LearnController()
+//        learnController.title = "Professions"
+//        learnController.questions = Data.getProfessions()
+//        navigationController?.pushViewController(learnController, animated: true)
+//    }
     
     
 
