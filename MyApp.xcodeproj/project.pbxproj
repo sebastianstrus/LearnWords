@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		64FDD9EFFF6639D7393B9C1A /* Pods_EmiApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A4B72E2E7888EDAE1802439 /* Pods_EmiApp.framework */; };
 		7D1B4EE62277B08900BA5064 /* bravo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7D1B4EE52277B08800BA5064 /* bravo.mp3 */; };
 		7D924E5D24E71529004E808F /* LongestQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D924E5C24E71529004E808F /* LongestQuestion.swift */; };
 		7DC0601924C39AE60061B8D9 /* LearnWordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC0601824C39AE60061B8D9 /* LearnWordVC.swift */; };
@@ -39,15 +38,16 @@
 		7DD60865225A46AF009AA0A2 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD60864225A46AF009AA0A2 /* Data.swift */; };
 		7DD60A89225BE5F9009AA0A2 /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7DD60A88225BE5F9009AA0A2 /* words.txt */; };
 		7DD60A90225E9591009AA0A2 /* LongQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD60A8F225E9591009AA0A2 /* LongQuestion.swift */; };
+		88A3E0D87D977CD2662A5CFA /* Pods_MyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8866FC7AEFC981D94EF2881 /* Pods_MyApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1A4B72E2E7888EDAE1802439 /* Pods_EmiApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmiApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23EA5240958E881C90E0734D /* Pods-EmiApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmiApp.debug.xcconfig"; path = "Target Support Files/Pods-EmiApp/Pods-EmiApp.debug.xcconfig"; sourceTree = "<group>"; };
+		5D0A1FE33596E22982F03B92 /* Pods-MyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyApp.release.xcconfig"; path = "Target Support Files/Pods-MyApp/Pods-MyApp.release.xcconfig"; sourceTree = "<group>"; };
 		7D1B4EE52277B08800BA5064 /* bravo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bravo.mp3; sourceTree = "<group>"; };
 		7D924E5C24E71529004E808F /* LongestQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongestQuestion.swift; sourceTree = "<group>"; };
 		7DC0601824C39AE60061B8D9 /* LearnWordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnWordVC.swift; sourceTree = "<group>"; };
-		7DD60810225A155B009AA0A2 /* EmiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DD60810225A155B009AA0A2 /* MyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD60813225A155B009AA0A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DD60815225A155B009AA0A2 /* MainMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
 		7DD60818225A155B009AA0A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -77,7 +77,9 @@
 		7DD60864225A46AF009AA0A2 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		7DD60A88225BE5F9009AA0A2 /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
 		7DD60A8F225E9591009AA0A2 /* LongQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongQuestion.swift; sourceTree = "<group>"; };
+		A8866FC7AEFC981D94EF2881 /* Pods_MyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6C84F0CC7EE2798DF8D0D35 /* Pods-EmiApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmiApp.release.xcconfig"; path = "Target Support Files/Pods-EmiApp/Pods-EmiApp.release.xcconfig"; sourceTree = "<group>"; };
+		FCCB51BD60C6DBF788151ED3 /* Pods-MyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyApp.debug.xcconfig"; path = "Target Support Files/Pods-MyApp/Pods-MyApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64FDD9EFFF6639D7393B9C1A /* Pods_EmiApp.framework in Frameworks */,
+				88A3E0D87D977CD2662A5CFA /* Pods_MyApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +99,8 @@
 			children = (
 				23EA5240958E881C90E0734D /* Pods-EmiApp.debug.xcconfig */,
 				C6C84F0CC7EE2798DF8D0D35 /* Pods-EmiApp.release.xcconfig */,
+				FCCB51BD60C6DBF788151ED3 /* Pods-MyApp.debug.xcconfig */,
+				5D0A1FE33596E22982F03B92 /* Pods-MyApp.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -104,7 +108,7 @@
 		6BE13C56B86C63351169A76D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1A4B72E2E7888EDAE1802439 /* Pods_EmiApp.framework */,
+				A8866FC7AEFC981D94EF2881 /* Pods_MyApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -122,7 +126,7 @@
 		7DD60811225A155B009AA0A2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7DD60810225A155B009AA0A2 /* EmiApp.app */,
+				7DD60810225A155B009AA0A2 /* MyApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -249,9 +253,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7DD6080F225A155B009AA0A2 /* EmiApp */ = {
+		7DD6080F225A155B009AA0A2 /* MyApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7DD60822225A155B009AA0A2 /* Build configuration list for PBXNativeTarget "EmiApp" */;
+			buildConfigurationList = 7DD60822225A155B009AA0A2 /* Build configuration list for PBXNativeTarget "MyApp" */;
 			buildPhases = (
 				1D2F77B680484A27FD308D58 /* [CP] Check Pods Manifest.lock */,
 				7DD6080C225A155B009AA0A2 /* Sources */,
@@ -263,9 +267,9 @@
 			);
 			dependencies = (
 			);
-			name = EmiApp;
+			name = MyApp;
 			productName = EmiApp;
-			productReference = 7DD60810225A155B009AA0A2 /* EmiApp.app */;
+			productReference = 7DD60810225A155B009AA0A2 /* MyApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -283,7 +287,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7DD6080B225A155B009AA0A2 /* Build configuration list for PBXProject "EmiApp" */;
+			buildConfigurationList = 7DD6080B225A155B009AA0A2 /* Build configuration list for PBXProject "MyApp" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -296,7 +300,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7DD6080F225A155B009AA0A2 /* EmiApp */,
+				7DD6080F225A155B009AA0A2 /* MyApp */,
 			);
 		};
 /* End PBXProject section */
@@ -335,7 +339,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EmiApp-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-MyApp-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -348,20 +352,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EmiApp/Pods-EmiApp-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftySound/SwiftySound.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-MyApp/Pods-MyApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftySound.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-MyApp/Pods-MyApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EmiApp/Pods-EmiApp-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyApp/Pods-MyApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -537,13 +536,13 @@
 		};
 		7DD60823225A155B009AA0A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 23EA5240958E881C90E0734D /* Pods-EmiApp.debug.xcconfig */;
+			baseConfigurationReference = FCCB51BD60C6DBF788151ED3 /* Pods-MyApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4SL936GBZY;
 				INFOPLIST_FILE = EmiApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -557,13 +556,13 @@
 		};
 		7DD60824225A155B009AA0A2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6C84F0CC7EE2798DF8D0D35 /* Pods-EmiApp.release.xcconfig */;
+			baseConfigurationReference = 5D0A1FE33596E22982F03B92 /* Pods-MyApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4SL936GBZY;
 				INFOPLIST_FILE = EmiApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -578,7 +577,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7DD6080B225A155B009AA0A2 /* Build configuration list for PBXProject "EmiApp" */ = {
+		7DD6080B225A155B009AA0A2 /* Build configuration list for PBXProject "MyApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7DD60820225A155B009AA0A2 /* Debug */,
@@ -587,7 +586,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7DD60822225A155B009AA0A2 /* Build configuration list for PBXNativeTarget "EmiApp" */ = {
+		7DD60822225A155B009AA0A2 /* Build configuration list for PBXNativeTarget "MyApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7DD60823225A155B009AA0A2 /* Debug */,
