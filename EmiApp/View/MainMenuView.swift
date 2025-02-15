@@ -48,7 +48,7 @@ class MainMenuView: UIView {
     
     fileprivate let titleLabel: UILabel = {
         let label = UILabel()
-        let attributedString = NSMutableAttributedString(attributedString: NSAttributedString(string: "EmiApp",
+        let attributedString = NSMutableAttributedString(attributedString: NSAttributedString(string: "MyApp",
                                                                                               attributes: [NSAttributedString.Key.font: AppFonts.TITLE_FONT!, .foregroundColor: UIColor.white]))
         label.attributedText = attributedString
         label.textAlignment = NSTextAlignment.center

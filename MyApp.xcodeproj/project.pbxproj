@@ -40,7 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7DD60810225A155B009AA0A2 /* EmiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DD60810225A155B009AA0A2 /* MyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD60813225A155B009AA0A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DD60815225A155B009AA0A2 /* MainMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
 		7DD60818225A155B009AA0A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 		7DD60811225A155B009AA0A2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7DD60810225A155B009AA0A2 /* EmiApp.app */,
+				7DD60810225A155B009AA0A2 /* MyApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -224,9 +224,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7DD6080F225A155B009AA0A2 /* EmiApp */ = {
+		7DD6080F225A155B009AA0A2 /* MyApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7DD60822225A155B009AA0A2 /* Build configuration list for PBXNativeTarget "EmiApp" */;
+			buildConfigurationList = 7DD60822225A155B009AA0A2 /* Build configuration list for PBXNativeTarget "MyApp" */;
 			buildPhases = (
 				7DD6080C225A155B009AA0A2 /* Sources */,
 				7DD6080D225A155B009AA0A2 /* Frameworks */,
@@ -236,9 +236,9 @@
 			);
 			dependencies = (
 			);
-			name = EmiApp;
+			name = MyApp;
 			productName = EmiApp;
-			productReference = 7DD60810225A155B009AA0A2 /* EmiApp.app */;
+			productReference = 7DD60810225A155B009AA0A2 /* MyApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -256,7 +256,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7DD6080B225A155B009AA0A2 /* Build configuration list for PBXProject "EmiApp" */;
+			buildConfigurationList = 7DD6080B225A155B009AA0A2 /* Build configuration list for PBXProject "MyApp" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -269,7 +269,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7DD6080F225A155B009AA0A2 /* EmiApp */,
+				7DD6080F225A155B009AA0A2 /* MyApp */,
 			);
 		};
 /* End PBXProject section */
@@ -499,7 +499,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7DD6080B225A155B009AA0A2 /* Build configuration list for PBXProject "EmiApp" */ = {
+		7DD6080B225A155B009AA0A2 /* Build configuration list for PBXProject "MyApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7DD60820225A155B009AA0A2 /* Debug */,
@@ -508,7 +508,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7DD60822225A155B009AA0A2 /* Build configuration list for PBXNativeTarget "EmiApp" */ = {
+		7DD60822225A155B009AA0A2 /* Build configuration list for PBXNativeTarget "MyApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7DD60823225A155B009AA0A2 /* Debug */,
